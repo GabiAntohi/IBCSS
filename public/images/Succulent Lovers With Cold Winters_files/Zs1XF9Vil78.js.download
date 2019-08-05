@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["cLQBf"]); }
+
+__d("ChatMontageSheet.react",["MontageThreadViewContainer.react","React"],(function(a,b,c,d,e,f){"use strict";__p&&__p();a=function(a){babelHelpers.inheritsLoose(c,a);function c(){return a.apply(this,arguments)||this}var d=c.prototype;d.render=function(){return b("React").createElement(b("MontageThreadViewContainer.react"),{onResize:this.props.onResize,threadID:this.props.threadID,shouldUseRelay:!0})};return c}(b("React").Component);e.exports=a}),null);

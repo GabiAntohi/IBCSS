@@ -1,12 +1,25 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+//next two lines for stripe payment
+const keys = require('./keys/keys');
+// const stripe = require('stripe')(keys.stripeSecretKey);
+const stripe = require('stripe')('sk_test_37aQR0BLogkIjLroXwWC8WqN00GnnTp0I2');
 const bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require("express-handlebars");
 //connect mongoose
 const mongoose = require("mongoose");
+// DB Config
+const db = require('./config/key').mongoURI;
+
+// Connect to MongoDB
+mongoose
+    .connect(db, { useNewUrlParser: true })
+    .then(() => console.log('Remote MongoDB Connected...'))
+    .catch(err => console.log(err));
+
 //sessions
 var session = require("express-session");
 var passport = require("passport");
@@ -16,12 +29,11 @@ var validator = require('express-validator');
 const MongoStore = require('connect-mongo')(session);
 const multer = require('multer');
 
-//next two lines for stripe payment
-const keys = require('./config/keys');
-const stripe = require('stripe')(keys.stripeSecretKey);
-
 //for PUT and DELETE
 var methodOverride = require('method-override'); 
+// var indexRouter = require('./routes/index', {
+//   stripePublishableKey: 'pk_test_EHq1USOjmhVbQJ9iebQFeoap00LURhhpdQ' //keys.stripePublishableKey
+// });
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -31,16 +43,16 @@ var contactRouter = require('./routes/contact');
 var adminRouter = require('./routes/admin');
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/ibcss', { useNewUrlParser: true });
-let db = mongoose.connection;
+//mongoose.connect('mongodb://localhost:27017/ibcss', { useNewUrlParser: true });
+//let db = mongoose.connection;
 //check connection
-db.once("open", function () {
-    console.log("connected to mongodb");
-});
+//db.once("open", function () {
+   // console.log("connected to mongodb");
+//});
 //check for db errors
-db.on("error", function (err) {
-    console.log(err);
-});
+//db.on("error", function (err) {
+  //  console.log(err);
+//});
 
 app.use(methodOverride('_method'));
 //load configuration from config file - setup passport
@@ -96,8 +108,8 @@ app.use(function (req, res, next) {
 
 //for stripe payment
 app.post('/charge', (req, res) => {
-    const amount = 2500;
-    //   console.log(req.body);
+    const amount = req.body.chargeAmount;
+    console.log(req.body.chargeAmount);
     //   res.send('TEST');
     stripe.customers
         .create({
@@ -106,18 +118,16 @@ app.post('/charge', (req, res) => {
         })
         .then(customer =>
             stripe.charges.create({
-                amount,
+                amount: amount * 100,
                 description: 'Purchase items',
                 currency: 'eur',
                 customer: customer.id
             })
         )
-        .then(charge => res.render('shop/success'));
+        .then(charge => res.render('shop/success'))
+        .then(req.session.cart = null);
 });
 //for stripe payment end
-
-
-
 
 
 app.use('/user', usersRouter);

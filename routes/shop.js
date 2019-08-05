@@ -90,22 +90,9 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
 
 
 
-router.post('/search', function (req, res) {
-    console.log("in search");
-    var query = { $text: { $search: req.query.search, $language: 'en' } };
-
-    console.log(query);
-}, function (err, query) {
-    if (err) return err;
-    console.log(query);
-    res.send(query);
-    res.render('shop/viewproducts', { title: 'Products Found', docs: docs, successMgs: successMgs, noMessage: !successMgs });
-});
-
-
 //const product_controller = require('../controllers/product.controller');
 
-/* GET shop page. */
+/* shop page. */
 router.get('/', function (req, res, next) {
     var successMgs = req.flash('success')[0];
     Product.find(function (err, docs) {
@@ -118,21 +105,6 @@ router.get('/', function (req, res, next) {
     });
 });
 
-
-
-
-//router.get('/createproduct', function (req, res) {
-  //  res.render('admin/products/createproduct', { title: 'Create product' });
-//});
-
-//router.post('/create', product_controller.product_create);
-//router.get('/:id', product_controller.product_details);
-//update product
-//router.put('/:id/update', product_controller.product_update);
-//delete product
-//router.delete('/:id/delete', product_controller.product_delete);
-// a simple test url to check that all of our files are communicating correctly.
-//router.get('/test', product_controller.test);
 
 router.get('/:id/details', function (req, res) {
     Product.findById(req.params.id, function (err, product) {

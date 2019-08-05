@@ -1,0 +1,812 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["ddFfo"]); }
+
+__d("VFWebAddMemberWarning.react",["fbt","React","stylex"],(function(a,b,c,d,e,f,g){"use strict";__p&&__p();b("stylex").inject(".nfkogyam{font-size:0.8125rem}",1);b("stylex").inject(".hcekrtk9{color:var(--fds-white-alpha-50)}",1);b("stylex").inject(".j2w92w1t{padding-left:20px}",1);b("stylex").inject(".a7s4sedp{padding-right:20px}",1);b("stylex").inject(".nthtkgg5{margin-top:5px}",1);b("stylex").inject(".jroqu855{margin-bottom:5px}",1);function a(){return b("React").createElement("div",{className:"jroqu855 nthtkgg5 a7s4sedp j2w92w1t hcekrtk9 nfkogyam"},g._("People you add to this group video will see previous messages in this conversation."))}e.exports=a}),null);
+__d("VFWebMaxCallMemberWarning.react",["fbt","React","VFWebIcon.react","joinClasses","stylex"],(function(a,b,c,d,e,f,g){"use strict";__p&&__p();b("stylex").inject(".hg9jxets{font-size:0.6875rem}",1);b("stylex").inject(".hcekrtk9{color:var(--fds-white-alpha-50)}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".gldv74r8{align-items:flex-end}",1);b("stylex").inject(".cqf1kptm{flex-direction:column}",1);b("stylex").inject(".k1z55t6l{font-size:0.9375rem}",1);b("stylex").inject(".oog5qr5w{line-height:1.3333}",1);b("stylex").inject(".lq84ybu9{overflow-x:hidden}",1);b("stylex").inject(".hf30pyar{overflow-y:hidden}",1);b("stylex").inject(".oshhggmv{text-overflow:ellipsis}",1);b("stylex").inject(".qm54mken{white-space:nowrap}",1);b("stylex").inject(".m6d5ke1c{color:var(--fds-white)}",1);b("stylex").inject(".aeinzg81{min-width:0}",1);b("stylex").inject(".jb7u07tx{margin-left:4px}",1);b("stylex").inject(".nfkogyam{font-size:0.8125rem}",1);b("stylex").inject(".lq84ybu9{overflow-x:hidden}",1);b("stylex").inject(".hf30pyar{overflow-y:hidden}",1);b("stylex").inject(".oshhggmv{text-overflow:ellipsis}",1);b("stylex").inject(".qm54mken{white-space:nowrap}",1);b("stylex").inject(".hcekrtk9{color:var(--fds-white-alpha-50)}",1);b("stylex").inject(".aeinzg81{min-width:0}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".jl2a5g8c{flex-direction:row}",1);b("stylex").inject(".i85zmo3j{align-items:center}",1);function a(a){return b("React").createElement("div",{className:b("joinClasses")(a.className,"cqf1kptm gldv74r8 alzwoclg hcekrtk9 hg9jxets")},b("React").createElement("div",{className:"i85zmo3j jl2a5g8c alzwoclg"},b("React").createElement(b("VFWebIcon.react"),{glyph:"caution-triangle",color:"white",size:16}),b("React").createElement("div",{className:"jb7u07tx aeinzg81 m6d5ke1c qm54mken oshhggmv hf30pyar lq84ybu9 oog5qr5w k1z55t6l"},g._("Video chat is full"))),b("React").createElement("div",{className:"aeinzg81 hcekrtk9 qm54mken oshhggmv hf30pyar lq84ybu9 nfkogyam"},g._("Video chats are limited to 8 people.")))}e.exports=a}),null);
+__d("VFWebModal.react",["React","VFWebButton.react","VFWebIcon.react","VFWebStrings","VFWebText.react","emptyFunction","joinClasses","stylex"],(function(a,b,c,d,e,f){"use strict";__p&&__p();b("stylex").inject("@keyframes c47ckhnv-B{0%{transform:translate(-50%,-100%);}100%{transform:translate(-50%,0);}}",1);b("stylex").inject(".djoa8rg2{background-color:#1C1E21}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".cqf1kptm{flex-direction:column}",1);b("stylex").inject(".gpr1yev6{width:420px}",1);b("stylex").inject(".fyn85a33{max-height:100%}",1);b("stylex").inject("@media (min-height:600px){.fgdovtd2.fgdovtd2{max-height:600px}}",2);b("stylex").inject(".r6ydv39a{margin-top:16px}",1);b("stylex").inject(".phjh7c7x{left:50%}",1);b("stylex").inject(".qy9lpsl4{top:50%}",1);b("stylex").inject(".khm9p5p9{position:fixed}",1);b("stylex").inject(".gaei4kxk{transform:translate(-50%,-50%)}",.1);b("stylex").inject(".jr8zf9rk{border-radius:12px}",1);b("stylex").inject(".phjh7c7x{left:50%}",1);b("stylex").inject(".ekq1a7f9{top:0}",1);b("stylex").inject(".khm9p5p9{position:fixed}",1);b("stylex").inject(".ofotgch5{transform:translate(-50%,0)}",.1);b("stylex").inject(".amwbuv4e{border-bottom-left-radius:12px}",1);b("stylex").inject(".t9pgwpk2{border-bottom-right-radius:12px}",1);b("stylex").inject(".jrsuzd9r{animation-duration:.3s}",1);b("stylex").inject(".t92fagy3{animation-name:c47ckhnv-B}",1);b("stylex").inject(".n437zhva{animation-timing-function:ease-out}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".jl2a5g8c{flex-direction:row}",1);b("stylex").inject(".jez8cy9q{flex-shrink:0}",1);b("stylex").inject(".h6ft4zvz{padding-top:20px}",1);b("stylex").inject(".q6feio67{padding-bottom:20px}",1);b("stylex").inject(".q5qw6xdq{padding-left:16px}",1);b("stylex").inject(".s1hqh9jm{padding-right:16px}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".cqf1kptm{flex-direction:column}",1);b("stylex").inject(".lq84ybu9{overflow-x:hidden}",1);b("stylex").inject(".hf30pyar{overflow-y:hidden}",1);b("stylex").inject(".jq45cqjh{height:10000px}",1);b("stylex").inject(".h6ft4zvz{padding-top:20px}",1);b("stylex").inject(".q6feio67{padding-bottom:20px}",1);b("stylex").inject(".q5qw6xdq{padding-left:16px}",1);b("stylex").inject(".s1hqh9jm{padding-right:16px}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".jl2a5g8c{flex-direction:row}",1);b("stylex").inject(".i85zmo3j{align-items:center}",1);b("stylex").inject(".jez8cy9q{flex-shrink:0}",1);b("stylex").inject(".h6ft4zvz{padding-top:20px}",1);b("stylex").inject(".ez8dtbzv{padding-bottom:16px}",1);b("stylex").inject(".q5qw6xdq{padding-left:16px}",1);b("stylex").inject(".s1hqh9jm{padding-right:16px}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".jl2a5g8c{flex-direction:row}",1);b("stylex").inject(".siu44isn{justify-content:flex-end}",1);b("stylex").inject(".fhfp1cgp{flex:1}",.1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".i85zmo3j{align-items:center}",1);b("stylex").inject(".r0esl6yt{height:30px}",1);b("stylex").inject(".f9xcifuu{padding-top:6px}",1);b("stylex").inject(".i5oewl5a{padding-right:6px}",1,".i5oewl5a{padding-left:6px}");b("stylex").inject(".bmgto6uh{padding-bottom:6px}",1);b("stylex").inject(".nnzkd6d7{padding-left:6px}",1,".nnzkd6d7{padding-right:6px}");b("stylex").inject(".ka0azl47{padding-left:10px}",1);b("stylex").inject(".evpwb5b3{padding-right:10px}",1);b("stylex").inject(".juxnsli8{margin-left:10px}",1);b("stylex").inject(".jpszfiqn{color:var(--fds-white-text)}",1);b("stylex").inject(".h7942ock{border:none}",.1);b("stylex").inject(".rtikfhul{border-radius:10px}",1);b("stylex").inject(".pwojg24b{background-color:var(--fds-white-alpha-20)}",1);b("stylex").inject(".bk2nvruq:hover{background-color:var(--fds-white-alpha-40)}",8);b("stylex").inject(".ka9tncxw:active{background-color:var(--fds-white-alpha-20)}",10);b("stylex").inject(".gtdfmt5o{background-color:#018eed}",1);b("stylex").inject(".hhytxud0:hover{background-color:#42acf3}",8);b("stylex").inject(".rlmb36ff:active{background-color:#018eed}",10);b("stylex").inject(".cpz3zgq0{color:var(--fds-white-alpha-30)}",1);b("stylex").inject(".pwojg24b{background-color:var(--fds-white-alpha-20)}",1);b("stylex").inject(".iciognh7:hover{background-color:var(--fds-white-alpha-20)}",8);b("stylex").inject(".ka9tncxw:active{background-color:var(--fds-white-alpha-20)}",10);b("stylex").inject(".h8lelt7y{margin-right:4px}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".jl2a5g8c{flex-direction:row}",1);b("stylex").inject(".siu44isn{justify-content:flex-end}",1);b("stylex").inject(".fhfp1cgp{flex:1}",.1);function a(a){return b("React").createElement("div",{className:"fgdovtd2 fyn85a33 gpr1yev6 cqf1kptm alzwoclg djoa8rg2"+(navigator.platform==="Win32"?" r6ydv39a":"")+" jr8zf9rk gaei4kxk khm9p5p9 qy9lpsl4 phjh7c7x"},a.children)}function c(a){return b("React").createElement("div",{className:"fgdovtd2 fyn85a33 gpr1yev6 cqf1kptm alzwoclg djoa8rg2 n437zhva t92fagy3 jrsuzd9r t9pgwpk2 amwbuv4e ofotgch5 khm9p5p9 ekq1a7f9 phjh7c7x"},a.children)}function d(a){var c=a.children;a=a.className;return b("React").createElement("div",{className:b("joinClasses")("s1hqh9jm q5qw6xdq q6feio67 h6ft4zvz jez8cy9q jl2a5g8c alzwoclg",a)},c)}function f(a){return b("React").createElement("div",{className:"hf30pyar lq84ybu9 cqf1kptm alzwoclg"+(a.height==="full"?" jq45cqjh":"")+(a.padding==="default"?" s1hqh9jm q5qw6xdq q6feio67 h6ft4zvz":"")},a.children)}f.defaultProps={height:"auto",padding:"default"};function g(a){return b("React").createElement("div",{className:"s1hqh9jm q5qw6xdq ez8dtbzv h6ft4zvz jez8cy9q i85zmo3j jl2a5g8c alzwoclg"},b("React").createElement("div",{className:"alzwoclg"},a.leftContent),b("React").createElement("div",{className:"fhfp1cgp siu44isn jl2a5g8c alzwoclg"},a.children))}function h(a){var c=a.use,d=a.disabled,e=a.label,f=a.onClick;a=a.icon;return b("React").createElement("button",{className:b("stylex").dedupe({"display-1":"alzwoclg","align-items-1":"i85zmo3j","height-1":"r0esl6yt","padding-top-1":"f9xcifuu","padding-end-1":"i5oewl5a","padding-bottom-1":"bmgto6uh","padding-start-1":"nnzkd6d7","padding-left-1":"ka0azl47","padding-right-1":"evpwb5b3","margin-left-1":"juxnsli8","color-1":"jpszfiqn","border-0.1":"h7942ock","border-radius-1":"rtikfhul","background-color-1":"pwojg24b","background-color-8":"bk2nvruq","background-color-10":"ka9tncxw"},c==="confirm"?{"background-color-1":"gtdfmt5o","background-color-8":"hhytxud0","background-color-10":"rlmb36ff"}:null,d?{"color-1":"cpz3zgq0","background-color-1":"pwojg24b","background-color-8":"iciognh7","background-color-10":"ka9tncxw"}:null),disabled:d,onClick:f},a&&b("React").createElement(b("VFWebIcon.react"),{className:"h8lelt7y",glyph:a,size:18}),b("React").createElement(b("VFWebText.react"),{style:"button-large"},e))}h.defaultProps={use:"button",disabled:!1};h.examples=[{title:"Modal buttons",description:"Used in modal windows",render:function(){return b("React").createElement("div",{style:{display:"flex"}},b("React").createElement(h,{use:"confirm",label:"Done",onClick:b("emptyFunction")}),b("React").createElement(h,{label:"Cancel",onClick:b("emptyFunction")}),b("React").createElement(h,{disabled:!0,use:"confirm",label:"Disabled",onClick:b("emptyFunction")}),b("React").createElement(h,{disabled:!0,use:"confirm",label:"Call",icon:"phone",onClick:b("emptyFunction")}),b("React").createElement(h,{disabled:!0,use:"confirm",label:"Video chat",icon:"camcorder",onClick:b("emptyFunction")}),b("React").createElement(h,{use:"confirm",label:"Call",icon:"phone",onClick:b("emptyFunction")}),b("React").createElement(h,{use:"confirm",label:"Video chat",icon:"camcorder",onClick:b("emptyFunction")}))}}];function i(a){a=a.onClick;return b("React").createElement("div",{className:"fhfp1cgp siu44isn jl2a5g8c alzwoclg"},b("React").createElement(b("VFWebButton.react"),{icon:"cross",size:32,use:"transparent",label:b("VFWebStrings").close_modal,onClick:a}))}e.exports={Dialog:a,Sheet:c,Header:d,Body:f,Footer:g,Button:h,CloseButton:i}}),null);
+__d("VFWebTrayLabel.react",["React","stylex"],(function(a,b,c,d,e,f){"use strict";__p&&__p();b("stylex").inject(".sxswz4zx{text-transform:uppercase}",1);b("stylex").inject(".hcekrtk9{color:var(--fds-white-alpha-50)}",1);b("stylex").inject(".igjjae4c{font-weight:bold}",1);b("stylex").inject(".c7y9u1f0{flex-grow:0}",1);b("stylex").inject(".jez8cy9q{flex-shrink:0}",1);b("stylex").inject(".nfkogyam{font-size:0.8125rem}",1);b("stylex").inject(".i0rxk2l3{margin-top:4px}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".i85zmo3j{align-items:center}",1);b("stylex").inject(".j2w92w1t{padding-left:20px}",1);b("stylex").inject(".a7s4sedp{padding-right:20px}",1);function a(a){return b("React").createElement("div",{className:"a7s4sedp j2w92w1t i85zmo3j alzwoclg i0rxk2l3 nfkogyam jez8cy9q c7y9u1f0 igjjae4c hcekrtk9 sxswz4zx"},a.children)}e.exports=a}),null);
+__d("VFWebLoadingIndicator.react",["cx","React","XUISpinner.react"],(function(a,b,c,d,e,f,g){"use strict";function a(){return b("React").createElement("div",{className:"_2mgg"},b("React").createElement(b("XUISpinner.react"),{size:"large",className:"_2mgj"}))}e.exports=a}),null);
+__d("VFWebUserRow.react",["AvailableListConstants","React","VFWebListItem.react","VFWebUserProfile.react","emptyFunction"],(function(a,b,c,d,e,f){"use strict";__p&&__p();a=function(a){babelHelpers.inheritsLoose(c,a);function c(){return a.apply(this,arguments)||this}var d=c.prototype;d.render=function(){var a=this.props.availability===b("AvailableListConstants").ACTIVE,c=this.props,d=c.handleContextMenu,e=c.primaryButton,f=c.showButtonOnlyOnHover,g=c.userName,h=c.userProfileUri,i=c.userSubtitle;c=c.onClick;return b("React").createElement(b("VFWebListItem.react"),{onContextMenu:d,icon:b("React").createElement(b("VFWebUserProfile.react"),{isOnline:a,userProfileUri:h,userName:g,profileSize:50}),title:g,subtitle:i,aux:e,showAuxOnlyOnHover:f,onClick:c})};return c}(b("React").Component);a.defaultProps={handleContextMenu:b("emptyFunction")};e.exports=a}),null);
+__d("VFWebIncomingCallDialogUtils",["regeneratorRuntime","RelayFBEnvironment","RelayModern","VFWebIncomingCallDialogUtils_actorQuery.graphql"],(function(a,b,c,d,e,f){__p&&__p();var g=b("RelayModern").fetchQuery;b("RelayModern").graphql;var h=function(){return b("VFWebIncomingCallDialogUtils_actorQuery.graphql")};function a(a,c,d,e){__p&&__p();var f;return b("regeneratorRuntime").async(function(j){__p&&__p();while(1)switch(j.prev=j.next){case 0:return j.abrupt("return",g(b("RelayFBEnvironment"),h,{actor_ids:c?[a].concat(c):[a],thread_id:(f=d)!=null?f:0,should_fetch_thread:!!d,picture_width:e.width,picture_height:e.height}).then(function(b){var c=b.message_thread;c=c?{name:c.thread_name,imageUri:(c=c.image)==null?void 0:c.uri}:null;b=b.messaging_actors;var d=b.find(function(b){return b.id===a});b=b.filter(function(b){return b.id!==a});d=[d].concat(b).map(i);return{participants:d,messageThread:c}}));case 1:case"end":return j.stop()}},null,this)}function i(a){return{id:a.id,shortName:a.short_name,profilePictureUri:a.profile_picture.uri,name:a.name}}e.exports={fetchIncomingCallData:a}}),null);
+__d("VFRTCCallActionTypes",[],(function(a,b,c,d,e,f){e.exports=Object.freeze({CALL:"CALL",CALL_SUCCESS:"CALL_SUCCESS",CALL_ERROR:"CALL_ERROR",INCOMING_CALL_SUCCESS:"INCOMING_CALL_SUCCESS",INIT:"INIT",RESET:"RESET",RESET_FOR_REDIAL:"RESET_FOR_REDIAL",CALL_COLLISION:"CALL_COLLISION",WAIT_FOR_USER_INPUT:"WAIT_FOR_USER_INPUT",SET_CALL_SUMMARY:"SET_CALL_SUMMARY",SET_MW_CALL_TYPE:"SET_MW_CALL_TYPE",SET_LAYOUT:"SET_LAYOUT",SET_DOMINANT_SPEAKER:"SET_DOMINANT_SPEAKER",SET_PINNED_SPEAKER:"SET_PINNED_SPEAKER",SET_USE_DOMINANT_SPEAKE_VIEW:"SET_USE_DOMINANT_SPEAKE_VIEW",SET_GRID_VIEW:"SET_GRID_VIEW",SET_STRIP_VIEW:"SET_STRIP_VIEW",INIT_THREAD:"INIT_THREAD",ON_PARTICIPANT_LEFT:"ON_PARTICIPANT_LEFT",ON_PARTICIPANTS_ADDED:"ON_PARTICIPANTS_ADDED",ADD_PARTICIPANTS_TO_RING:"ADD_PARTICIPANTS_TO_RING",JOIN:"JOIN",JOIN_SUCCESS:"JOIN_SUCCESS",JOIN_ERROR:"JOIN_ERROR",HANGUP:"HANGUP",HANGUP_SUCCESS:"HANGUP_SUCCESS",HANGUP_ERROR:"HANGUP_ERROR",ON_CONFERENCE_STATE:"ON_CONFERENCE_STATE",DISMISS:"DISMISS",END_CALL:"END_CALL",ON_JOIN_REQUEST_SENT:"ON_JOIN_REQUEST_SENT",ON_JOIN_RESPONSE:"ON_JOIN_RESPONSE",ON_RECEIVED_JOIN_RESPONSE:"ON_RECEIVED_JOIN_RESPONSE",ON_PROCESSED_JOIN_RESPONSE:"ON_PROCESSED_JOIN_RESPONSE",ON_SERVER_MEDIA_UPDATE_SUCCESS:"ON_SERVER_MEDIA_UPDATE_SUCCESS",ON_CLIENT_MEDIA_UPDATE_RESPONSE:"ON_CLIENT_MEDIA_UPDATE_RESPONSE",SET_LOCAL_CLIENT_VERSION:"SET_LOCAL_CLIENT_VERSION",INIT_LOCAL_USER:"INIT_LOCAL_USER",INIT_REMOTE_USERS:"INIT_REMOTE_USERS",UPDATE_REMOTE_USERS:"UPDATE_REMOTE_USERS",UPDATE_LOCAL_USER_INFO:"UPDATE_LOCAL_USER_INFO",ADD_REMOTE_STREAM:"ADD_REMOTE_STREAM",REMOVE_REMOTE_STREAM:"REMOVE_REMOTE_STREAM",REMOVE_ALL_REMOTE_STREAMS:"REMOVE_ALL_REMOTE_STREAMS",ADD_REMOTE_TRACK:"ADD_REMOTE_TRACK",REMOVE_REMOTE_TRACK:"REMOVE_REMOTE_TRACK",AUDIO_MUTED:"AUDIO_MUTED",AUDIO_UNMUTED:"AUDIO_UNMUTED",VIDEO_MUTED:"VIDEO_MUTED",VIDEO_UNMUTED:"VIDEO_UNMUTED",REMOTE_AUDIO_MUTED:"REMOTE_AUDIO_MUTED",REMOTE_AUDIO_UNMUTED:"REMOTE_AUDIO_UNMUTED",REMOTE_VIDEO_MUTED:"REMOTE_VIDEO_MUTED",REMOTE_VIDEO_UNMUTED:"REMOTE_VIDEO_UNMUTED",SELF_VIEW_COLLAPSED:"SELF_VIEW_COLLAPSED",SELF_VIEW_UNCOLLAPSED:"SELF_VIEW_UNCOLLAPSED",ADD_LOCAL_STREAM:"ADD_LOCAL_STREAM",REMOVE_LOCAL_STREAM:"REMOVE_LOCAL_STREAM",REPLACE_LOCAL_STREAM:"REPLACE_LOCAL_STREAM",REMOVE_ALL_LOCAL_STREAMS:"REMOVE_ALL_LOCAL_STREAMS",STOP_LOCAL_STREAM:"STOP_LOCAL_STREAM",ADD_LOCAL_SCREEN_STREAM:"ADD_LOCAL_SCREEN_STREAM",REMOVE_LOCAL_SCREEN_STREAM:"REMOVE_LOCAL_SCREEN_STREAM",REMOVE_ALL_LOCAL_SCREEN_STREAMS:"REMOVE_ALL_LOCAL_SCREEN_STREAMS",REPLACE_LOCAL_SCREEN_STREAM:"REPLACE_LOCAL_SCREEN_STREAM",ADD_REMOTE_SCREEN_STREAM:"ADD_REMOTE_SCREEN_STREAM",REMOVE_REMOTE_SCREEN_STREAM:"REMOVE_REMOTE_SCREEN_STREAM",TOGGLE_REMOTE_STREAM:"TOGGLE_REMOTE_STREAM",SUBMIT_RATING:"SUBMIT_RATING",SUBMIT_FEEDBACK:"SUBMIT_FEEDBACK",SUBMIT_FEEDBACK_OPTIONS:"SUBMIT_FEEDBACK_OPTIONS",SUBMIT_SURVEY_CHOICE:"SUBMIT_SURVEY_CHOICE",RATING_SHOWN:"RATING_SHOWN",FEEDBACK_SHOWN:"FEEDBACK_SHOWN",SET_CONFERENCE_STATE:"SET_CONFERENCE_STATE",SET_END_CALL_REASON:"SET_END_CALL_REASON",FLOOR_STATUS:"FLOOR_STATUS"})}),null);
+__d("RungParticipantsAddedWebGraphQLSubscription",["WebGraphQLSubscriptionHelper"],(function(a,b,c,d,e,f){"use strict";e.exports=b("WebGraphQLSubscriptionHelper").getExports({docID:"1879396068740293",queryID:"738167736389860"})}),null);
+__d("XBrowserNotSupportedDialogController",["XController"],(function(a,b,c,d,e,f){e.exports=b("XController").create("/videocall/browser_not_supported/",{is_group_call:{type:"Bool",defaultValue:!1},participants:{type:"StringVector"},user_id:{type:"Int"},warning:{type:"Bool",defaultValue:!1},call_type:{type:"Enum",defaultValue:2,enumType:0},__asyncDialog:{type:"Int"}})}),null);
+__d("VFDesktopHelper",["invariant","Promise","regeneratorRuntime","Form","VFWebSupportUtils","XMessengerDotComLogoutController","FacebookAppIDs","VFWebLocalStorage"],(function(a,b,c,d,e,f,g){"use strict";__p&&__p();var h=null,i=35,j={getAppID:function(){if(j.isDesktopApp())return j.isWindows()?b("FacebookAppIDs").DESKTOP_VIDEO_CHAT_WINDOWS.toString():b("FacebookAppIDs").DESKTOP_VIDEO_CHAT.toString();else return b("FacebookAppIDs").MESSENGERDOTCOM.toString()},isDesktopApp:function(){return window.messengervideo!==void 0},injectBridge:function(a){if(window.messengervideo===void 0)return;if(typeof window.messengervideo.injectBridge!=="function")return;window.messengervideo.injectBridge(a)},getDeviceID:function(){return j.isDesktopApp()&&typeof window.messengervideo.getDeviceID==="function"?window.messengervideo.getDeviceID():b("VFWebLocalStorage").getDeviceID()},getSessionID:function(){return j.isDesktopApp()&&typeof window.messengervideo.getSessionID==="function"?window.messengervideo.getSessionID():b("VFWebLocalStorage").getSessionID()},getScreenSharingSourceID:function(){return window.messengervideo.getScreenSharingSourceID()},stopScreenSharing:function(){return window.messengervideo.stopScreenSharing()},onMiniViewResolutionChange:function(a){j.isDesktopApp()&&typeof window.messengervideo.onMiniViewResolutionChange==="function"&&window.messengervideo.onMiniViewResolutionChange(a)},restoreFromMiniView:function(){j.isDesktopApp()&&window.messengervideo.restoreFromMiniView()},supportsAppSettings:function(){return typeof window.messengervideo.getOpenAtLogin==="function"},getOpenAtLogin:function(){return window.messengervideo.getOpenAtLogin()},setOpenAtLogin:function(a){j.canOpenAtLogin()&&window.messengervideo.setOpenAtLogin(a)},canOpenAtLogin:function(){return j.isDesktopApp()&&typeof window.messengervideo.setOpenAtLogin==="function"},logout:function(){j.isDesktopApp()&&typeof window.messengervideo.logout==="function"&&(window.messengervideo.logout(),b("VFWebSupportUtils").newLoggedOutScreenCall()||j.goToLoggedOutScreen())},goToLoggedOutScreen:function(){var a=window.location.origin+"/call";b("Form").post(b("XMessengerDotComLogoutController").getURIBuilder().getURI()+"?next="+a,{})},setRecentCalls:function(a){j.isDesktopApp()&&typeof window.messengervideo.setRecentCalls==="function"&&window.messengervideo.setRecentCalls(a)},openContextMenu:function(a){if(j.isDesktopApp()){var b=function(a){return a.length>i?a.substr(0,i-1)+"\u2026":a};a=a.map(function(a){var c=a.label;a=babelHelpers.objectWithoutPropertiesLoose(a,["label"]);return babelHelpers["extends"]({},a,{label:c==null?null:b(c.toString())})});window.messengervideo.openContextMenu(a)}},showMessageBox:function(a){return!j.isDesktopApp()||typeof window.messengervideo.showMessageBox!=="function"?b("Promise").reject(new Error("showMessageBox is not available")):window.messengervideo.showMessageBox(babelHelpers["extends"]({},a,{title:a.title&&a.title.toString(),message:a.message&&a.message.toString(),detail:a.detail&&a.detail.toString(),checkboxLabel:a.checkboxLabel&&a.checkboxLabel.toString(),buttons:a.buttons.map(function(a){return a.toString()}),noLink:a.noLink===void 0?!0:a.noLink}))},showIncomingCallDialog:function(a,c,d,e,f,g){return b("regeneratorRuntime").async(function(b){while(1)switch(b.prev=b.next){case 0:return b.abrupt("return",window.messengervideo.showIncomingCallDialog(a,c,d,e,f,g));case 1:case"end":return b.stop()}},null,this)},dismissIncomingCallDialog:function(){window.messengervideo.dismissIncomingCallDialog()},setTouchBarInCallConfig:function(a){j.isDesktopApp()&&window.messengervideo.setTouchBarInCallConfig!=null&&window.messengervideo.setTouchBarInCallConfig(a)},toggleCamera:function(a){window.messengervideo.toggleCamera!=null&&window.messengervideo.toggleCamera(a)},showMissedCallDialog:function(a){return b("regeneratorRuntime").async(function(b){while(1)switch(b.prev=b.next){case 0:return b.abrupt("return",window.messengervideo.showMissedCallDialog(a));case 1:case"end":return b.stop()}},null,this)},dismissMissedCallDialog:function(){window.messengervideo.dismissMissedCallDialog()},hideSplash:function(){j.isDesktopApp()&&window.messengervideo.hideSplash!==void 0&&window.messengervideo.hideSplash()},hideSplashAfterLoad:function(){window.addEventListener("load",this.hideSplash)},autoStartDownload:function(){var a=window.navigator.platform==="MacIntel"?"mac":window.navigator.platform==="Win32"?"win":null;if(a){a=document.getElementById(a+"-download-form");this.onDownloadClick(a)}},onDownloadClick:function(a){a.submit(),a.classList.add("async_saving"),window.setTimeout(function(){return a.classList.remove("async_saving")},3e3)},isWindows:function(){return navigator.platform==="Win32"},canShowMenuBar:function(){return j.getAppID()===b("FacebookAppIDs").DESKTOP_VIDEO_CHAT_WINDOWS.toString()&&window.messengervideo.triggerMenuItem!=void 0},useApplicationMenuCache:function(){return window.messengervideo.getApplicationMenu!==void 0},getApplicationMenuCache:function(){__p&&__p();if(!h){var a=window.messengervideo.getApplicationMenu(),b=function a(b){var c;c=((c=b.submenu)==null?void 0:c.items)||[];return{id:b.id,type:b.type,accelerator:b.accelerator,visible:b.visible,enabled:b.enabled,checked:b.checked,label:b.label,submenu:c.map(a)}};a=a.items||[];h=a.map(b)}h||g(0,12892);return h},triggerMenuItem:function(a){window.messengervideo.triggerMenuItem(a.id),a.type==="checkbox"&&j.useApplicationMenuCache()&&(a.checked=!a.checked)},canSetMiniViewEnabled:function(){return j.isDesktopApp()&&b("VFWebSupportUtils").isMiniViewSupported()&&typeof window.messengervideo.setMiniViewEnabled==="function"},setMiniViewEnabled:function(a){if(j.canSetMiniViewEnabled())return window.messengervideo.setMiniViewEnabled(a)},isMiniViewEnabled:function(){return j.isDesktopApp()&&typeof window.messengervideo.isMiniViewEnabled==="function"&&window.messengervideo.isMiniViewEnabled()},canSetPushNotificationsEnabled:function(){return j.isDesktopApp()&&(b("VFWebSupportUtils").canReceiveMacRemoteNotifications()||b("VFWebSupportUtils").canReceiveWindowsRemoteNotifications())&&typeof window.messengervideo.setPushNotificationsEnabled==="function"},setPushNotificationsEnabled:function(a){if(j.canSetPushNotificationsEnabled())return window.messengervideo.setPushNotificationsEnabled(a)},arePushNotificationsEnabled:function(){return j.isDesktopApp()&&typeof window.messengervideo.arePushNotificationsEnabled==="function"&&window.messengervideo.arePushNotificationsEnabled()},openExternalURL:function(a){typeof window.messengervideo.openExternalURL==="function"?window.messengervideo.openExternalURL(a):window.open(a)}};e.exports=j}),null);
+__d("FluxTrigger",["getUniformDispatcher"],(function(a,b,c,d,e,f){"use strict";__p&&__p();a=function(){__p&&__p();a.create=function(b,c,d){return new a(b,c,d)};function a(a,c,d){__p&&__p();var e=this;this.$7=null;this.$8=function(a){e.$1.waitFor(e.$4);if(e.$3.some(function(a){return a.hasChanged()})){a=e.$5();e.$6(e.$7,a);e.$7=a}};this.$5=c;this.$6=d;this.$1=b("getUniformDispatcher")(a);this.$3=a;this.$4=a.map(function(a){return a.getDispatchToken()})}var c=a.prototype;c.getDispatchToken=function(){return this.$2};c.attach=function(){this.$2||(this.$2=this.$1.register(this.$8),this.$1.explicitlyRegisterStore&&this.$1.explicitlyRegisterStore(this))};c.release=function(){this.$2&&this.$1.unregister(this.$2)};return a}();e.exports=a}),null);
+__d("VFWebCallUtils",["invariant","Promise","regeneratorRuntime","EnterMessengerCallRoomMutation","FBRTCParticipantCallState","FluxTrigger","MercuryIDs","MessengerParticipants.bs","RelayFBEnvironment","VFDesktopHelper","VFRTCCallActions","VFRTCCallStore","VFRTCConstants","VFRTCgenerateRTCCallID","VFRTCGroupCallEscalationActions","VFRTCGroupCallEscalationStore","VFRTCMWProtocolHandler","VFRTCP2PCallEscalationActions","VFRTCP2PCallEscalationStore","VFRTCP2PCallEscalator","VFRTCP2PCallStore","VFRTCP2PProtocolHandler","VFRTCUser","VFWebAppFluxStore","VFWebCallStore","VFWebConferenceUtils","VFWebCreateCallMutation","VFWebEndCallMutation","VFWebLogger","VFWebLogHistory","VFWebMediaUtils","VFWebRingListener","VFWebSoundController","VFWebStartCallMutation","VFWebSupportUtils","generateRTCCallID","immutable","promiseDone"],(function(a,b,c,d,e,f,g){"use strict";__p&&__p();var h=b("VFRTCConstants").CallEndReason,i=b("VFRTCConstants").SignalingProtocol,j={_endingCallIDs:new Set(),placeOutgoingCall:function(a){a.clientCallId||(a.clientCallId=String(b("VFRTCgenerateRTCCallID")()));var c=b("VFRTCCallStore").isInCall();c&&!Boolean(a.suppressSwitchCallUI)?b("VFWebAppFluxStore").showCallSwitchDialog(function(){return j.placeOutgoingCall(babelHelpers["extends"]({},a,{suppressSwitchCallUI:!0}))},"create",a.isAudioCall):b("promiseDone")(b("Promise").resolve().then(function(){return c?j._endAndCleanupCall({keepLocalStreams:!0,resetP2PListener:!0}):null}).then(function(){return j._placeOutgoingCall(a)})["catch"](function(c){return b("VFWebLogHistory").errorObject("placeOutgoingCall",c,a)}))},joinOngoingCall:function(a){var c=b("VFRTCCallStore").isInCall();c&&!Boolean(a.suppressSwitchCallUI)?b("VFWebAppFluxStore").showCallSwitchDialog(function(){return j.joinOngoingCall(babelHelpers["extends"]({},a,{suppressSwitchCallUI:!0}))},"join",a.isAudioCall):b("promiseDone")(j._joinOngoingCall(a))},joinConference:function(a){var c=b("VFRTCCallStore").isInCall();c&&!Boolean(a.suppressSwitchCallUI)?b("VFWebAppFluxStore").showCallSwitchDialog(function(){return j.joinConference(babelHelpers["extends"]({},a,{suppressSwitchCallUI:!0}))},"join",a.isAudioCall):b("promiseDone")(b("Promise").resolve().then(function(){return b("EnterMessengerCallRoomMutation")(a.linkUrl)}).then(function(b){b=b.conferenceName;return j._joinOngoingCall({conferenceName:b,initializeVideo:!0,signalingProtocol:i.MULTIWAY,endCurrentCall:!0,suppressSwitchCallUI:!0,thread:a.thread})})["catch"](function(c){return b("VFWebLogHistory").errorObject("joinConference",c,{linkUrl:a.linkUrl})}))},inviteToCall:function(a){b("promiseDone")(j._inviteToCall(a))},cancelRing:function(a){var c=b("VFRTCCallStore").getState().callInfo,d=c.conferenceName;c=c.serverInfoData;b("promiseDone")(b("VFRTCMWProtocolHandler").removeParticipants(d,c,a))},ignoreIncomingCall:function(){b("promiseDone")(j._ignoreIncomingCall())},updateMediaStreams:function(){b("promiseDone")(j._updateLocalMediaStreams(),null,function(a){b("VFWebLogger").logError(null,"update_media_stream_failed",a)})},endAndCleanupCall:function(){b("promiseDone")(j._endAndCleanupCall({resetP2PListener:!0}))},reInviteToCall:function(a){b("promiseDone")(j._reInviteToCall(a))},isNotPortalShadowUser:function(a){return a.FBID!==((a=b("VFRTCCallStore").getState().localUser)==null?void 0:a.FBID)},isConnectedOrRinging:function(a){return j.isRinging(a)||j.isConnectedOrConnecting(a)||((a=a.participantState)==null?void 0:a.state)===b("FBRTCParticipantCallState").UNKNOWN},isRinging:function(a){var c;return((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").CONTACTING||((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").RINGING},isContacting:function(a){return((a=a.participantState)==null?void 0:a.state)===b("FBRTCParticipantCallState").CONTACTING},isConnectedOrConnecting:function(a){var c;return((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").CONNECTING||((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").CONNECTED},isConnected:function(a){return((a=a.participantState)==null?void 0:a.state)===b("FBRTCParticipantCallState").CONNECTED},isDisconnected:function(a){var c;return((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").DISCONNECTED||((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").NO_ANSWER||((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").REJECTED||((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").UNREACHABLE||((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").CONNECTION_DROPPED||((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").IN_ANOTHER_CALL},canRedial:function(a){var c;return((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").REJECTED||((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").NO_ANSWER||((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").UNREACHABLE||((c=a.participantState)==null?void 0:c.state)===b("FBRTCParticipantCallState").IN_ANOTHER_CALL},redialPreviousCall:function(){var a=b("VFWebAppFluxStore").getState(),c=a.previousCallData;if(!c||!c.remoteUsers)throw new Error("Redial attempt with no previous call data!");b("promiseDone")(b("VFWebConferenceUtils").queryThreadId(c.conferenceName).then(function(a){j.placeOutgoingCall({usersToRing:c.remoteUsers.map(function(a){return a.FBID}).toArray(),thread:{id:a}})}))},dismissPreviousCall:function(){b("VFWebAppFluxStore").setPreviousCallData(null)},toggleLocalUserVideoInCall:function(){__p&&__p();var a=b("VFRTCCallStore").getState(),c=a.localUser;a=a.callInfo;var d=a.protocol==="p2p"&&b("VFRTCP2PCallStore").getState().callType==="AUDIO_ONLY"&&b("VFRTCCallStore").isInCall();if(c.hasVideo()&&!d){b("VFRTCCallActions").toggleMuteVideo(c.isVideoMuted());return}d=c.getStream();d&&(a.protocol===i.MULTIWAY?b("VFRTCMWProtocolHandler").escalateLocalStream():a.protocol===i.P2P&&(b("VFRTCP2PCallEscalationStore").isInProgress()?b("VFRTCP2PCallEscalationActions").cancel():b("promiseDone")(b("VFWebMediaUtils").fetchLocalStreams(!0).then(function(a){return b("VFRTCP2PCallEscalator").initEscalation(a)}))))},canStartOneOnOneCallWithUser:function(a,b){return Boolean(a)&&(b.size!==1||a!==b.first().FBID)},_ensureCameraEnabled:function(){var a=b("VFRTCCallStore").getState();a=a.localUser;if(a.hasVideo()){a.isVideoMuted()&&b("VFRTCCallActions").toggleMuteVideo(!0);return b("Promise").resolve()}return b("VFWebMediaUtils").fetchAndAddLocalStreams()},_ensureAudioOnlyStream:function(){__p&&__p();var a=b("VFRTCCallStore").getState();a=a.localUser;var c=a.getStream();if(c)if(a.hasVideo()){a.stopVideo();return b("VFWebMediaUtils").fetchLocalStreams(!1).then(function(a){a&&b("VFRTCCallActions").replaceLocalStream(c,a)})}else if(a.hasAudio())return b("Promise").resolve();return b("VFWebMediaUtils").fetchAndAddLocalStreams(!1)},_placeOutgoingCall:function(a){__p&&__p();var c,d,e,f,g,h,i,k;return b("regeneratorRuntime").async(function(l){__p&&__p();while(1)switch(l.prev=l.next){case 0:c=a.usersToRing,d=a.isAudioCall,e=a.thread;f=a.usersToRing.length===1&&b("VFWebSupportUtils").useP2PProtocolForOutgoingCalls();l.prev=2;if(!Boolean(d)){l.next=8;break}l.next=6;return b("regeneratorRuntime").awrap(j._ensureAudioOnlyStream());case 6:l.next=10;break;case 8:l.next=10;return b("regeneratorRuntime").awrap(j._ensureCameraEnabled());case 10:j._updateRemoteUsers(c,f?b("FBRTCParticipantCallState").UNKNOWN:b("FBRTCParticipantCallState").CONTACTING);b("VFWebAppFluxStore").startCallingUsers(c,e);if(!f){l.next=22;break}b("VFWebRingListener").stopListenP2P();g=b("VFRTCCallStore").getState().callInfo.set("callID",b("generateRTCCallID")().toString()).set("conferenceName",b("VFWebConferenceUtils").buildP2PConferenceName(String(c[0])));h=b("VFRTCCallStore").getState(),i=h.localUser;l.next=18;return b("regeneratorRuntime").awrap(b("VFWebStartCallMutation")(!0,g,i,c,Boolean(d)));case 18:k=l.sent;b("VFWebAppFluxStore").joinedCall(k);l.next=26;break;case 22:l.next=24;return b("regeneratorRuntime").awrap(b("VFWebCreateCallMutation")(a));case 24:l.next=26;return b("regeneratorRuntime").awrap(j._joinExistingCall({usersToRing:c,thread:e}));case 26:l.next=32;break;case 28:l.prev=28,l.t0=l["catch"](2),b("VFWebLogHistory").errorObject("_placeOutgoingCall",l.t0,{placeCallInfo:a,useP2PProtocol:f}),b("VFWebAppFluxStore").leftCall();case 32:case"end":return l.stop()}},null,this,[[2,28]])},_joinExistingCall:function(a){__p&&__p();var c,d,e,f,g,h;return b("regeneratorRuntime").async(function(i){__p&&__p();while(1)switch(i.prev=i.next){case 0:c=Boolean(a.isAudio);d=a.usersToRing||[];e=b("VFRTCCallStore").getState(),f=e.callInfo,g=e.localUser;i.prev=3;i.next=6;return b("regeneratorRuntime").awrap(b("VFWebStartCallMutation")(!1,f,g,d,c));case 6:h=i.sent;b("VFWebAppFluxStore").joinedCall(h,a.thread);i.next=13;break;case 10:i.prev=10,i.t0=i["catch"](3),b("VFWebLogHistory").errorObject("_joinExistingCall",i.t0,{usersToRing:d});case 13:case"end":return i.stop()}},null,this,[[3,10]])},_inviteToCall:function(a){var c=b("VFRTCCallStore").getState().callInfo,d=c.conferenceName,e=c.serverInfoData;return b("Promise").resolve().then(function(){return j._addRemoteUsers(a)}).then(function(){return j._escalateIfNecessary(a)}).then(function(){return b("VFRTCMWProtocolHandler").addParticipants(d,e,a)})},_reInviteToCall:function(a){var c=b("VFRTCCallStore").getState().callInfo,d=c.conferenceName,e=c.serverInfoData;return b("Promise").resolve().then(function(){return b("VFRTCMWProtocolHandler").addParticipants(d,e,a)})},_escalateIfNecessary:function(a){__p&&__p();var c=b("VFWebAppFluxStore").getState().protocolHandler;if(c instanceof b("VFRTCP2PProtocolHandler")){b("VFRTCCallStore").getState().callInfo.protocol===i.P2P||g(0,3148);var d=a.map(function(a){return b("MercuryIDs").getParticipantIDFromUserID(a)});return new(b("Promise"))(function(a,e){b("MessengerParticipants.bs").getMulti(d,function(d){b("VFRTCGroupCallEscalationActions").setUsersToRing(b("immutable").Map(d)),c.escalateToMultiway(),b("promiseDone")(j._waitForEscalation(),a,e)})})}return b("Promise").resolve()},_waitForEscalation:function(){return new(b("Promise"))(function(a,c){b("FluxTrigger").create([b("VFRTCGroupCallEscalationStore")],function(){var a=b("VFRTCGroupCallEscalationStore").getState();return{isComplete:a.readyToTransition||a.aborted,isSuccess:a.readyToTransition}},function(b,d){!(b==null?void 0:b.isComplete)&&d.isComplete&&(d.isSuccess?a():c())})})},_joinOngoingCall:function(a){__p&&__p();return b("regeneratorRuntime").async(function(c){__p&&__p();while(1)switch(c.prev=c.next){case 0:if(!b("VFRTCCallStore").isInCall()){c.next=5;break}if(a.endCurrentCall){c.next=3;break}return c.abrupt("return",b("Promise").reject(new Error("in-call switching not supported yet.")));case 3:c.next=5;return b("regeneratorRuntime").awrap(j._endAndCleanupCall({keepLocalStreams:!0,resetP2PListener:a.signalingProtocol!==i.P2P}));case 5:b("VFRTCCallActions").initialize({protocol:a.signalingProtocol,conferenceName:a.conferenceName,serverInfoData:a.serverInfoData,callID:a.callID});return c.abrupt("return",(a.initializeVideo?j._ensureCameraEnabled():j._ensureAudioOnlyStream()).then(function(){return j._updateRemoteUsers(a.remoteUserFBIDs||[])}).then(function(){return j._joinExistingCall({isAudio:a.isAudioCall,thread:a.thread})})["finally"](function(){return b("VFWebCallStore").resolveIncomingCall()}));case 7:case"end":return c.stop()}},null,this)},_ignoreIncomingCall:function(){return b("Promise").reject(new Error("Ignore in unsupported."))},_setPreviousCallData:function(){__p&&__p();var a=b("VFRTCCallStore").getState(),c=a.callSummary;a=a.callInfo;var d=b("VFRTCCallStore").getState();d=d.remoteUsers;if(d.size===0)return;var e=b("VFRTCConstants").endCallReasonFromString(c.getEndCallReason());if(d.size===1){e=this._participantStateForCallEndReason(e);e!=null&&(d=b("immutable").Set([d.first().setParticipantState({state:e})]))}b("VFWebAppFluxStore").setPreviousCallData({remoteUsers:d,conferenceName:a.conferenceName,callSummary:c,protocol:a.protocol})},_participantStateForCallEndReason:function(a){switch(a){case h.IGNORE_CALL:return b("FBRTCParticipantCallState").REJECTED;case h.IN_ANOTHER_CALL:return b("FBRTCParticipantCallState").IN_ANOTHER_CALL;default:return null}},_endAndCleanupCall:function(a){__p&&__p();var c,d,e,f;return b("regeneratorRuntime").async(function(g){__p&&__p();while(1)switch(g.prev=g.next){case 0:c=b("VFWebAppFluxStore").getState(),d=c.miniViewActive;e=b("VFRTCCallStore").getState(),f=e.callInfo;if(!j._endingCallIDs.has(f.callID)){g.next=4;break}return g.abrupt("return",b("Promise").resolve());case 4:j._endingCallIDs.add(f.callID);b("VFWebSoundController").leaveCallSound.play();d&&b("VFDesktopHelper").restoreFromMiniView();return g.abrupt("return",b("Promise").resolve().then(function(){return j._setPreviousCallData()}).then(function(){a.keepLocalStreams||b("VFRTCCallActions").removeAllLocalStreams(!0)}).then(b("VFWebAppFluxStore").leftCall).then(b("VFWebEndCallMutation"))["catch"](function(a){return b("VFWebLogHistory").errorObject("_endAndCleanupCall",a)})["finally"](function(){a.resetP2PListener&&b("VFWebRingListener").listenP2P(),j._endingCallIDs["delete"](f.callID)}));case 8:case"end":return g.stop()}},null,this)},_addRemoteUsers:function(a){a=a.map(function(a){return k(a,b("FBRTCParticipantCallState").CONTACTING)}).filter(Boolean).reduce(function(a,b){return a.add(b)},b("VFRTCCallStore").getState().remoteUsers);b("VFRTCCallActions").updateRemoteUsers(a)},_updateRemoteUsers:function(a,c){c===void 0&&(c=b("FBRTCParticipantCallState").CONTACTING);a=b("immutable").Set(a.map(function(a){return k(a,c)}).filter(Boolean));b("VFRTCCallActions").updateRemoteUsers(a)},_updateLocalMediaStreams:function(){__p&&__p();return b("VFWebMediaUtils").fetchLocalStreams().then(function(a){if(!a)return;var c=b("VFRTCCallStore").getState(),d=c.callInfo,e=c.localUser;c=e.getStream();a.getAudioTracks().forEach(function(a){a.enabled=!e.isAudioMuted()});if(d.protocol===i.P2P&&c)b("VFRTCCallActions").replaceLocalStream(c,a);else return b("VFRTCMWProtocolHandler").updateLocalStream(a)})}};function k(a,c){var d=b("RelayFBEnvironment").getStore().getSource();a=d.get(a);if(!a)return null;d=a.profile_picture&&d.get(a.profile_picture.__ref);d=d?d.uri:null;return new(b("VFRTCUser"))({FBID:a.id,isGuestUser:!1,isMessengerUser:!1,isPartiesUser:!1,lastConnectedAt:0,meetingID:null,meetingPassword:null,participantState:{state:c},profilePictureUrl:d,profileUrl:null,roomLocation:null,screenStreams:b("immutable").Set(),streams:b("immutable").Set(),userName:a.name,userShortName:a.short_name,vanity:""})}e.exports=j}),null);
+__d("VFWebConferenceUtils",["regeneratorRuntime","RelayFBEnvironment","RelayModern","VFWebLogger","VFWebConferenceUtilsCallThreadLookupQuery.graphql"],(function(a,b,c,d,e,f){"use strict";__p&&__p();var g,h="PEER",i="MESSENGER",j=b("RelayModern").fetchQuery;b("RelayModern").graphql;function a(a){__p&&__p();var c,d,e,f;return b("regeneratorRuntime").async(function(h){__p&&__p();while(1)switch(h.prev=h.next){case 0:c=m(a);if(!(c==null)){h.next=3;break}return h.abrupt("return",null);case 3:h.prev=3;h.next=6;return b("regeneratorRuntime").awrap(j(b("RelayFBEnvironment"),g||(g=function(){return b("VFWebConferenceUtilsCallThreadLookupQuery.graphql")}),{callId:c}));case 6:f=h.sent;return h.abrupt("return",(d=f.node)==null?void 0:(e=d.thread)==null?void 0:e.id);case 10:h.prev=10;h.t0=h["catch"](3);b("VFWebLogger").logError(null,"thread_for_call_error",JSON.stringify(h.t0));throw h.t0;case 14:case"end":return h.stop()}},null,this,[[3,10]])}function k(a,b){return a+":"+b}function l(a,b){return b==null?null:b.startsWith(a+":")?b.substr(a.length+1):null}function c(a){return l(h,a)}function d(a){return k(h,a)}function m(a){return l(i,a)}e.exports={buildP2PConferenceName:d,parseP2PConferenceName:c,queryThreadId:a}}),null);
+__d("VFWebMediaUtils",["regeneratorRuntime","VFRTCCallActions","VFRTCCallStore","VFRTCConstants","VFRTCGroupCallStore","VFRTCMediaDevices","VFRTCUserMediaConstraints","VFRTCUtils","VFWebAppFluxStore","VFWebSoundController","immutable","promiseDone"],(function(a,b,c,d,e,f){"use strict";__p&&__p();var g=b("VFRTCConstants").VideoQuality,h={enableCamera:function(){b("VFWebSoundController").previewOnSound.play(),b("promiseDone")(h.fetchAndAddLocalStreams())},disableCamera:function(){b("VFWebSoundController").previewOffSound.play(),b("VFRTCCallActions").removeAllLocalStreams(!0)},fetchLocalStreams:function(a){__p&&__p();a===void 0&&(a=!0);var c=b("VFWebAppFluxStore").getState();c=c.userSettings;var d=c.audioInput;c=c.videoInput;return b("VFRTCUtils").getUserMedia({audio:{deviceId:d},video:a?b("VFRTCUserMediaConstraints").video(g.FHD_IDEAL_LQ_REQUIRED_VIDEO,c):!1},{supportFilteredStreams:!1}).then(function(a){b("VFWebAppFluxStore").setCameraError(null);return a},function(a){b("VFWebAppFluxStore").setCameraError(a);return null})},fetchAndAddLocalStreams:function(a){a===void 0&&(a=!0);return h.fetchLocalStreams(a).then(function(a){a&&b("VFRTCCallActions").addLocalStream(a)})},selectInput:function(a,b){if(a.length===0)return null;a=a.map(h.getDeviceID).filter(Boolean);return a.includes(b)?b:a.length>0?a.pop():null},ensureValidInputsSelected:function(){__p&&__p();var a,c,d,e,f,g,i,j;return b("regeneratorRuntime").async(function(k){while(1)switch(k.prev=k.next){case 0:k.next=2;return b("regeneratorRuntime").awrap(b("VFRTCMediaDevices").enumerateDevices());case 2:a=k.sent,c=a.filter(function(a){return a.kind==="videoinput"}),d=a.filter(function(a){return a.kind==="audioinput"}),(e=b("VFWebAppFluxStore").getState().userSettings,f=e.videoInput,g=e.audioInput),i=h.selectInput(c,f),j=h.selectInput(d,g),(i!=f||j!=g)&&b("VFWebAppFluxStore").updateMediaDevices(i,j);case 9:case"end":return k.stop()}},null,this)},getUserInView:function(a,b,c){var d;a.size===1||b==null?d=a.first():d=a.find(function(a){return a.FBID===b});d==null&&(d=c);return d},getUserInViewVideoResolution:function(){__p&&__p();var a=b("VFRTCCallStore").getState(),c=a.localUser;a=a.remoteUsers;a=h.getUserInView(b("immutable").List(a),b("VFRTCGroupCallStore").getState().dominantSpeakerFBID,c);c=a.getStream();if(!c||c.getVideoTracks().length===0)return null;var d=c.getVideoTracks()[0].id;a=Array.from(document.getElementsByTagName("video")).find(function(a){a=a.srcObject?a.srcObject.getVideoTracks():null;return a&&(a==null?void 0:a.length)>0&&a[0].id===d});return a!=null?{width:a.videoWidth,height:a.videoHeight}:null},getUserInViewVideoOrientation:function(){var a=h.getUserInViewVideoResolution();return a&&(a==null?void 0:a.width)<(a==null?void 0:a.height)?"portrait":"landscape"},getDeviceID:function(a){return a?a.deviceId:null}};e.exports=h}),null);
+__d("VFWebSupportUtils",["invariant","MessengerVideoConfig","VFWebMediaUtils","WebStorage","gkx","qex"],(function(a,b,c,d,e,f,g){"use strict";__p&&__p();var h=b("WebStorage").getLocalStorage(),i={showAudioSettings:function(){return b("gkx")("678794")},showRecentCallsInSystemTray:function(){return b("gkx")("811027")},showShareCallLink:function(){return b("gkx")("678795")},showIncomingCallDialogV2:function(){return b("gkx")("678796")},showP2PMissedCallDialogV2:function(){return b("gkx")("699260")},showCallGridViewV2:function(){return b("gkx")("810420")},showNewCallingView:function(){return b("gkx")("873024")},showStarRating:function(){return b("gkx")("812454")},showStarRatingFeedback:function(){return b("gkx")("822145")},showAspectRatioAwareMiniView:function(){return b("gkx")("814975")},showTouchBarControls:function(){return b("gkx")("857971")},acceptVideoChatLinks:function(){return b("gkx")("684302")},canAcceptCallWhileInCall:function(){return b("gkx")("691876")},canAccessDevTools:function(){return b("gkx")("698237")},enableScreenSharing:function(){return b("gkx")("680437")},isMiniViewSupported:function(){return b("gkx")("709734")},eligibleForCallSettingsNUX:function(){return b("gkx")("814872")},canReceiveMacRemoteNotifications:function(){return b("MessengerVideoConfig").areMacPushNotificationsSupported},canReceiveWindowsRemoteNotifications:function(){return b("MessengerVideoConfig").areWindowsPushNotificationsSupported},isOnMacOSMojave:function(){return b("gkx")("843391")},showContactCards:function(){return b("gkx")("851924")},enableDevTools:function(){return b("gkx")("809871")},newLoggedOutScreenCall:function(){return b("gkx")("868211")},showCreateGroupCallButton:function(){return b("gkx")("874866")},useP2PProtocolForOutgoingCalls:function(){return b("qex")._("910093")},showAddPeopleTrayV2:function(){return b("gkx")("885546")},showArchonUpsellScreen:function(){return b("gkx")("1000804")},getUserSettings:function(){return h&&h.getItem?{audioInput:h.getItem("audioInput"),audioOutput:h.getItem("audioOutput"),videoInput:h.getItem("videoInput")}:{audioInput:null,audioOutput:null,videoInput:null}},setSelfViewLocation:function(a){h||g(0,13765),h.setItem("selfViewLocation",a.toString())},getSelfViewLocation:function(){h||g(0,13765);var a=parseInt(h.getItem("selfViewLocation"),10);return isNaN(a)?-1:a},saveUserSettings:function(a){h&&h.setItem&&(a.videoInput!=null&&(h.setItem("videoInput",a.videoInput),b("VFWebMediaUtils").fetchLocalStreams(!1)),a.audioInput!=null&&h.setItem("audioInput",a.audioInput),a.audioOutput!=null&&h.setItem("audioOutput",a.audioOutput))},isOldVersion:function(a){if(a==null)return!0;else if(a==="0.0.0")return!1;var b=201811061932;i.isOnMacOSMojave()&&(b=201902201851);a=parseInt(a.split(".").pop(),10);return a<b}};e.exports=i}),null);
+__d("VFWebCallErrorModal.react",["React","VFWebAppFluxStore","VFWebModal.react","VFWebStrings","VFWebText.react"],(function(a,b,c,d,e,f){"use strict";var g=b("VFWebModal.react").Body,h=b("VFWebModal.react").Button,i=b("VFWebModal.react").Dialog,j=b("VFWebModal.react").Footer,k=b("VFWebModal.react").Header;function a(){return b("React").createElement(i,null,b("React").createElement(k,null,b("React").createElement(b("VFWebText.react"),{style:"title-large"},b("VFWebStrings").joining_generic_error_title)),b("React").createElement(g,null,b("React").createElement(b("VFWebText.react"),{style:"body-small"},b("VFWebStrings").joining_generic_error_message)),b("React").createElement(j,null,b("React").createElement(h,{use:"confirm",label:b("VFWebStrings").okay,onClick:b("VFWebAppFluxStore").removeOverlayModal})))}e.exports=a}),null);
+__d("VFWebRingButton.react",["invariant","React","VFRTCConstants","VFWebButton.react","VFWebCallUtils","VFWebLogger","VFWebStrings","nullthrows"],(function(a,b,c,d,e,f,g){"use strict";__p&&__p();var h=b("VFRTCConstants").SignalingProtocol;a=function(a){__p&&__p();babelHelpers.inheritsLoose(c,a);function c(){__p&&__p();var c,d;for(var e=arguments.length,f=new Array(e),g=0;g<e;g++)f[g]=arguments[g];return(c=d=a.call.apply(a,[this].concat(f))||this,d.$1=function(){var a=d.props,c=a.isAudioCall,e=a.surface,f=a.usersToRing;a=a.thread;Boolean(c)?b("VFWebLogger").logClick(e,"vfweb_call_place_audio"):b("VFWebLogger").logClick(e,"vfweb_call_place");b("VFWebCallUtils").placeOutgoingCall({usersToRing:f,thread:a,isAudioCall:c,trigger:"dvc_ring_button"})},d.$2=function(){var a=d.props,c=a.conferenceName,e=a.serverInfoData,f=a.thread;a=a.usersToRing;b("VFWebLogger").logClick(d.props.surface,"vfweb_call_join");b("VFWebCallUtils").joinOngoingCall({conferenceName:b("nullthrows")(c),serverInfoData:e,initializeVideo:!0,signalingProtocol:h.MULTIWAY,endCurrentCall:!0,remoteUserFBIDs:a,thread:f})},d.$3=function(){b("VFWebLogger").logClick(d.props.surface,"vfweb_call_invite"),b("VFWebCallUtils").inviteToCall(d.props.usersToRing)},d.$4=function(){b("VFWebLogger").logClick(d.props.surface,"vfweb_ring_cancel"),b("VFWebCallUtils").cancelRing(d.props.usersToRing)},d.$5=function(){b("VFWebLogger").logClick(d.props.surface,"vfweb_ring_redial"),b("VFWebCallUtils").reInviteToCall(d.props.usersToRing)},c)||babelHelpers.assertThisInitialized(d)}var d=c.prototype;d.validateProps=function(){var a=this.props,b=a.mode,c=a.conferenceName,d=a.serverInfoData;a=a.thread;c=c!=null&&d!==void 0;d=(a==null?void 0:a.id)!=null;b=="create"&&d||b=="join"&&c||!c&&!d||g(0,13181)};d.render=function(){this.validateProps();var a=this.props.disabled;switch(this.props.mode){case"create":return b("React").createElement(b("VFWebButton.react"),{size:32,icon:Boolean(this.props.isAudioCall)?"phone":"camcorder",label:b("VFWebStrings").ring_friend_button,onClick:this.$1,disabled:a});case"join":return b("React").createElement(b("VFWebButton.react"),{size:28,icon:"camcorder",use:"green",label:b("VFWebStrings").join_button_label,labelIsHidden:!1,onClick:this.$2,disabled:a});case"invite":return b("React").createElement(b("VFWebButton.react"),{size:28,label:b("VFWebStrings").invite_friend_button,labelIsHidden:!1,onClick:this.$3,disabled:a});case"cancel":return b("React").createElement(b("VFWebButton.react"),{size:28,use:"clear",label:b("VFWebStrings").cancel_ring_button,labelIsHidden:!1,onClick:this.$4,disabled:a});case"redial":return b("React").createElement(b("VFWebButton.react"),{size:28,label:b("VFWebStrings").redial_remote_user,labelIsHidden:!1,onClick:this.$5,disabled:a});default:return null}};return c}(b("React").Component);e.exports=a}),null);
+__d("VFWebSettingsDialog.react",["cx","fbt","ArchonAppBridge","CancelablePromise","FluxContainer","Link.react","PresencePrivacy","React","SubscriptionsHandler","VFDesktopHelper","VFRTCConfig","VFRTCMediaDevices","VFRTCSettingsAudioInputPreview.react","VFRTCSettingsAudioOutputPreview.react","VFRTCUtils","VFRTCVideo.react","VFWebAppFluxStore","VFWebModal.react","VFWebText.react","nullthrows","promiseDone","stylex"],(function(a,b,c,d,e,f,g,h){"use strict";__p&&__p();var i=b("VFWebModal.react").Body,j=b("VFWebModal.react").Button,k=b("VFWebModal.react").Dialog,l=b("VFWebModal.react").Footer,m=b("VFWebModal.react").Header,n=b("VFWebModal.react").Sheet;b("stylex").inject(".eyufkmuh{margin-bottom:6px}",1);b("stylex").inject(".haw9rcua{width:200px}",1);b("stylex").inject(".blljefdq{background-color:#4b4b4b}",1);b("stylex").inject(".h5fs5mea{color:white}",1);b("stylex").inject(".h7942ock{border:none}",.1);b("stylex").inject(".op9v4316{height:26px}",1);b("stylex").inject(".pypt52fi{height:80px}",1);b("stylex").inject(".rbcf3a04{margin-bottom:10px}",1);b("stylex").inject(".om3e55n1{position:relative}",1);b("stylex").inject(".rb7hu60p{height:70px}",1);b("stylex").inject(".rbcf3a04{margin-bottom:10px}",1);b("stylex").inject(".dmdr2h6l{height:20px}",1);b("stylex").inject(".laatuukc{margin-bottom:4px}",1);b("stylex").inject(".hinttmwx{height:25px}",1);b("stylex").inject(".jroqu855{margin-bottom:5px}",1);b("stylex").inject(".alzwoclg{display:flex}",1);b("stylex").inject(".i85zmo3j{align-items:center}",1);b("stylex").inject(".sl27f92c{justify-content:space-between}",1);b("stylex").inject(".hn59l83k{color:#0099ff}",1);b("stylex").inject(".k1z55t6l{font-size:0.9375rem}",1);b("stylex").inject(".h7942ock{border:none}",.1);b("stylex").inject(".ehoxm9kp{border-radius:4px}",1);b("stylex").inject(".pytsy3co{height:100%}",1);b("stylex").inject(".lq84ybu9{overflow-x:hidden}",1);b("stylex").inject(".hf30pyar{overflow-y:hidden}",1);b("stylex").inject(".s8sjc6am{position:absolute}",1);b("stylex").inject(".ql1abi13{right:0}",1);b("stylex").inject(".ekq1a7f9{top:0}",1);b("stylex").inject(".htm025lk{width:106px}",1);b("stylex").inject(".hqfru6jp{background-color:var(--fds-black)}",1);b("stylex").inject(".juxnsli8{margin-left:10px}",1);a=function(a){__p&&__p();babelHelpers.inheritsLoose(c,a);function c(){__p&&__p();var c,d;for(var e=arguments.length,f=new Array(e),g=0;g<e;g++)f[g]=arguments[g];return(c=d=a.call.apply(a,[this].concat(f))||this,d.$1=new(b("SubscriptionsHandler"))(),d.$2=null,d.$3=null,d.state={dirty:!1,mediaStream:null,audioInput:"",audioInputs:[],audioOutput:"",audioOutputs:[],videoInput:"",videoInputs:[],openAtLogin:b("VFDesktopHelper").isDesktopApp()&&b("VFDesktopHelper").getOpenAtLogin(),presencePrivacy:b("PresencePrivacy").getVisibility(),miniViewEnabled:b("VFDesktopHelper").isMiniViewEnabled(),pushNotificationsEnabled:b("VFDesktopHelper").arePushNotificationsEnabled()},d.$6=function(a){d.setState({videoInput:a,dirty:!0})},d.$7=function(a){d.setState({audioInput:a,dirty:!0})},d.$8=function(a){d.setState({audioOutput:a,dirty:!0})},d.$9=function(a){a=a.target;a instanceof HTMLInputElement&&d.setState({openAtLogin:a.checked,dirty:!0})},d.$10=function(a){a=a.target;a instanceof HTMLInputElement&&d.setState({miniViewEnabled:a.checked,dirty:!0})},d.$11=function(a){a=a.target;a instanceof HTMLInputElement&&d.setState({pushNotificationsEnabled:a.checked,dirty:!0})},d.$12=function(){b("VFWebAppFluxStore").changeUserSettings({audioInput:d.state.audioInput,videoInput:d.state.videoInput,audioOutput:d.state.audioOutput}),b("VFDesktopHelper").setOpenAtLogin(d.state.openAtLogin),b("VFDesktopHelper").setMiniViewEnabled(d.state.miniViewEnabled),b("PresencePrivacy").setVisibility(d.state.presencePrivacy),b("VFDesktopHelper").setPushNotificationsEnabled(d.state.pushNotificationsEnabled),d.$5()},d.$4=function(){d.$2&&d.$2.cancel(),d.$2=new(b("CancelablePromise"))(b("VFRTCMediaDevices").enumerateDevices()),b("promiseDone")(d.$2.getPromise().then(s).then(function(a){var b=a.audioInputs,c=a.audioOutputs;a=a.videoInputs;var e=d.state,f=e.audioInput,g=e.audioOutput;e=e.videoInput;d.setState({audioInputs:b,audioInput:r(b,f),audioOutputs:c,audioOutput:r(c,g),videoInputs:a,videoInput:r(a,e)})}),null,function(a){if(!a.isCanceled)throw a})},d.$18=function(){d.setState(function(a){return{presencePrivacy:a.presencePrivacy===b("PresencePrivacy").ONLINE?b("PresencePrivacy").OFFLINE:b("PresencePrivacy").ONLINE,dirty:!0}})},c)||babelHelpers.assertThisInitialized(d)}c.getStores=function(){return[b("VFWebAppFluxStore")]};c.calculateState=function(a){return babelHelpers["extends"]({},a,{audioInput:b("VFWebAppFluxStore").getState().userSettings.audioInput,videoInput:b("VFWebAppFluxStore").getState().userSettings.videoInput,audioOutput:b("VFWebAppFluxStore").getState().userSettings.audioOutput})};var d=c.prototype;d.componentDidMount=function(){this.$4(),b("nullthrows")(navigator.mediaDevices).addEventListener("devicechange",this.$4)};d.componentWillUnmount=function(){this.$2&&this.$2.cancel();this.$3&&this.$3.cancel();b("nullthrows")(navigator.mediaDevices).removeEventListener("devicechange",this.$4);this.$1&&this.$1.release();var a=this.state.mediaStream;a&&b("VFRTCUtils").stopMediaStream(a)};d.$5=function(){b("VFWebAppFluxStore").closeSettings()};d.componentDidUpdate=function(a,c){var d=this;a=this.state.audioInput;var e=this.state.videoInput,f=this.state.mediaStream;(a!==c.audioInput||e!==c.videoInput||f===null)&&(this.$3&&this.$3.cancel(),this.$3=new(b("CancelablePromise"))(b("VFRTCUtils").getUserMedia({audio:{deviceId:a},video:{deviceId:e}})),b("promiseDone")(this.$3.getPromise().then(function(a){f&&b("VFRTCUtils").stopMediaStream(f),d.setState({mediaStream:a})}),null,function(a){if(!a.isCanceled)throw a}))};d.$13=function(){var a=this.state,c=a.videoInput,d=a.videoInputs;a=a.mediaStream;return b("React").createElement("div",{className:"om3e55n1 rbcf3a04 pypt52fi"},b("React").createElement(o,null,h._("Camera")),b("React").createElement(q,{devices:d,onChange:this.$6,value:c,width:200}),b("React").createElement(b("VFRTCVideo.react"),{ref:"videoPreview",mediaStream:a,mirrorVideo:!0,muted:!0,className:"hqfru6jp htm025lk ekq1a7f9 ql1abi13 s8sjc6am hf30pyar lq84ybu9 pytsy3co ehoxm9kp h7942ock"}))};d.$14=function(){var a=this.state,c=a.audioInput,d=a.audioInputs;a=a.mediaStream;return b("React").createElement("div",{className:"rbcf3a04 rb7hu60p"},b("React").createElement(o,null,h._("Microphone")),b("React").createElement("div",{className:"sl27f92c i85zmo3j alzwoclg"},b("React").createElement(q,{devices:d,onChange:this.$7,value:c,width:200}),b("React").createElement(b("VFRTCSettingsAudioInputPreview.react"),{mediaStream:a,fillStyle:"#0099ff"})))};d.$15=function(){var a=this.state,c=a.audioOutput;a=a.audioOutputs;return b("React").createElement("div",{className:"rbcf3a04 rb7hu60p"},b("React").createElement(o,null,h._("Audio Output")),b("React").createElement("div",{className:"sl27f92c i85zmo3j alzwoclg"},b("React").createElement(q,{devices:a,onChange:this.$8,value:c,width:200}),b("React").createElement(b("VFRTCSettingsAudioOutputPreview.react"),{mediaStream:null,sinkID:c})),b("React").createElement("audio",{autoPlay:!0,ref:"audioPreview"}))};d.$16=function(){return b("VFDesktopHelper").canOpenAtLogin()?b("React").createElement("div",{className:"laatuukc dmdr2h6l"},b("React").createElement("input",{id:"openAtLogin",type:"checkbox",checked:this.state.openAtLogin,onChange:this.$9}),b("React").createElement("label",{htmlFor:"openAtLogin",className:"juxnsli8"},h._("Launch App at Login"))):null};d.$17=function(){if(b("ArchonAppBridge").isArchon())return null;var a=this.state.presencePrivacy===b("PresencePrivacy").ONLINE,c=a?h._("Your friends and contacts will see when you're active or recently active. You'll appear active or recently active unless you turn off the setting every place you're using Messenger or Facebook. You'll also see when your friends and contacts are active or recently active."):h._("You'll still appear active or recently active unless you turn off the setting every place you're using Messenger or Facebook. You won't see when your friends and contacts are active or recently active from here.");return b("React").createElement(b("React").Fragment,null,b("React").createElement("div",{className:"jroqu855 hinttmwx"},b("React").createElement("input",{id:"presencePrivacy",type:"checkbox",checked:a,onChange:this.$18}),b("React").createElement("label",{htmlFor:"presencePrivacy",title:c,className:"juxnsli8"},h._("Show when you're Active"))),b("React").createElement("label",null,c))};d.$19=function(){var a=b("VFDesktopHelper").canSetMiniViewEnabled()?b("React").createElement(t,{miniViewEnabled:this.state.miniViewEnabled,onChange:this.$10}):null,c=b("VFDesktopHelper").canSetPushNotificationsEnabled()?b("React").createElement(u,{enabled:this.state.pushNotificationsEnabled,onChange:this.$11}):null;return b("React").createElement("div",{className:"_7bn2"},this.$13(),this.$14(),this.$15(),this.$16(),a,c,this.$17())};d.$20=function(){var a=b("VFDesktopHelper").isDesktopApp()?{onClick:function(){return b("VFDesktopHelper").openExternalURL(b("VFRTCConfig").userMediaErrorUrl())}}:{target:"_blank",href:b("VFRTCConfig").userMediaErrorUrl()};return b("React").createElement(b("VFWebText.react"),{style:"body-small"},b("React").createElement(b("Link.react"),babelHelpers["extends"]({className:"k1z55t6l hn59l83k"},a),h._("Get help")))};d.render=function(){var a=navigator.platform==="Win32"?k:n;return b("React").createElement(a,null,b("React").createElement(m,null,b("React").createElement(b("VFWebText.react"),{style:"title-large"},h._("Settings"))),b("React").createElement(i,null,this.$19()),b("React").createElement(l,{leftContent:this.$20()},b("React").createElement(j,{label:"Cancel",onClick:this.$5}),b("React").createElement(j,{disabled:!this.state.dirty,use:"confirm",label:"Save",onClick:this.$12})))};return c}(b("React").Component);var o=function(a){a=a.children;return b("React").createElement("div",{className:"eyufkmuh"},b("React").createElement(b("VFWebText.react"),{style:"title-small",color:"white-50"},a))},p={videoinput:"Camera",audioinput:"Microphone",audiooutput:"Audio Output"};function q(a){var c=0,d=a.devices.map(function(a){return b("React").createElement("option",{key:a.deviceId,value:a.deviceId},a.label?a.label:h._({"Camera":"Camera {number}","Microphone":"Microphone {number}","Audio Output":"Audio Output {number}"},[h._enum(p[a.kind],{Camera:"Camera",Microphone:"Microphone","Audio Output":"Audio Output"}),h._param("number",++c)]))}),e=!1;d.length===0&&(e=!0,d=b("React").createElement("option",{key:"not-found"},h._("No devices found")));return b("React").createElement("select",{disabled:e,onChange:function(b){return a.onChange(b.target.value)},value:a.value,className:"op9v4316 h7942ock h5fs5mea blljefdq haw9rcua"},d)}function r(a,b){return b!==null&&a.some(function(a){return a.deviceId===b})?b:a.length>0?a[0].deviceId:null}function s(a){__p&&__p();var b=[],c=[],d=[];for(var a=a,e=Array.isArray(a),f=0,a=e?a:a[typeof Symbol==="function"?Symbol.iterator:"@@iterator"]();;){var g;if(e){if(f>=a.length)break;g=a[f++]}else{f=a.next();if(f.done)break;g=f.value}g=g;switch(g.kind){case"audioinput":b.push(g);break;case"audiooutput":c.push(g);break;case"videoinput":d.push(g);break;default:break}}return{audioInputs:b,audioOutputs:c,videoInputs:d}}function t(a){return b("React").createElement("div",{className:"laatuukc dmdr2h6l"},b("React").createElement("input",{id:"enableMiniView",type:"checkbox",checked:a.miniViewEnabled,onChange:a.onChange}),b("React").createElement("label",{htmlFor:"enableMiniView",className:"juxnsli8"},h._("Enable miniview")))}function u(a){return b("React").createElement("div",{className:"laatuukc dmdr2h6l"},b("React").createElement("input",{id:"enablePushNotifications",type:"checkbox",checked:a.enabled,onChange:a.onChange}),b("React").createElement("label",{htmlFor:"enablePushNotifications",className:"juxnsli8"},h._("Enable push notifications")))}e.exports=b("FluxContainer").create(a,{withProps:!0})}),null);
+/**
+ * @nolint
+ * @preserve-header
+ * @preserve-whitespace
+ */
+__d("sdp-interop-array-equals",[],(function $module_sdp_interop_array_equals(global,require,requireDynamic,requireLazy,module,exports){
+
+/* Copyright @ 2015 Atlassian Pty Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+module.exports = function arrayEquals(array) {
+    // if the other array is a falsy value, return
+    if (!array)
+        return false;
+
+    // compare lengths - can save a lot of time
+    if (this.length != array.length)
+        return false;
+
+    for (var i = 0, l = this.length; i < l; i++) {
+        // Check if we have nested arrays
+        if (this[i] instanceof Array && array[i] instanceof Array) {
+            // recurse into the nested arrays
+            if (!arrayEquals.apply(this[i], [array[i]]))
+                return false;
+        } else if (this[i] != array[i]) {
+            // Warning - two different object instances will never be equal:
+            // {x:20} != {x:20}
+            return false;
+        }
+    }
+    return true;
+};
+
+/*  */}),null);
+/**
+ * @nolint
+ * @preserve-header
+ * @preserve-whitespace
+ */
+__d("sdp-transform-grammar",[],(function $module_sdp_transform_grammar(global,require,requireDynamic,requireLazy,module,exports){
+
+var grammar = module.exports = {
+  v: [{
+    name: 'version',
+    reg: /^(\d*)$/
+  }],
+  o: [{ //o=- 20518 0 IN IP4 203.0.113.1
+    // NB: sessionId will be a String in most cases because it is huge
+    name: 'origin',
+    reg: /^(\S*) (\d*) (\d*) (\S*) IP(\d) (\S*)/,
+    names: ['username', 'sessionId', 'sessionVersion', 'netType', 'ipVer', 'address'],
+    format: '%s %s %d %s IP%d %s'
+  }],
+  // default parsing of these only (though some of these feel outdated)
+  s: [{ name: 'name' }],
+  i: [{ name: 'description' }],
+  u: [{ name: 'uri' }],
+  e: [{ name: 'email' }],
+  p: [{ name: 'phone' }],
+  z: [{ name: 'timezones' }], // TODO: this one can actually be parsed properly..
+  r: [{ name: 'repeats' }],   // TODO: this one can also be parsed properly
+  //k: [{}], // outdated thing ignored
+  t: [{ //t=0 0
+    name: 'timing',
+    reg: /^(\d*) (\d*)/,
+    names: ['start', 'stop'],
+    format: '%d %d'
+  }],
+  c: [{ //c=IN IP4 10.47.197.26
+    name: 'connection',
+    reg: /^IN IP(\d) (\S*)/,
+    names: ['version', 'ip'],
+    format: 'IN IP%d %s'
+  }],
+  b: [{ //b=AS:4000
+    push: 'bandwidth',
+    reg: /^(TIAS|AS|CT|RR|RS):(\d*)/,
+    names: ['type', 'limit'],
+    format: '%s:%s'
+  }],
+  m: [{ //m=video 51744 RTP/AVP 126 97 98 34 31
+    // NB: special - pushes to session
+    // TODO: rtp/fmtp should be filtered by the payloads found here?
+    reg: /^(\w*) (\d*) ([\w\/]*)(?: (.*))?/,
+    names: ['type', 'port', 'protocol', 'payloads'],
+    format: '%s %d %s %s'
+  }],
+  a: [
+    { //a=rtpmap:110 opus/48000/2
+      push: 'rtp',
+      reg: /^rtpmap:(\d*) ([\w\-\.]*)(?:\s*\/(\d*)(?:\s*\/(\S*))?)?/,
+      names: ['payload', 'codec', 'rate', 'encoding'],
+      format: function (o) {
+        return (o.encoding) ?
+          'rtpmap:%d %s/%s/%s':
+          o.rate ?
+          'rtpmap:%d %s/%s':
+          'rtpmap:%d %s';
+      }
+    },
+    { //a=fmtp:108 profile-level-id=24;object=23;bitrate=64000
+      //a=fmtp:111 minptime=10; useinbandfec=1
+      push: 'fmtp',
+      reg: /^fmtp:(\d*) ([\S| ]*)/,
+      names: ['payload', 'config'],
+      format: 'fmtp:%d %s'
+    },
+    { //a=control:streamid=0
+      name: 'control',
+      reg: /^control:(.*)/,
+      format: 'control:%s'
+    },
+    { //a=rtcp:65179 IN IP4 193.84.77.194
+      name: 'rtcp',
+      reg: /^rtcp:(\d*)(?: (\S*) IP(\d) (\S*))?/,
+      names: ['port', 'netType', 'ipVer', 'address'],
+      format: function (o) {
+        return (o.address != null) ?
+          'rtcp:%d %s IP%d %s':
+          'rtcp:%d';
+      }
+    },
+    { //a=rtcp-fb:98 trr-int 100
+      push: 'rtcpFbTrrInt',
+      reg: /^rtcp-fb:(\*|\d*) trr-int (\d*)/,
+      names: ['payload', 'value'],
+      format: 'rtcp-fb:%d trr-int %d'
+    },
+    { //a=rtcp-fb:98 nack rpsi
+      push: 'rtcpFb',
+      reg: /^rtcp-fb:(\*|\d*) ([\w-_]*)(?: ([\w-_]*))?/,
+      names: ['payload', 'type', 'subtype'],
+      format: function (o) {
+        return (o.subtype != null) ?
+          'rtcp-fb:%s %s %s':
+          'rtcp-fb:%s %s';
+      }
+    },
+    { //a=extmap:2 urn:ietf:params:rtp-hdrext:toffset
+      //a=extmap:1/recvonly URI-gps-string
+      push: 'ext',
+      reg: /^extmap:(\d+)(?:\/(\w+))? (\S*)(?: (\S*))?/,
+      names: ['value', 'direction', 'uri', 'config'],
+      format: function (o) {
+        return 'extmap:%d' + (o.direction ? '/%s' : '%v') + ' %s' + (o.config ? ' %s' : '');
+      }
+    },
+    { //a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:PS1uQCVeeCFCanVmcjkpPywjNWhcYD0mXXtxaVBR|2^20|1:32
+      push: 'crypto',
+      reg: /^crypto:(\d*) ([\w_]*) (\S*)(?: (\S*))?/,
+      names: ['id', 'suite', 'config', 'sessionConfig'],
+      format: function (o) {
+        return (o.sessionConfig != null) ?
+          'crypto:%d %s %s %s':
+          'crypto:%d %s %s';
+      }
+    },
+    { //a=setup:actpass
+      name: 'setup',
+      reg: /^setup:(\w*)/,
+      format: 'setup:%s'
+    },
+    { //a=mid:1
+      name: 'mid',
+      reg: /^mid:([^\s]*)/,
+      format: 'mid:%s'
+    },
+    { //a=msid:0c8b064d-d807-43b4-b434-f92a889d8587 98178685-d409-46e0-8e16-7ef0db0db64a
+      name: 'msid',
+      reg: /^msid:(.*)/,
+      format: 'msid:%s'
+    },
+    { //a=ptime:20
+      name: 'ptime',
+      reg: /^ptime:(\d*)/,
+      format: 'ptime:%d'
+    },
+    { //a=maxptime:60
+      name: 'maxptime',
+      reg: /^maxptime:(\d*)/,
+      format: 'maxptime:%d'
+    },
+    { //a=sendrecv
+      name: 'direction',
+      reg: /^(sendrecv|recvonly|sendonly|inactive)/
+    },
+    { //a=ice-lite
+      name: 'icelite',
+      reg: /^(ice-lite)/
+    },
+    { //a=ice-ufrag:F7gI
+      name: 'iceUfrag',
+      reg: /^ice-ufrag:(\S*)/,
+      format: 'ice-ufrag:%s'
+    },
+    { //a=ice-pwd:x9cml/YzichV2+XlhiMu8g
+      name: 'icePwd',
+      reg: /^ice-pwd:(\S*)/,
+      format: 'ice-pwd:%s'
+    },
+    { //a=fingerprint:SHA-1 00:11:22:33:44:55:66:77:88:99:AA:BB:CC:DD:EE:FF:00:11:22:33
+      name: 'fingerprint',
+      reg: /^fingerprint:(\S*) (\S*)/,
+      names: ['type', 'hash'],
+      format: 'fingerprint:%s %s'
+    },
+    { //a=candidate:0 1 UDP 2113667327 203.0.113.1 54400 typ host
+      //a=candidate:1162875081 1 udp 2113937151 192.168.34.75 60017 typ host generation 0 network-id 3 network-cost 10
+      //a=candidate:3289912957 2 udp 1845501695 193.84.77.194 60017 typ srflx raddr 192.168.34.75 rport 60017 generation 0 network-id 3 network-cost 10
+      //a=candidate:229815620 1 tcp 1518280447 192.168.150.19 60017 typ host tcptype active generation 0 network-id 3 network-cost 10
+      //a=candidate:3289912957 2 tcp 1845501695 193.84.77.194 60017 typ srflx raddr 192.168.34.75 rport 60017 tcptype passive generation 0 network-id 3 network-cost 10
+      push:'candidates',
+      reg: /^candidate:(\S*) (\d*) (\S*) (\d*) (\S*) (\d*) typ (\S*)(?: raddr (\S*) rport (\d*))?(?: tcptype (\S*))?(?: generation (\d*))?(?: network-id (\d*))?(?: network-cost (\d*))?/,
+      names: ['foundation', 'component', 'transport', 'priority', 'ip', 'port', 'type', 'raddr', 'rport', 'tcptype', 'generation', 'network-id', 'network-cost'],
+      format: function (o) {
+        var str = 'candidate:%s %d %s %d %s %d typ %s';
+
+        str += (o.raddr != null) ? ' raddr %s rport %d' : '%v%v';
+
+        // NB: candidate has three optional chunks, so %void middles one if it's missing
+        str += (o.tcptype != null) ? ' tcptype %s' : '%v';
+
+        if (o.generation != null) {
+          str += ' generation %d';
+        }
+
+        str += (o['network-id'] != null) ? ' network-id %d' : '%v';
+        str += (o['network-cost'] != null) ? ' network-cost %d' : '%v';
+        return str;
+      }
+    },
+    { //a=end-of-candidates (keep after the candidates line for readability)
+      name: 'endOfCandidates',
+      reg: /^(end-of-candidates)/
+    },
+    { //a=remote-candidates:1 203.0.113.1 54400 2 203.0.113.1 54401 ...
+      name: 'remoteCandidates',
+      reg: /^remote-candidates:(.*)/,
+      format: 'remote-candidates:%s'
+    },
+    { //a=ice-options:google-ice
+      name: 'iceOptions',
+      reg: /^ice-options:(\S*)/,
+      format: 'ice-options:%s'
+    },
+    { //a=ssrc:2566107569 cname:t9YU8M1UxTF8Y1A1
+      push: 'ssrcs',
+      reg: /^ssrc:(\d*) ([\w_]*)(?::(.*))?/,
+      names: ['id', 'attribute', 'value'],
+      format: function (o) {
+        var str = 'ssrc:%d';
+        if (o.attribute != null) {
+          str += ' %s';
+          if (o.value != null) {
+            str += ':%s';
+          }
+        }
+        return str;
+      }
+    },
+    { //a=ssrc-group:FEC 1 2
+      //a=ssrc-group:FEC-FR 3004364195 1080772241
+      push: 'ssrcGroups',
+      // token-char = %x21 / %x23-27 / %x2A-2B / %x2D-2E / %x30-39 / %x41-5A / %x5E-7E
+      reg: /^ssrc-group:([\x21\x23\x24\x25\x26\x27\x2A\x2B\x2D\x2E\w]*) (.*)/,
+      names: ['semantics', 'ssrcs'],
+      format: 'ssrc-group:%s %s'
+    },
+    { //a=msid-semantic: WMS Jvlam5X3SX1OP6pn20zWogvaKJz5Hjf9OnlV
+      name: 'msidSemantic',
+      reg: /^msid-semantic:\s?(\w*) (\S*)/,
+      names: ['semantic', 'token'],
+      format: 'msid-semantic: %s %s' // space after ':' is not accidental
+    },
+    { //a=group:BUNDLE audio video
+      push: 'groups',
+      reg: /^group:(\w*) (.*)/,
+      names: ['type', 'mids'],
+      format: 'group:%s %s'
+    },
+    { //a=rtcp-mux
+      name: 'rtcpMux',
+      reg: /^(rtcp-mux)/
+    },
+    { //a=rtcp-rsize
+      name: 'rtcpRsize',
+      reg: /^(rtcp-rsize)/
+    },
+    { //a=sctpmap:5000 webrtc-datachannel 1024
+      name: 'sctpmap',
+      reg: /^sctpmap:([\w_\/]*) (\S*)(?: (\S*))?/,
+      names: ['sctpmapNumber', 'app', 'maxMessageSize'],
+      format: function (o) {
+        return (o.maxMessageSize != null) ?
+          'sctpmap:%s %s %s' :
+          'sctpmap:%s %s';
+      }
+    },
+    { //a=x-google-flag:conference
+      name: 'xGoogleFlag',
+      reg: /^x-google-flag:([^\s]*)/,
+      format: 'x-google-flag:%s'
+    },
+    { //a=rid:1 send max-width=1280;max-height=720;max-fps=30;depend=0
+      push: 'rids',
+      reg: /^rid:([\d\w]+) (\w+)(?: ([\S| ]*))?/,
+      names: ['id', 'direction', 'params'],
+      format: function (o) {
+        return (o.params) ? 'rid:%s %s %s' : 'rid:%s %s';
+      }
+    },
+    { //a=imageattr:97 send [x=800,y=640,sar=1.1,q=0.6] [x=480,y=320] recv [x=330,y=250]
+      //a=imageattr:* send [x=800,y=640] recv *
+      //a=imageattr:100 recv [x=320,y=240]
+      push: 'imageattrs',
+      reg: new RegExp(
+        //a=imageattr:97
+        '^imageattr:(\\d+|\\*)' +
+        //send [x=800,y=640,sar=1.1,q=0.6] [x=480,y=320]
+        '[\\s\\t]+(send|recv)[\\s\\t]+(\\*|\\[\\S+\\](?:[\\s\\t]+\\[\\S+\\])*)' +
+        //recv [x=330,y=250]
+        '(?:[\\s\\t]+(recv|send)[\\s\\t]+(\\*|\\[\\S+\\](?:[\\s\\t]+\\[\\S+\\])*))?'
+      ),
+      names: ['pt', 'dir1', 'attrs1', 'dir2', 'attrs2'],
+      format: function (o) {
+        return 'imageattr:%s %s %s' + (o.dir2 ? ' %s %s' : '');
+      }
+    },
+    { //a=simulcast:send 1,2,3;~4,~5 recv 6;~7,~8
+      //a=simulcast:recv 1;4,5 send 6;7
+      name: 'simulcast',
+      reg: new RegExp(
+        //a=simulcast:
+        '^simulcast:' +
+        //send 1,2,3;~4,~5
+        '(send|recv) ([a-zA-Z0-9\\-_~;,]+)' +
+        //space + recv 6;~7,~8
+        '(?:\\s?(send|recv) ([a-zA-Z0-9\\-_~;,]+))?' +
+        //end
+        '$'
+      ),
+      names: ['dir1', 'list1', 'dir2', 'list2'],
+      format: function (o) {
+        return 'simulcast:%s %s' + (o.dir2 ? ' %s %s' : '');
+      }
+    },
+    { //Old simulcast draft 03 (implemented by Firefox)
+      //  https://tools.ietf.org/html/draft-ietf-mmusic-sdp-simulcast-03
+      //a=simulcast: recv pt=97;98 send pt=97
+      //a=simulcast: send rid=5;6;7 paused=6,7
+      name: 'simulcast_03',
+      reg: /^simulcast:[\s\t]+([\S+\s\t]+)$/,
+      names: ['value'],
+      format: 'simulcast: %s'
+    },
+    {
+      //a=framerate:25
+      //a=framerate:29.97
+      name: 'framerate',
+      reg: /^framerate:(\d+(?:$|\.\d+))/,
+      format: 'framerate:%s'
+    },
+    { // any a= that we don't understand is kepts verbatim on media.invalid
+      push: 'invalid',
+      names: ['value']
+    }
+  ]
+};
+
+// set sensible defaults to avoid polluting the grammar with boring details
+Object.keys(grammar).forEach(function (key) {
+  var objs = grammar[key];
+  objs.forEach(function (obj) {
+    if (!obj.reg) {
+      obj.reg = /(.*)/;
+    }
+    if (!obj.format) {
+      obj.format = '%s';
+    }
+  });
+});
+
+/*  */}),null);
+/**
+ * @nolint
+ * @preserve-header
+ * @preserve-whitespace
+ */
+__d("sdp-transform-parser",["sdp-transform-grammar"],(function $module_sdp_transform_parser(global,require,requireDynamic,requireLazy,module,exports){
+
+var toIntIfInt = function (v) {
+  return String(Number(v)) === v ? Number(v) : v;
+};
+
+var attachProperties = function (match, location, names, rawName) {
+  if (rawName && !names) {
+    location[rawName] = toIntIfInt(match[1]);
+  }
+  else {
+    for (var i = 0; i < names.length; i += 1) {
+      if (match[i+1] != null) {
+        location[names[i]] = toIntIfInt(match[i+1]);
+      }
+    }
+  }
+};
+
+var parseReg = function (obj, location, content) {
+  var needsBlank = obj.name && obj.names;
+  if (obj.push && !location[obj.push]) {
+    location[obj.push] = [];
+  }
+  else if (needsBlank && !location[obj.name]) {
+    location[obj.name] = {};
+  }
+  var keyLocation = obj.push ?
+    {} :  // blank object that will be pushed
+    needsBlank ? location[obj.name] : location; // otherwise, named location or root
+
+  attachProperties(content.match(obj.reg), keyLocation, obj.names, obj.name);
+
+  if (obj.push) {
+    location[obj.push].push(keyLocation);
+  }
+};
+
+var grammar = require('sdp-transform-grammar');
+var validLine = RegExp.prototype.test.bind(/^([a-z])=(.*)/);
+
+exports.parse = function (sdp) {
+  var session = {}
+    , media = []
+    , location = session; // points at where properties go under (one of the above)
+
+  // parse lines we understand
+  sdp.split(/(\r\n|\r|\n)/).filter(validLine).forEach(function (l) {
+    var type = l[0];
+    var content = l.slice(2);
+    if (type === 'm') {
+      media.push({rtp: [], fmtp: []});
+      location = media[media.length-1]; // point at latest media line
+    }
+
+    for (var j = 0; j < (grammar[type] || []).length; j += 1) {
+      var obj = grammar[type][j];
+      if (obj.reg.test(content)) {
+        return parseReg(obj, location, content);
+      }
+    }
+  });
+
+  session.media = media; // link it up
+  return session;
+};
+
+var paramReducer = function (acc, expr) {
+  var s = expr.split(/=(.+)/, 2);
+  if (s.length === 2) {
+    acc[s[0]] = toIntIfInt(s[1]);
+  }
+  return acc;
+};
+
+exports.parseParams = function (str) {
+  return str.split(/\;\s?/).reduce(paramReducer, {});
+};
+
+// For backward compatibility - alias will be removed in 3.0.0
+exports.parseFmtpConfig = exports.parseParams;
+
+exports.parsePayloads = function (str) {
+  return str.split(' ').map(Number);
+};
+
+exports.parseRemoteCandidates = function (str) {
+  var candidates = [];
+  var parts = str.split(' ').map(toIntIfInt);
+  for (var i = 0; i < parts.length; i += 3) {
+    candidates.push({
+      component: parts[i],
+      ip: parts[i + 1],
+      port: parts[i + 2]
+    });
+  }
+  return candidates;
+};
+
+exports.parseImageAttributes = function (str) {
+  return str.split(' ').map(function (item) {
+    return item.substring(1, item.length-1).split(',').reduce(paramReducer, {});
+  });
+};
+
+exports.parseSimulcastStreamList = function (str) {
+  return str.split(';').map(function (stream) {
+    return stream.split(',').map(function (format) {
+      var scid, paused = false;
+
+      if (format[0] !== '~') {
+        scid = toIntIfInt(format);
+      } else {
+        scid = toIntIfInt(format.substring(1, format.length));
+        paused = true;
+      }
+
+      return {
+        scid: scid,
+        paused: paused
+      };
+    });
+  });
+};
+
+/*  */}),null);
+/**
+ * @nolint
+ * @preserve-header
+ * @preserve-whitespace
+ */
+__d("sdp-transform-writer",["sdp-transform-grammar"],(function $module_sdp_transform_writer(global,require,requireDynamic,requireLazy,module,exports){
+
+var grammar = require('sdp-transform-grammar');
+
+// customized util.format - discards excess arguments and can void middle ones
+var formatRegExp = /%[sdv%]/g;
+var format = function (formatStr) {
+  var i = 1;
+  var args = arguments;
+  var len = args.length;
+  return formatStr.replace(formatRegExp, function (x) {
+    if (i >= len) {
+      return x; // missing argument
+    }
+    var arg = args[i];
+    i += 1;
+    switch (x) {
+    case '%%':
+      return '%';
+    case '%s':
+      return String(arg);
+    case '%d':
+      return Number(arg);
+    case '%v':
+      return '';
+    }
+  });
+  // NB: we discard excess arguments - they are typically undefined from makeLine
+};
+
+var makeLine = function (type, obj, location) {
+  var str = obj.format instanceof Function ?
+    (obj.format(obj.push ? location : location[obj.name])) :
+    obj.format;
+
+  var args = [type + '=' + str];
+  if (obj.names) {
+    for (var i = 0; i < obj.names.length; i += 1) {
+      var n = obj.names[i];
+      if (obj.name) {
+        args.push(location[obj.name][n]);
+      }
+      else { // for mLine and push attributes
+        args.push(location[obj.names[i]]);
+      }
+    }
+  }
+  else {
+    args.push(location[obj.name]);
+  }
+  return format.apply(null, args);
+};
+
+// RFC specified order
+// TODO: extend this with all the rest
+var defaultOuterOrder = [
+  'v', 'o', 's', 'i',
+  'u', 'e', 'p', 'c',
+  'b', 't', 'r', 'z', 'a'
+];
+var defaultInnerOrder = ['i', 'c', 'b', 'a'];
+
+
+module.exports = function (session, opts) {
+  opts = opts || {};
+  // ensure certain properties exist
+  if (session.version == null) {
+    session.version = 0; // 'v=0' must be there (only defined version atm)
+  }
+  if (session.name == null) {
+    session.name = ' '; // 's= ' must be there if no meaningful name set
+  }
+  session.media.forEach(function (mLine) {
+    if (mLine.payloads == null) {
+      mLine.payloads = '';
+    }
+  });
+
+  var outerOrder = opts.outerOrder || defaultOuterOrder;
+  var innerOrder = opts.innerOrder || defaultInnerOrder;
+  var sdp = [];
+
+  // loop through outerOrder for matching properties on session
+  outerOrder.forEach(function (type) {
+    grammar[type].forEach(function (obj) {
+      if (obj.name in session && session[obj.name] != null) {
+        sdp.push(makeLine(type, obj, session));
+      }
+      else if (obj.push in session && session[obj.push] != null) {
+        session[obj.push].forEach(function (el) {
+          sdp.push(makeLine(type, obj, el));
+        });
+      }
+    });
+  });
+
+  // then for each media line, follow the innerOrder
+  session.media.forEach(function (mLine) {
+    sdp.push(makeLine('m', grammar.m[0], mLine));
+
+    innerOrder.forEach(function (type) {
+      grammar[type].forEach(function (obj) {
+        if (obj.name in mLine && mLine[obj.name] != null) {
+          sdp.push(makeLine(type, obj, mLine));
+        }
+        else if (obj.push in mLine && mLine[obj.push] != null) {
+          mLine[obj.push].forEach(function (el) {
+            sdp.push(makeLine(type, obj, el));
+          });
+        }
+      });
+    });
+  });
+
+  return sdp.join('\r\n') + '\r\n';
+};
+
+/*  */}),null);
+/**
+ * @nolint
+ * @preserve-header
+ * @preserve-whitespace
+ */
+__d("sdp-transform",["sdp-transform-parser","sdp-transform-writer"],(function $module_sdp_transform(global,require,requireDynamic,requireLazy,module,exports){
+
+var parser = require('sdp-transform-parser');
+var writer = require('sdp-transform-writer');
+
+exports.write = writer;
+exports.parse = parser.parse;
+exports.parseFmtpConfig = parser.parseFmtpConfig;
+exports.parseParams = parser.parseParams;
+exports.parsePayloads = parser.parsePayloads;
+exports.parseRemoteCandidates = parser.parseRemoteCandidates;
+exports.parseImageAttributes = parser.parseImageAttributes;
+exports.parseSimulcastStreamList = parser.parseSimulcastStreamList;
+
+/*  */}),null);
+/**
+ * @nolint
+ * @preserve-header
+ * @preserve-whitespace
+ */
+__d("sdp-interop-transform",["sdp-transform"],(function $module_sdp_interop_transform(global,require,requireDynamic,requireLazy,module,exports){
+
+/* Copyright @ 2015 Atlassian Pty Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+var transform = require('sdp-transform');
+
+exports.write = function(session, opts) {
+
+  if (typeof session !== 'undefined' &&
+      typeof session.media !== 'undefined' &&
+      Array.isArray(session.media)) {
+
+    session.media.forEach(function (mLine) {
+      // expand sources to ssrcs
+      if (typeof mLine.sources !== 'undefined' &&
+        Object.keys(mLine.sources).length !== 0) {
+          mLine.ssrcs = [];
+          Object.keys(mLine.sources).forEach(function (ssrc) {
+            var source = mLine.sources[ssrc];
+            Object.keys(source).forEach(function (attribute) {
+              mLine.ssrcs.push({
+                id: ssrc,
+                attribute: attribute,
+                value: source[attribute]
+              });
+            });
+          });
+          delete mLine.sources;
+        }
+
+      // join ssrcs in ssrc groups
+      if (typeof mLine.ssrcGroups !== 'undefined' &&
+        Array.isArray(mLine.ssrcGroups)) {
+          mLine.ssrcGroups.forEach(function (ssrcGroup) {
+            if (typeof ssrcGroup.ssrcs !== 'undefined' &&
+                Array.isArray(ssrcGroup.ssrcs)) {
+              ssrcGroup.ssrcs = ssrcGroup.ssrcs.join(' ');
+            }
+          });
+        }
+    });
+  }
+
+  // join group mids
+  if (typeof session !== 'undefined' &&
+      typeof session.groups !== 'undefined' && Array.isArray(session.groups)) {
+
+    session.groups.forEach(function (g) {
+      if (typeof g.mids !== 'undefined' && Array.isArray(g.mids)) {
+        g.mids = g.mids.join(' ');
+      }
+    });
+  }
+
+  return transform.write(session, opts);
+};
+
+exports.parse = function(sdp) {
+  var session = transform.parse(sdp);
+
+  if (typeof session !== 'undefined' && typeof session.media !== 'undefined' &&
+      Array.isArray(session.media)) {
+
+    session.media.forEach(function (mLine) {
+      // group sources attributes by ssrc
+      if (typeof mLine.ssrcs !== 'undefined' && Array.isArray(mLine.ssrcs)) {
+        mLine.sources = {};
+        mLine.ssrcs.forEach(function (ssrc) {
+          if (!mLine.sources[ssrc.id])
+          mLine.sources[ssrc.id] = {};
+        mLine.sources[ssrc.id][ssrc.attribute] = ssrc.value;
+        });
+
+        delete mLine.ssrcs;
+      }
+
+      // split ssrcs in ssrc groups
+      if (typeof mLine.ssrcGroups !== 'undefined' &&
+        Array.isArray(mLine.ssrcGroups)) {
+          mLine.ssrcGroups.forEach(function (ssrcGroup) {
+            if (typeof ssrcGroup.ssrcs === 'string') {
+              ssrcGroup.ssrcs = ssrcGroup.ssrcs.split(' ');
+            }
+          });
+        }
+    });
+  }
+  // split group mids
+  if (typeof session !== 'undefined' &&
+      typeof session.groups !== 'undefined' && Array.isArray(session.groups)) {
+
+    session.groups.forEach(function (g) {
+      if (typeof g.mids === 'string') {
+        g.mids = g.mids.split(' ');
+      }
+    });
+  }
+
+  return session;
+};
+
+/*  */}),null);
+__d("XVideoCallSigningController",["XController"],(function(a,b,c,d,e,f){e.exports=b("XController").create("/videocall/init/",{peer_id:{type:"FBID",required:!0},call_id:{type:"Int"},is_caller:{type:"Bool",defaultValue:!1},audio_only:{type:"Bool",defaultValue:!1},nonce:{type:"String"},meeting_id:{type:"Int"},meeting_pass:{type:"String"},initialize_video:{type:"Bool",defaultValue:!0}})}),null);

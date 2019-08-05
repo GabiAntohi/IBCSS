@@ -8,7 +8,7 @@ const upload = multer({dest:'/uploads/'});
 
 /* GET home page. */
 router.get('/dashboard', function (req, res) {
-    res.render('admin/dashboard', { title: 'IBCSS Dashboard', layout: false });
+    res.render('admin/dashboard', { title: 'IBCSS Dashboard', layout: false, user:re.user });
 });
 
 const product_controller = require('../controllers/product.controller');
@@ -39,8 +39,6 @@ router.put('/product/:id/update', product_controller.product_update);
 router.delete('/product/:id/delete', product_controller.product_delete);
 // a simple test url to check that all of our files are communicating correctly.
 router.get('/test', product_controller.test);
-
-
 
 
 //blogs
