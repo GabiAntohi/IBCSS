@@ -8,7 +8,7 @@ const upload = multer({dest:'/uploads/'});
 
 /* GET home page. */
 router.get('/dashboard', function (req, res) {
-    res.render('admin/dashboard', { title: 'IBCSS Dashboard', layout: false, user:re.user });
+    res.render('admin/dashboard', { title: 'IBCSS Dashboard', layout: false, user:req.user });
 });
 
 const product_controller = require('../controllers/product.controller');
