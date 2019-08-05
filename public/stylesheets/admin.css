@@ -1,0 +1,250 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body {
+    margin: 0;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #858796;
+    text-align: left;
+    background-color: #fff;
+}
+#wrapper {
+    min-height: 500px;
+    position: relative;
+    width:100%;
+}
+#wrapper h2 {
+        padding-top:25%;
+        text-align:center;
+        width:30%;
+        margin:0 auto;
+        font-size:2em;
+    }
+
+h4 {
+    font-size: 2em;
+    font-weight:bold;
+}
+/* form */
+form, .login form {
+    width: 80%;
+    color: #888888;
+    margin: 0 auto;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+}
+
+input{
+    width: 100%;
+    height: 30px;
+    margin: 0 auto 10px auto;
+}
+
+textarea, input, .login input {
+    border-radius: 5px;
+    border-width: 0;
+    border: 1px solid gray;
+    background-color: rgba(225,227,226, .1);
+}
+
+    input:focus, textarea:focus{
+        outline: 0px none;
+    }
+
+p a {
+    color: #2a292e;
+    font-weight: bold;
+}
+
+.required::after {
+    content: " (required)";
+}
+
+.required::after {
+    color: #c40046;
+    content: "*";
+}
+
+.onbanner {padding-left:12px;
+}
+.buttn {
+    margin: 23px 0;
+    width: 100%;
+    color: #e1e3e2;
+    border: 1px solid #1f2b3b;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: block;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #1f2b3b;
+    text-align:center;
+}
+hr {
+    width:100%;
+}
+::-webkit-input-placeholder {
+    font-size: 1em;
+    padding-left: 5px;
+    color: #c8c7c7;
+    font-family: Lato, sans-serif;
+}
+
+::-moz-placeholder {
+    font-size: 1em;
+    padding-left: 5px;
+    color: #c8c7c7;
+    font-family: Lato, sans-serif;
+}
+
+:-ms-input-placeholder {
+    font-size: 1em;
+    padding-left: 5px;
+    color: #c8c7c7;
+    font-family: Lato, sans-serif;
+}
+
+:-moz-placeholder {
+    font-size: 1em;
+    padding-left: 5px;
+    color: #c8c7c7;
+    font-family: Lato, sans-serif;
+}
+
+
+
+/*for all products in allproducts page*/
+.span_details {
+    color: #c8c7c7;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+}
+
+.span_details.right {
+        color: #335228;
+}
+.tablehead {display:none;
+}
+.tablehead.shop {
+    height:30px;
+    border-bottom:1px solid black;
+}
+    .tablehead.shop .details {
+        height: 30px;
+    }
+
+.shop {
+    height:500px;
+}
+.details {
+    width:90%; 
+    height:auto;
+
+
+}
+    .details.imgPath {
+        width: 100%;
+        display:block;
+    }
+    .details.descr {
+        width:100%;
+    }
+    .details.prc, .details.email {
+        width: 100%;
+    }
+
+    .details img {
+        width: 100%;
+    }
+
+.details.actions {
+    width: 100%;
+    height: 50px;
+    float:none;
+    margin:0;
+}
+    /*from blog*/
+    .details.cont {
+        width: 100%;
+    }
+.actions .buttn, .actions button{
+    width: 100%;
+}
+.size {
+    padding-top:20px;
+}
+
+@media only screen and (min-width: 790px) {
+    .tablehead {display:block;
+    }
+    .shop {
+        height: auto;
+    }
+    .details {
+        float: left;
+        width: 15%;
+        height: auto;
+        padding-left: 10px;
+        display: inline-block;
+    }
+
+        .details.imgPath {
+            width: 20%;
+            display: block;
+        }
+
+        .details.descr {
+            width: 40%;
+        }
+        /*from blog*/
+        .details.cont {
+            width: 30%;
+        }
+        /*from contact*/
+        .details.email {
+            width:25%;
+        }
+        .details.prc {
+            width: 10%;
+        }
+
+        .details img {
+            width: 100%;
+        }
+
+        .details.actions {
+            width: 15%;
+            height: 50px;
+            float: none;
+            margin: 0;
+        }
+
+    .actions .buttn, .actions button {
+        width: 100%;
+    }
+
+    .size {
+        padding-top: 20px;
+    }
+    
+}

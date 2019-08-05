@@ -1,0 +1,34 @@
+{{>header_nav_admin}}
+<!-- Content Row -->
+<hr />
+<div id="wrapper" class="row">
+    <section class="banner_contact">
+        <div class="onbanner">
+            <h4>{{title}}</h4>
+            <h5>Warning: Once you make those changes you can't undo them</h5>
+        </div>
+    </section>
+    <hr />
+    <section class="section_contact">
+        <div class="container">
+            <form accept-charset="UTF-8" action="/admin/blog/{{blog.id}}/update?_method=PUT" method="post">
+                <label class="required" for="title">Name</label>
+                <input id="title" name="title" required type="text" value="{{blog.title}}" />
+                <label class="required" for="imagePath">Image</label>
+                <input id="imagePath" name="imagePath" required type="text" value="{{blog.imagePath}}" />
+                <label class="required" for="author">Author</label>
+                <input id="author" required name="author" type="text" value="{{blog.author}}" />
+                <label class="required" for="author">Tag</label>
+                <input id="tag" required name="tag" type="text" value="{{blog.tag}}" />
+                <label class="required" for="content">Content</label>
+                <textarea id="content" required name="content">{{blog.content}}</textarea>
+                <br />
+                <button class="buttn" type="submit">Save Changes</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+
+{{>footer_admin}}
+

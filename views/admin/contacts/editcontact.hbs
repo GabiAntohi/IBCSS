@@ -1,0 +1,30 @@
+{{>header_nav_admin}}
+<!-- Content Row -->
+<hr />
+<div id="wrapper" class="row">
+    <section class="banner_contact">
+        <div class="onbanner">
+            <h4>{{title}}</h4>
+            <h5>Warning: Once you make those changes you can't undo them</h5>
+        </div>
+    </section>
+    <hr />
+    <section class="section_contact">
+        <div class="container">
+            <form accept-charset="UTF-8" action="/admin/contact/{{contact.id}}/update?_method=PUT" method="post">
+                <label class="required" for="name">First name</label>
+                <input id="name" name="name" required type="text" value="{{contact.name}}" />
+                <label class="required" for="surname">Surname</label>
+                <input id="surname" name="surname" required type="text" value="{{contact.surname}}" />
+                <label class="required" for="email">Email</label>
+                <input id="email" required name="email" type="email" value="{{contact.email}}" />
+                <label class="required" for="message">Message</label>
+                <textarea id="message" required name="message">{{contact.message}}</textarea>
+                <button class="buttn" type="submit">Save Changes</button>
+            </form>
+            </div>
+    </section>
+</div>
+
+
+{{>footer_admin}}

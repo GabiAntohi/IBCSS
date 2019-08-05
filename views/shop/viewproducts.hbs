@@ -1,0 +1,51 @@
+<!-- Title Page -->
+<div class="pagebackground clearfix">
+    <div class="container">
+        <section class="background_pages">
+            <div class="blog_header container">
+                <h2>
+                    Our Shop
+                </h2>
+                <p class="moto">Welcome to the IBCSS {{title}}</p>
+            </div>
+        </section>
+        <div class="row">
+            <div class="col-md-4">
+                <div id="success" class="alert alert-success {{#if noMessage}}invisible{{/if}}">
+                    {{ successMgs }}
+                </div>
+            </div>
+        </div>
+
+        {{#each products}}
+        {{#each this}}
+        <div class="size products">
+            <div class=" shop">
+                <div class="relative block image_zoom">
+                    <img src="{{this.imagePath}}" alt="IMG-BLOG">
+                </div>
+                <div class="styleproduct">
+                    <h4>
+                        {{this.name}}
+                    </h4>
+                    <div class="span_details">
+                        <span>
+                            Price: &euro;
+                            {{this.price}}
+
+                        </span>
+
+                    </div>
+                    <a href="/shop/{{this._id}}/details" class="button link2 details">Details</a>
+                    <a href="/shop/add-to-cart/{{this._id}}" class=" button link2 details" role="button">Add to Cart</a>
+                </div>
+            </div>
+            </div>
+            {{/each}}
+            {{/each}}
+       
+        </div>
+    </div>
+
+
+

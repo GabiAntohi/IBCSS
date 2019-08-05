@@ -1,0 +1,81 @@
+{{>header_nav_admin}}
+<!-- Content Row -->
+<hr />
+<div id="wrapper" class="row">
+    <section class="banner_contact">
+        <div class="onbanner">
+            <h4>{{title}}</h4>
+            <h5>These are all the people who have tried to contact IBCSS, you can edit or delete.</h5>
+        </div>
+    </section>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="success" class="alert alert-success {{#if noMessage}}invisible{{/if}}">
+                    {{ successMgs }}
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="shop tablehead">
+            <div class="details prc">
+                <p>Name</p>
+            </div>
+            <div class="details prc">
+                <p>Surname</p>
+            </div>
+            <div class="details email">
+                <p>Email</p>
+            </div>
+            <div class="details descr">
+                <p>Message</p>
+            </div>
+            <div class="details actions">
+                <p>Action</p>
+            </div>
+        </div>
+
+        {{#each contacts}}
+        {{#each this}}
+        <div class="size products clearfix" style="clear:both">
+            <div class="shop clearfix">
+                <div class="details prc">
+                    <p>
+                        {{this.name}}>
+                    </p>
+                </div>
+                <div class="details prc">
+                    <p>
+                        {{this.surname}}
+                    </p>
+                </div>
+                <div class="details email">
+                    <p>
+
+                        {{this.email}}
+                    </p>
+                </div>
+                <div class="details descr">
+                    <p>
+                        {{this.message}}
+                    </p>
+                </div>
+                <div class="details actions">
+                    <a href="/admin/contact/{{this._id}}" class="buttn">Edit</a>
+                    <form method="POST" style="width:100%" action="/admin/contact/{{this._id}}/delete?_method=DELETE">
+                        <button type="submit" class="buttn" style="background-color:gray;">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/each}}
+
+    </div>
+    </div>
+
+    {{>footer_admin}}

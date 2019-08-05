@@ -1,0 +1,28 @@
+{{>header_nav_admin}}
+<!-- Content Row -->
+<hr />
+<div id="wrapper" class="row">
+    <section class="banner_contact">
+        <div class="onbanner">
+            <h4>{{title}}</h4>
+            <h5>Create product by using the form below, thank you!</h5>
+        </div>
+    </section>
+    <hr />
+    <section class="section_contact">
+        <div class="container">
+            <form accept-charset="UTF-8" id="contactform" name="myForm" action="/admin/product/create" onsubmit="" method="post">
+                <label class="required" for="name">Product name</label>
+                <input id="name" name="name" required type="text" placeholder="name" />
+                <label class="required" for="image">Image</label>
+                <input id="image" name="imagePath" required type="text" placeholder="image" />
+                <label class="required" for="price">Price</label>
+                <input id="price" required name="price" type="text" placeholder="price" />
+                <label class="required" for="description">Description</label>
+                <textarea id="description" required name="description" placeholder="your description here"></textarea>
+                <button class="buttn" type="submit" form="contactform">Submit</button>
+            </form>
+        </div>
+    </section>
+</div>
+{{>footer_admin}}

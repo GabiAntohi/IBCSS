@@ -1,0 +1,25 @@
+<div class="pagebackground clearfix">
+    <div class="container">
+        <section class="background_pages banner_about">
+            <div class="blog_header">
+                <h2>
+                    Edit user details
+                </h2>
+                <p class="moto"> {{title}} </p>
+            </div>
+        </section>
+        <section class="section_contact">
+            <form accept-charset="UTF-8" action="/user/{{user.id}}/update?_method=PUT" method="post">
+                <label class="required" for="name">First name</label>
+                <input id="name" name="name" required type="text" value="{{user.name}}" />
+                <label class="required" for="surname">Email</label>
+                <input id="email" required name="email" type="email" value="{{user.email}}" />
+                <label class="required" for="isAdmin">Admin Status</label>
+                <input id="isAdmin" required name="isAdmin" type="text" value="{{user.isAdmin}}" />
+                <input type="hidden" name="_csrf" value="{{ csrfToken }}"/>
+                <button class="button link2 details" type="submit">Edit Profile</button>
+            </form>
+        </section>
+    </div>
+    </div>
+

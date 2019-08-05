@@ -1,0 +1,36 @@
+<div class="pagebackground clearfix">
+    <div class="container">
+        <section class="background_pages banner_about">
+            <div class="blog_header">
+                <h2>
+                    Page for all users
+                </h2>
+                <p class="moto"> {{title}} </p>
+            </div>
+        </section>
+        <div class="row">
+            <h1>
+                {{#each users}}
+                <div class="grid-container">
+                    {{#each this}}
+                    <ul class="item">
+                        <li class="itemp title">{{this.name}}</li>
+                        <li class="itemp description">{{this.email}}</li>
+                        <li class="itemp description">{{this.isAdmin}}</li>
+                        <a href="/user/{{this._id}}" class=" button link2 details" role="button">Edit user </a>
+
+                        <form method="POST" action="/user/{{this._id}}/delete?_method=DELETE">
+                            <button type="submit" class="button details">Delete</button>
+                        </form>
+                    </ul>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </h1>
+
+        </div>
+    </div>
+
+</div>
+
+

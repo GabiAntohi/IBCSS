@@ -1,0 +1,83 @@
+{{>header_nav_admin}}
+<!-- Content Row -->
+<hr />
+<div id="wrapper" class="row">
+    <section class="banner_contact">
+        <div class="onbanner">
+            <h4>{{title}}</h4>
+            <h5>These are all the blogs, you can edit or delete. You can add blog posts from the menu</h5>
+        </div>
+    </section>
+    <hr />
+    <div class="container">
+        <!-- content page -->
+        <div class="shop tablehead">
+            <div class="details imgPath">
+                <p>Image</p>
+            </div>
+            <div class="details prc">
+                <p>Title</p>
+            </div>
+            <div class="details prc">
+                <p>Tag</p>
+            </div>
+            <div class="details prc">
+                <p>Author</p>
+            </div>
+            <div class="details cont ">
+                <p>Content</p>
+            </div>
+            <div class="details prc">
+                <p>Action</p>
+            </div>
+        </div>
+        <!-- blog post -->
+        {{#each blogs}}
+        {{#each this}}
+        <div class="size products clearfix" style="clear:both">
+            <div class="shop clearfix">
+                <div class="details imgPath">
+                    <p>
+                        <img src="{{this.imagePath}}" alt="IMG-BLOG">
+                    </p>
+                </div>
+                <div class="details prc">
+                    <p>
+                        {{this.title}}
+                    </p>
+                </div>
+                <div class="details prc">
+                    <p>
+                        {{this.tag}}
+                    </p>
+                </div>
+
+                <div class="details prc">
+                    <p>
+
+                        {{this.author}}
+                    </p>
+                </div>
+                <div class="details cont ">
+                    <p>
+                        {{this.content}}
+                    </p>
+                </div>
+                <div class="details actions">
+                    <a href="/admin/blog/{{this._id}}" class="buttn">Edit</a>
+                    <form method="POST" style="width:100%" action="/admin/blog/{{this._id}}/delete?_method=DELETE">
+                        <button type="submit" class="buttn" style="background-color:gray;">Delete</button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+        {{/each}}
+        {{/each}}
+
+    </div>
+</div>
+
+{{>footer_admin}}

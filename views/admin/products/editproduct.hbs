@@ -1,0 +1,31 @@
+{{>header_nav_admin}}
+<!-- Content Row -->
+<hr />
+<div id="wrapper" class="row">
+    <section class="banner_contact">
+        <div class="onbanner">
+            <h4>{{title}}</h4>
+            <h5>Warning: Once you make those changes you can't undo them</h5>
+        </div>
+    </section>
+    <hr />
+    <section class="section_contact">
+        <div class="container">
+            <form accept-charset="UTF-8" action="/admin/product/{{product.id}}/update?_method=PUT" method="post">
+                <label class="required" for="name">Name</label>
+                <input id="name" name="name" required type="text" value="{{product.name}}" />
+                <label class="required" for="imagePath">Image</label>
+                <input id="imagePath" name="imagePath" required type="text" value="{{product.imagePath}}" />
+                <label class="required" for="price">Price</label>
+                <input id="price" required name="price" type="text" value="{{product.price}}" />
+                <label class="required" for="description">Description</label>
+                <textarea id="description" required name="description">{{product.description}}</textarea>
+                <button class="buttn" type="submit">Save Changes</button>
+            </form>
+            </div>
+    </section>
+</div>
+
+
+
+    {{>footer_admin}}

@@ -1,0 +1,72 @@
+<div class="pagebackground clearfix">
+    <div class="container">
+        <section class="background_pages banner_about">
+            <div class="blog_header">
+                <h2>
+                    Shopping cart
+                </h2>
+                <p class="moto"> {{title}}</p>
+            </div>
+        </section>
+
+        {{# if products}}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="list-group">
+                    {{# each products }}
+                    <div class="list-group-item border">
+                        <strong>{{ this.item.title }}</strong>
+                        <span class="badge price-cart">${{ this.price }}</span>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-raised btn-info dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                Action
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/shop/reduce/{{ this.item._id }}">Reduce by 1</a>
+                                <a class="dropdown-item" href="/shop/remove/{{ this.item._id }}">Remove All</a>
+                            </div>
+                        </div>
+                        <span class="total">{{ this.qty }}</span>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <strong>Total: {{ totalPrice }}</strong>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <form action="/charge" method="POST">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_EHq1USOjmhVbQJ9iebQFeoap00LURhhpdQ" data-amount=" {{ totalPrice }} " data-name="IBCSS"
+                            data-description="Your Plant Purchases" data-image="/images/marketplace.png" data-locale="auto"
+                            data-currency="eur">
+                    </script>
+                    <script>
+                document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+                    </script>
+                    <button type="submit" class="btn btn-raised btn-success btn-lg">
+                        Purchase Amount
+                        &euro;{{ totalPrice }}
+                    </button>
+                </form>
+            </div>
+        </div>
+        {{else}}
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 main">
+                <h2>No items in Cart</h2>
+            </div>
+        </div>
+        {{/if}}
+        </div>
+</div>

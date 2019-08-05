@@ -1,0 +1,38 @@
+<div class="pagebackground clearfix">
+    <div class="container">
+        <section class="background_pages banner_about">
+            <div class="blog_header">
+                <h2>
+                    Create an account
+                </h2>
+                <p class="moto"> {{title}}</p>
+            </div>
+        </section>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <!--bootstrap alerts-->
+                {{#if hasErrors}}
+                <div class="alert alert-danger">
+                    {{#each messages}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                </div>
+                {{/if }}
+                <form action="/user/register" method="POST" class="login">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" class=" form-control" placeholder="your email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class=" form-control" placeholder="current password" />
+                    </div>
+                    <!--protection - session stolen-->
+                    <input type="hidden" name="_csrf" value="{{ csrfToken }}" />
+                    <button type="submit"  class="button"> Register</button>
+                </form>
+            </div>
+        </div>
+        <br />
+    </div>
+    </div>

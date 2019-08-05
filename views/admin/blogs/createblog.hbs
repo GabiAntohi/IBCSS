@@ -1,0 +1,30 @@
+{{>header_nav_admin}}
+<!-- Content Row -->
+<hr />
+<div id="wrapper" class="row">
+    <section class="banner_contact">
+        <div class="onbanner">
+            <h4>{{title}}</h4>
+            <h5>Create a blog post by using the form below, thank you!</h5>
+        </div>
+    </section>
+    <hr />
+    <section class="section_contact">
+        <div class="container">
+            <form accept-charset="UTF-8" id="contactform" name="myForm" action="admin/blog/create" onsubmit="" method="post">
+                <label class="required" for="imagePath">Image here</label>
+                <input id="imagePath" name="imagePath" required type="text" placeholder="your image" />
+                <label class="required" for="surname">Title</label>
+                <input id="title" name="title" required type="text" placeholder="blog post title" />
+                <label class="required" for="email">Author</label>
+                <input id="author" required name="author" type="text" placeholder="who is the author" />
+                <label class="required" for="email">Tag</label>
+                <input id="tag" required name="tag" type="text" placeholder="tag" />
+                <label class="required" for="message">Content</label>
+                <textarea id="content" required name="content" placeholder="your content here"></textarea>
+                <button class="buttn" type="submit" form="contactform">Submit</button>
+            </form>
+        </div>
+    </section>
+</div>
+{{>footer_admin}}

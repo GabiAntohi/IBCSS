@@ -1,0 +1,67 @@
+
+<div class="pagebackground clearfix">
+    <div class="container">
+        <!-- Title Page -->
+        <section class="background_pages">
+            <div class="blog_header container">
+                <h2>
+                    Our Stories
+                </h2>
+                <p class="moto">Welcome to the IBCSS {{title}}</p>
+            </div>
+        </section>
+
+        <!-- content page -->
+        <section class="section_stories container">
+            <section class="section_stories_category">
+                <!-- Categories -->
+                <h4>
+                    Categories
+                </h4>
+
+                <div id="myBtnContainer">
+                    <button class="btn active" onclick="filterSelection('all')">All</button>
+                    <button class="btn" onclick="filterSelection('cactus')">Cactus</button>
+                    <button class="btn" onclick="filterSelection('succulent')"> Succulents</button>
+                    <button class="btn" onclick="filterSelection('euphorbia')"> Euphorbia</button>
+                    <button class="btn" onclick="filterSelection('pots')"> Pots</button>
+                </div>
+
+            </section>
+            <section class="full_stories clearfix">
+                <!-- blog post -->
+                {{#each blogs}}
+                <div class="story ">
+                    {{#each this}}
+                    <div class="story_details filterDiv {{this.tag}}">
+                        <div class="relative block image_zoom">
+                            <img src="{{this.imagePath}}" alt="IMG-BLOG">
+                        </div>
+
+                        <h4>
+                            {{this.title}}
+                        </h4>
+                        <div class="span_details">
+                            <span>
+                                by {{this.author}}
+                                <span class="span_line">|</span>
+                            </span>
+                            <span>
+                                {{this.tag}}
+                            </span>
+                        </div>
+                        <p>
+                            {{this.content}}
+                        </p>
+
+
+                    </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </section>
+        </section>
+    </div>
+</div>
+<script src="../../javascripts/filter.js"></script>
+
