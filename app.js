@@ -84,7 +84,7 @@ app.get('/about', function (req, res) {
 });
 
 //sessions
-//defaults are true - session saved even if not initisalized 
+//defaults are true - session saved even if not initialized 
 app.use(session({
     secret: "mycarnivale", resave: false, saveUninitialized: false,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),

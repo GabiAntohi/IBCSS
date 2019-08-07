@@ -9,7 +9,8 @@ var contacts= [
         surname: 'Vincent',
         email:
             'alexvincent@gmail.com',
-        message: "helllo theeeere"
+        message: "helllo theeeere",
+
     }),
     new Contact({
         name:
