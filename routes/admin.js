@@ -4,7 +4,7 @@ var Product = require("../models/product.model");
 var User = require("../models/user.model");
 var Contact = require("../models/contact.model");
 const multer = require('multer');
-const upload = multer({dest:'/uploads/'});
+const upload = multer({dest:'uploads/'});
 
 /* GET home page. */
 router.get('/dashboard', function (req, res) {
