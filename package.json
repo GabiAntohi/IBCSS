@@ -27,5 +27,9 @@
     "passport-local": "^1.0.0",
     "serve-favicon": "^2.4.5",
     "stripe": "^5.10.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2",
+    "supertest": "^4.0.2"
   }
 }
