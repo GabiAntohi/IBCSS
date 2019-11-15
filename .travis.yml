@@ -5,11 +5,10 @@ branches:
    - master
 
 node_js:
- - '7.0.0'
- - '8.0.0'
+ - '10.15.1'
 
 before_install:
  - npm install
 
 script:
- - echo "Hello World"
+ - ./node_modules/mocha/bin/mocha -R spec test
