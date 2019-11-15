@@ -40,26 +40,26 @@ function stopDB(done) {
 
 function makeServer(config) {
     var stripe = stripeMod(config.stripeSecretKey);
-// Connect to MongoDB
+    // Connect to MongoDB
     mongoose
         .connect(config.mongoURI, { useNewUrlParser: true })
         .then(() => console.log('Remote MongoDB Connected...'))
         .catch(err => console.log(err));
 
-//sessions
+    //sessions
     var session = require("express-session");
     var passport = require("passport");
     var flash = require("connect-flash");
     var validator = require('express-validator');
-//after importing the session package
+    //after importing the session package
     const MongoStore = require('connect-mongo')(session);
     const multer = require('multer');
 
-//for PUT and DELETE
+    //for PUT and DELETE
     var methodOverride = require('method-override');
-// var indexRouter = require('./routes/index', {
-//   stripePublishableKey: 'pk_test_EHq1USOjmhVbQJ9iebQFeoap00LURhhpdQ' //keys.stripePublishableKey
-// });
+    // var indexRouter = require('./routes/index', {
+    //   stripePublishableKey: 'pk_test_EHq1USOjmhVbQJ9iebQFeoap00LURhhpdQ' //keys.stripePublishableKey
+    // });
 
     var indexRouter = require('./routes/index');
     var usersRouter = require('./routes/users');
@@ -69,36 +69,38 @@ function makeServer(config) {
     var adminRouter = require('./routes/admin');
     var app = express();
 
-//mongoose.connect('mongodb://localhost:27017/ibcss', { useNewUrlParser: true });
-//let db = mongoose.connection;
-//check connection
-//db.once("open", function () {
-    // console.log("connected to mongodb");
-//});
-//check for db errors
-//db.on("error", function (err) {
-    //  console.log(err);
-//});
+    //mongoose.connect('mongodb://localhost:27017/ibcss', { useNewUrlParser: true });
+    //let db = mongoose.connection;
+    //check connection
+    //db.once("open", function () {
+        // console.log("connected to mongodb");
+    //});
+    //check for db errors
+    //db.on("error", function (err) {
+        //  console.log(err);
+    //});
 
     app.use(methodOverride('_method'));
-//load configuration from config file - setup passport
+
+    //load configuration from config file - setup passport
     require("./config/passport");
     app.set('views', path.join(__dirname, 'views'));
-// view engine setup
+
+    // view engine setup
     app.engine(".hbs", expressHbs({ defaultLayout: "layout", extname: ".hbs" }));
     app.set('view engine', '.hbs');
 
 
-//get body parser from https://github.com/expressjs/body-parser
-// parse application/x-www-form-urlencoded
+    //get body parser from https://github.com/expressjs/body-parser
+    // parse application/x-www-form-urlencoded
     app.use(bodyParser.urlencoded({ extended: true }));
 
-// parse application/json
+    // parse application/json
     app.use(bodyParser.json());
 
-//-validator - start after body-parser if not you cannot validate
-//app.use(validator());
-// Routes
+    //-validator - start after body-parser if not you cannot validate
+    //app.use(validator());
+    // Routes
     app.use(logger('dev'));
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
@@ -109,8 +111,8 @@ function makeServer(config) {
         res.render("about/about", { title: 'About IBCSS' });
     });
 
-//sessions
-//defaults are true - session saved even if not initialized
+    //sessions
+    //defaults are true - session saved even if not initialized
     app.use(session({
             secret: "mycarnivale", resave: false, saveUninitialized: false,
             store: new MongoStore({ mongooseConnection: mongoose.connection }),
@@ -118,21 +120,21 @@ function makeServer(config) {
         })
     );
 
-//very important - initialize flash and passport after session
+    //very important - initialize flash and passport after session
     app.use(flash());
     app.use(passport.initialize());
-//after session init
+    //after session init
     app.use(passport.session());
     app.use(express.static(path.join(__dirname, 'public')));
 
-//global variable - available in all views
+    //global variable - available in all views
     app.use(function (req, res, next) {
         res.locals.login = req.isAuthenticated();
         res.locals.session = req.session;
         next();
     });
 
-//for stripe payment
+    //for stripe payment
     app.post('/charge', (req, res) => {
         const amount = req.body.chargeAmount;
         console.log(req.body.chargeAmount);
@@ -153,22 +155,21 @@ function makeServer(config) {
             .then(charge => res.render('shop/success'))
             .then(req.session.cart = null);
     });
-//for stripe payment end
-
+    //for stripe payment end
 
     app.use('/user', usersRouter);
     app.use('/', indexRouter);
     app.use('/admin', adminRouter);
-//products
+    //products
     app.use('/shop', shopRouter);
     app.use('/blog', blogRouter);
     app.use("/contact", contactRouter);
-// catch 404 and forward to error handler
+    // catch 404 and forward to error handler
     app.use(function(req, res, next) {
         next(createError(404));
     });
 
-// error handler
+    // error handler
     app.use(function(err, req, res, next) {
         // set locals, only providing error in development
         res.locals.message = err.message;
@@ -180,7 +181,6 @@ function makeServer(config) {
     });
 
     var debug = require('debug')('ibcss:server');
-    var http = require('http');
 
     /**
      * Get port from environment and store in Express.
@@ -189,7 +189,6 @@ function makeServer(config) {
     var port = normalizePort(process.env.PORT || '3000');
     app.set('port', port);
 
-    ////////
     var server = app.listen(port, function () {
         var addr = server.address();
         var bind = typeof addr === 'string'
@@ -198,34 +197,6 @@ function makeServer(config) {
         debug('Listening on ' + bind);
     });
     return server;
-    ////////
-
-    /**
-     * Create HTTP server.
-     */
-
-    var server = http.createServer(app);
-
-    /**
-     * Listen on provided port, on all network interfaces.
-     */
-
-    /**
-     * Event listener for HTTP server "listening" event.
-     */
-
-    function onListening() {
-        var addr = server.address();
-        var bind = typeof addr === 'string'
-            ? 'pipe ' + addr
-            : 'port ' + addr.port;
-        debug('Listening on ' + bind);
-    }
-    server.listen(port);
-    server.on('error', onError);
-    server.on('listening', onListening);
-
-    return server
 }
 
 /**
