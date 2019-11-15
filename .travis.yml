@@ -4,6 +4,9 @@ branches:
   only:
    - master
 
+services:
+ - mongodb
+
 node_js:
  - '10.15.1'
 
