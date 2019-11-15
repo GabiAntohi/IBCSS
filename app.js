@@ -1,18 +1,22 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-//next two lines for stripe payment
-const keys = require('./keys/keys');
-// const stripe = require('stripe')(keys.stripeSecretKey);
-const stripe = require('stripe')('sk_test_37aQR0BLogkIjLroXwWC8WqN00GnnTp0I2');
+
 const bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require("express-handlebars");
+
+// CONFIGURATION: next two lines for stripe payment
+const keys = require('./config/config');
+// const stripe = require('stripe')(keys.stripeSecretKey);
+const stripe = require('stripe')(keys.stripeSecretKey);
+
+// DB Config
+const db = keys.mongoURI;
+
 //connect mongoose
 const mongoose = require("mongoose");
-// DB Config
-const db = require('./config/key').mongoURI;
 
 function onError(error) {
     if (error.syscall !== 'listen') {
