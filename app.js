@@ -2,22 +2,14 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const stripeMod = require('stripe');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require("express-handlebars");
 
-// CONFIGURATION: next two lines for stripe payment
-const keys = require('./config/config');
-// const stripe = require('stripe')(keys.stripeSecretKey);
-const stripe = require('stripe')(keys.stripeSecretKey);
-
 // DB Config
-const db = keys.mongoURI;
-
-//connect mongoose
-const mongoose = require("mongoose");
-
 function onError(error) {
     if (error.syscall !== 'listen') {
         throw error;
@@ -46,11 +38,11 @@ function stopDB(done) {
     mongoose.disconnect(done)
 }
 
-function makeServer() {
-
+function makeServer(config) {
+    var stripe = stripeMod(config.stripeSecretKey);
 // Connect to MongoDB
     mongoose
-        .connect(db, { useNewUrlParser: true })
+        .connect(config.mongoURI, { useNewUrlParser: true })
         .then(() => console.log('Remote MongoDB Connected...'))
         .catch(err => console.log(err));
 

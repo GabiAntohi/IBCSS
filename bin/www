@@ -3,5 +3,5 @@
 /**
  * Module dependencies.
  */
-
-var app = require('../app')();
+var config = require('../config/config.js');
+require('../app')(config);
