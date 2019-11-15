@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Blog = require("../models/blog.model");
 
-
 /* GET home page. */
 router.get('/', function (req, res, next) {
     Blog.find(function (err, docs) {
