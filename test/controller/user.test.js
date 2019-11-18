@@ -2,6 +2,7 @@ const cheerio = require('cheerio');
 const mongoose = require('mongoose');
 const request = require('supertest');
 const User = require("../../models/user.model");
+const bcrypt = require("bcrypt-nodejs");
 var TEST_DEBUG = process.env.TEST_DEBUG || false;
 
 function testDebug(msg) {
@@ -25,91 +26,303 @@ function expectBodyIncludes(stringToMatch) {
  * test for correctness
  */
 describe('user', function () {
-    describe('register form', function () {
-        var app;
-        var server;
-        var config = {
-            mongoURI: "mongodb://localhost:27017/ibcss",
-        };
+    var passwordPasswordHash = bcrypt.hashSync("password", bcrypt.genSaltSync(5), null);
 
-        beforeEach(function (done) {
-            app = require('../../app');
-            server = app(config);
-            done()
-        });
-        afterEach(function (done) {
-            server.close();
-            app.stopDB();
-            done()
+    describe('registration', function() {
+        describe('form', function () {
+            var app;
+            var server;
+            var config = {
+                mongoURI: "mongodb://localhost:27017/ibcss",
+            };
+
+            beforeEach(function (done) {
+                app = require('../../app');
+                server = app(config);
+                done()
+            });
+            afterEach(function (done) {
+                server.close();
+                app.stopDB();
+                done()
+            });
+
+            it('shows form', function testSlash(done) {
+                request(server)
+                    .get('/user/register')
+                    .expect(expectBodyIncludes("Create an account"))
+                    .expect(expectBodyIncludes("Email"))
+                    .expect(expectBodyIncludes("Password"))
+                    .expect(200, done)
+                ;
+            });
         });
 
-        it('shows form input', function testSlash(done) {
-            request(server)
-                .get('/user/register')
-                .expect(expectBodyIncludes("Create an account"))
-                .expect(expectBodyIncludes("Email"))
-                .expect(expectBodyIncludes("Password"))
-                .expect(200, done)
-            ;
+        describe('form submit', function () {
+            var app;
+            var server;
+            var config = {
+                mongoURI: "mongodb://localhost:27017/ibcss",
+            };
+
+            beforeEach(function (done) {
+                app = require('../../app');
+                server = app(config);
+                done()
+            });
+            afterEach(function (done) {
+                server.close();
+                app.stopDB();
+                done()
+            });
+
+            it('redirects to profile on success', function testSlash(done) {
+                mongoose.createConnection(config.mongoURI, {
+                    useNewUrlParser: true
+                })
+                    .then(() => {
+                        testDebug("Delete old users");
+                        return User.deleteMany({});
+                    })
+                    .then(() => {
+                        testDebug("Start test");
+                        request(server)
+                            .get('/user/register')
+                            .expect(200)
+                            .end(function(err, getres) {
+                                let $ = cheerio.load(getres.text);
+                                var csrfToken = $("#_csrf").val();
+                                request(server)
+                                    .post('/user/register')
+                                    .set({cookie: getres.headers['set-cookie']})
+                                    .send({
+                                        _csrf: csrfToken,
+                                        email: "testuser@domain.localhost",
+                                        password: "password"
+                                    })
+                                    .expect(function (res) {
+                                        if (!res.header['location'].includes('/user/profile')) {
+                                            throw new Error("expected redirect to profile page: " + res.header['location'])
+                                        }
+                                    })
+                                    .expect(302)
+                                    .end(done);
+                            })
+                        ;
+                    })
+                    .catch((err) => {
+                        testDebug(err);
+                        throw err;
+                    });
+            });
         });
     });
 
-    describe('submit form', function () {
-        var app;
-        var server;
-        var config = {
-            mongoURI: "mongodb://localhost:27017/ibcss",
-        };
+    describe('login', function () {
+        describe('form', function () {
+            var app;
+            var server;
+            var config = {
+                mongoURI: "mongodb://localhost:27017/ibcss",
+            };
 
-        beforeEach(function (done) {
-            app = require('../../app');
-            server = app(config);
-            done()
-        });
-        afterEach(function (done) {
-            server.close();
-            app.stopDB();
-            done()
+            beforeEach(function (done) {
+                app = require('../../app');
+                server = app(config);
+                done()
+            });
+            afterEach(function (done) {
+                server.close();
+                app.stopDB();
+                done()
+            });
+
+            it('shows form', function testSlash(done) {
+                request(server)
+                    .get('/user/login')
+                    .expect(expectBodyIncludes("Log In"))
+                    .expect(expectBodyIncludes("Email"))
+                    .expect(expectBodyIncludes("Password"))
+                    .expect(expectBodyIncludes("Don't have an account?"))
+                    .expect(expectBodyIncludes("Register instead!"))
+                    .expect(200, done)
+                ;
+            });
         });
 
-        it('on success, redirects to profile', function testSlash(done) {
-            mongoose.createConnection(config.mongoURI, {
-                useNewUrlParser: true
-            })
-                .then(() => {
-                    testDebug("Delete old users");
-                    return User.deleteMany({});
+        describe('submit', function () {
+            var app;
+            var server;
+            var config = {
+                mongoURI: "mongodb://localhost:27017/ibcss",
+            };
+
+            beforeEach(function (done) {
+                app = require('../../app');
+                server = app(config);
+                done()
+            });
+            afterEach(function (done) {
+                server.close();
+                app.stopDB();
+                done()
+            });
+
+            it('on success, redirects to profile', function testSlash(done) {
+                mongoose.createConnection(config.mongoURI, {
+                    useNewUrlParser: true
                 })
-                .then(() => {
-                    testDebug("Start test");
-                    request(server)
-                        .get('/user/register')
-                        .expect(200)
-                        .end(function(err, getres) {
-                            let $ = cheerio.load(getres.text);
-                            var csrfToken = $("#_csrf").val();
-                            request(server)
-                                .post('/user/register')
-                                .set({cookie: getres.headers['set-cookie']})
-                                .send({
-                                    _csrf: csrfToken,
-                                    email: "testuser@domain.localhost",
-                                    password: "password"
-                                })
-                                .expect(function (res) {
-                                    if (!res.header['location'].includes('/user/profile')) {
-                                        throw new Error("expected redirect to profile page: " + res.header['location'])
-                                    }
-                                })
-                                .expect(302)
-                                .end(done);
-                        })
-                    ;
+                    .then(() => {
+                        testDebug("Delete old users");
+                        return User.deleteMany({});
+                    })
+                    .then(() => {
+                        let user = new User({
+                            name: "Abe Froman",
+                            email: "abefroman@domain.localhost",
+                            // lowest cost factor
+                            password: passwordPasswordHash,
+                            isAdmin: false,
+                        });
+                        return user.save()
+                    })
+                    .then(() => {
+                        testDebug("Start test");
+                        request(server)
+                            .get('/user/login')
+                            .expect(200)
+                            .then(function (getres) {
+                                let $ = cheerio.load(getres.text);
+                                var csrfToken = $("#_csrf").val();
+                                testDebug("With CSRF token " + csrfToken);
+                                var reqCookie = getres.headers['set-cookie'];
+                                return request(server)
+                                    .post('/user/login')
+                                    .set({cookie: reqCookie})
+                                    .send({
+                                        _csrf: csrfToken,
+                                        email: "abefroman@domain.localhost",
+                                        password: "password"
+                                    })
+                                    .expect(function (res) {
+                                        if (!res.header['location'].includes('/user/profile')) {
+                                            throw new Error("expected redirect to profile page: " + res.header['location'])
+                                        }
+                                    })
+                                    .expect(302)
+                                    .then(function () {
+                                        return reqCookie;
+                                    });
+                            })
+                            .then(function (reqCookie) {
+                                return request(server)
+                                    .get('/user/profile')
+                                    .set({cookie: reqCookie})
+                                    .expect(200)
+                                    .expect(expectBodyIncludes("Your Profile"))
+                                    .then(function () {
+                                        done();
+                                    });
+                            });
+                    })
+                    .catch((err) => {
+                        testDebug(err);
+                        throw err;
+                    });
+            });
+
+            it('incorrect password, redirects to login', function testSlash(done) {
+                mongoose.createConnection(config.mongoURI, {
+                    useNewUrlParser: true
                 })
-                .catch((err) => {
-                    testDebug(err);
-                    throw err;
-                });
+                    .then(() => {
+                        testDebug("Delete old users");
+                        return User.deleteMany({});
+                    })
+                    .then(() => {
+                        testDebug("Add test user");
+                        let user = new User({
+                            name: "Abe Froman",
+                            email: "abefroman@domain.localhost",
+                            // lowest cost factor
+                            password: passwordPasswordHash,
+                            isAdmin: false,
+                        });
+                        return user.save()
+                    })
+                    .then(() => {
+                        testDebug("Start test");
+                        request(server)
+                            .get('/user/login')
+                            .expect(200)
+                            .then(function (getres) {
+                                let $ = cheerio.load(getres.text);
+                                var csrfToken = $("#_csrf").val();
+                                testDebug("With CSRF token " + csrfToken);
+                                var reqCookie = getres.headers['set-cookie'];
+                                request(server)
+                                    .post('/user/login')
+                                    .set({cookie: reqCookie})
+                                    .send({
+                                        _csrf: csrfToken,
+                                        email: "abefroman@domain.localhost",
+                                        password: "password2"
+                                    })
+                                    .expect(function (res) {
+                                        if (!res.header['location'].includes('/user/login')) {
+                                            throw new Error("expected redirect to profile page: " + res.header['location'])
+                                        }
+                                    })
+                                    .expect(302, done);
+                            })
+
+                    })
+                    .catch((err) => {
+                        testDebug(err);
+                        throw err;
+                    });
+            });
+
+            it('unknown user, redirects to login', function testSlash(done) {
+                mongoose.createConnection(config.mongoURI, {
+                    useNewUrlParser: true
+                })
+                    .then(() => {
+                        testDebug("Delete old users");
+                        return User.deleteMany({});
+                    })
+                    .then(() => {
+                        testDebug("Start test");
+                        request(server)
+                            .get('/user/login')
+                            .expect(200)
+                            .then(function (getres) {
+                                let $ = cheerio.load(getres.text);
+                                var csrfToken = $("#_csrf").val();
+                                testDebug("With CSRF token " + csrfToken);
+                                var reqCookie = getres.headers['set-cookie'];
+                                request(server)
+                                    .post('/user/login')
+                                    .set({cookie: reqCookie})
+                                    .send({
+                                        _csrf: csrfToken,
+                                        email: "rowanatkinson@domain.localhost",
+                                        password: "password"
+                                    })
+                                    .expect(function (res) {
+                                        if (!res.header['location'].includes('/user/login')) {
+                                            throw new Error("expected redirect to profile page: " + res.header['location'])
+                                        }
+                                    })
+                                    .expect(302, done);
+                            })
+
+                    })
+                    .catch((err) => {
+                        testDebug(err);
+                        throw err;
+                    });
+            });
         });
     });
 });

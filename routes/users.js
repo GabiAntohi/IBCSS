@@ -92,15 +92,15 @@ router.post("/login", passport.authenticate("local.signin", {
     } else {
         res.redirect('/user/profile');
     }
-    });
+});
 
 router.get('/dashboard', isAdmin, isLoggedIn, function (req, res) {
     console.log(user.name);
     User.findById(req.params.id, function (err, user) {
         if (err) return next(err);
         console.log(user.name);
-    res.render('admin/dashboard', { title: 'Dashboard', layout: false, user : req.user});
-});
+        res.render('admin/dashboard', { title: 'Dashboard', layout: false, user : req.user});
+    });
 });
 
 
