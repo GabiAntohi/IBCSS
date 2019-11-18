@@ -14,4 +14,4 @@ before_install:
  - npm install
 
 script:
- - ./node_modules/mocha/bin/mocha -R spec test/*
+ - npm run coverage-test
