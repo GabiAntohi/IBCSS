@@ -1,7 +1,14 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-
+// sessions
+var session = require("express-session");
+var passport = require("passport");
+var flash = require("connect-flash");
+var validator = require('express-validator');
+const multer = require('multer');
+//for PUT and DELETE
+var methodOverride = require('method-override');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const stripeMod = require('stripe');
@@ -46,17 +53,9 @@ function makeServer(config) {
         .then(() => console.log('Remote MongoDB Connected...'))
         .catch(err => console.log(err));
 
-    //sessions
-    var session = require("express-session");
-    var passport = require("passport");
-    var flash = require("connect-flash");
-    var validator = require('express-validator');
     //after importing the session package
     const MongoStore = require('connect-mongo')(session);
-    const multer = require('multer');
 
-    //for PUT and DELETE
-    var methodOverride = require('method-override');
     // var indexRouter = require('./routes/index', {
     //   stripePublishableKey: 'pk_test_EHq1USOjmhVbQJ9iebQFeoap00LURhhpdQ' //keys.stripePublishableKey
     // });
