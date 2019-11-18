@@ -1,7 +1,7 @@
 var request = require('supertest');
 const sinon = require('sinon');
 const mongoose = require('mongoose');
-var Blog = require("../models/blog.model");
+var Blog = require("../../models/blog.model");
 var TEST_DEBUG = process.env.TEST_DEBUG || false;
 
 function testDebug(msg) {
@@ -24,7 +24,7 @@ describe('the app', function() {
         mongoURI: "mongodb://localhost:27017/ibcss",
     };
     beforeEach(function () {
-        app = require('../app');
+        app = require('../../app');
         server = app(config);
     });
     afterEach(function (done) {
@@ -47,7 +47,7 @@ describe('home page', function () {
         mongoURI: "mongodb://localhost:27017/ibcss",
     };
     beforeEach(function () {
-        app = require('../app');
+        app = require('../../app');
         server = app(config);
     });
     afterEach(function (done) {
@@ -96,7 +96,7 @@ describe('home page with live db', function () {
     };
 
     beforeEach(function (done) {
-        app = require('../app');
+        app = require('../../app');
         server = app(config);
         done()
     });

@@ -60,7 +60,6 @@ router.use("/", notLoggedIn, function (req, res, next) {
 router.get("/register", function (req, res, next) {
     var messages = req.flash("error");//message stored under error - passport.js
     res.render("user/register", { csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0, title: "Register" });   ///error message, hasErrors - check on sinlgle properties in handlebars
-
 });
 
 router.post("/register", passport.authenticate("local.signup", {
@@ -74,7 +73,7 @@ router.post("/register", passport.authenticate("local.signup", {
     } else {
         res.redirect('/user/profile');
     }
-    });
+});
 
 //on success redirect to profile page
 router.get("/login", function (req, res, next) {
