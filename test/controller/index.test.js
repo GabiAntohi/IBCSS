@@ -4,6 +4,11 @@ const mongoose = require('mongoose');
 var Blog = require("../../models/blog.model");
 var TEST_DEBUG = process.env.TEST_DEBUG || false;
 
+var config = {
+    mongoURI: "mongodb://localhost:27017/ibcss",
+    sessionSecret: "testing-mycarnivale"
+};
+
 function testDebug(msg) {
     if (TEST_DEBUG) {
         console.log(msg)
@@ -20,9 +25,7 @@ function expectBodyIncludes(stringToMatch) {
 describe('the app', function() {
     var app;
     var server;
-    var config = {
-        mongoURI: "mongodb://localhost:27017/ibcss",
-    };
+
     beforeEach(function () {
         app = require('../../app');
         return app(config)
@@ -46,9 +49,7 @@ describe('the app', function() {
 describe('home page', function () {
     var app;
     var server;
-    var config = {
-        mongoURI: "mongodb://localhost:27017/ibcss",
-    };
+
     beforeEach(function () {
         app = require('../../app');
         return app(config)
@@ -97,9 +98,6 @@ describe('home page', function () {
 describe('home page with live db', function () {
     var app;
     var server;
-    var config = {
-        mongoURI: "mongodb://localhost:27017/ibcss",
-    };
 
     beforeEach(function () {
         app = require('../../app');
@@ -115,8 +113,8 @@ describe('home page with live db', function () {
         done()
     });
 
-    it('responds to / with blogs', function testSlash(done) {
-        mongoose.createConnection(config.mongoURI, {
+    it('responds to / with blogs', function testSlash() {
+        return mongoose.createConnection(config.mongoURI, {
             useNewUrlParser: true
         })
             .then(() => {
@@ -146,7 +144,7 @@ describe('home page with live db', function () {
             })
             .then(() => {
                 testDebug("Start test");
-                request(server)
+                return request(server)
                     .get('/')
                     .expect(expectBodyIncludes("Welcome to the Irish Cactus and Succulent Society Website"))
                     .expect(expectBodyIncludes("Announcing new website"))
@@ -155,7 +153,7 @@ describe('home page with live db', function () {
                     .expect(expectBodyIncludes("Announcing 2019 cactus show"))
                     .expect(expectBodyIncludes("Thanks to the Botanical Gardens for hosting it"))
                     .expect(expectBodyIncludes("Admin2"))
-                    .expect(200, done);
+                    .expect(200);
             })
             .catch((err) => {
                 testDebug(err);
