@@ -44,6 +44,7 @@ function onError(error) {
 function stopDB(done) {
     mongoose.disconnect(done)
 }
+
 function createServer(config) {
     var stripe = stripeMod(config.stripeSecretKey);
     //after importing the session package
@@ -91,7 +92,7 @@ function createServer(config) {
     //sessions
     //defaults are true - session saved even if not initialized
     app.use(session({
-            secret: "mycarnivale", resave: false, saveUninitialized: false,
+            secret: config.sessionSecret, resave: false, saveUninitialized: false,
             store: new MongoStore({ mongooseConnection: mongoose.connection }),
             cookie: { maxAge: 180 * 60 * 1000 }//how long session lasts before it expires
         })
@@ -177,6 +178,10 @@ function createServer(config) {
 }
 
 function startServer(config) {
+    if (!config.sessionSecret) {
+        throw new Error("sessionSecret missing from config");
+    }
+
     // Connect to MongoDB
     return mongoose
         .connect(config.mongoURI, { useNewUrlParser: true })

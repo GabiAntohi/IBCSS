@@ -5,6 +5,11 @@ const User = require("../../models/user.model");
 const bcrypt = require("bcrypt-nodejs");
 var TEST_DEBUG = process.env.TEST_DEBUG || false;
 
+var config = {
+    mongoURI: "mongodb://localhost:27017/ibcss",
+    sessionSecret: "testing-mycarnivale"
+};
+
 function testDebug(msg) {
     if (TEST_DEBUG) {
         console.log(msg)
@@ -32,9 +37,6 @@ describe('user', function () {
         describe('form', function () {
             var app;
             var server;
-            var config = {
-                mongoURI: "mongodb://localhost:27017/ibcss",
-            };
 
             beforeEach(function () {
                 app = require('../../app');
@@ -49,13 +51,13 @@ describe('user', function () {
                 done()
             });
 
-            it('shows form', function testSlash(done) {
-                request(server)
+            it('shows form', function testSlash() {
+                return request(server)
                     .get('/user/register')
                     .expect(expectBodyIncludes("Create an account"))
                     .expect(expectBodyIncludes("Email"))
                     .expect(expectBodyIncludes("Password"))
-                    .expect(200, done)
+                    .expect(200)
                 ;
             });
         });
@@ -63,9 +65,6 @@ describe('user', function () {
         describe('form submit', function () {
             var app;
             var server;
-            var config = {
-                mongoURI: "mongodb://localhost:27017/ibcss",
-            };
 
             beforeEach(function () {
                 app = require('../../app');
@@ -80,8 +79,8 @@ describe('user', function () {
                 done()
             });
 
-            it('redirects to profile on success', function testSlash(done) {
-                mongoose.createConnection(config.mongoURI, {
+            it('redirects to profile on success', function testSlash() {
+                return mongoose.createConnection(config.mongoURI, {
                     useNewUrlParser: true
                 })
                     .then(() => {
@@ -90,13 +89,13 @@ describe('user', function () {
                     })
                     .then(() => {
                         testDebug("Start test");
-                        request(server)
+                        return request(server)
                             .get('/user/register')
                             .expect(200)
-                            .end(function(err, getres) {
+                            .then(function(getres) {
                                 let $ = cheerio.load(getres.text);
                                 var csrfToken = $("#_csrf").val();
-                                request(server)
+                                return request(server)
                                     .post('/user/register')
                                     .set({cookie: getres.headers['set-cookie']})
                                     .send({
@@ -109,8 +108,7 @@ describe('user', function () {
                                             throw new Error("expected redirect to profile page: " + res.header['location'])
                                         }
                                     })
-                                    .expect(302)
-                                    .end(done);
+                                    .expect(302);
                             })
                         ;
                     })
@@ -126,10 +124,6 @@ describe('user', function () {
         describe('form', function () {
             var app;
             var server;
-            var config = {
-                mongoURI: "mongodb://localhost:27017/ibcss",
-            };
-
             beforeEach(function () {
                 app = require('../../app');
                 return app(config)
@@ -159,10 +153,6 @@ describe('user', function () {
         describe('submit', function () {
             var app;
             var server;
-            var config = {
-                mongoURI: "mongodb://localhost:27017/ibcss",
-            };
-
             beforeEach(function () {
                 app = require('../../app');
                 return app(config)
@@ -176,8 +166,8 @@ describe('user', function () {
                 done()
             });
 
-            it('on success, redirects to profile', function testSlash(done) {
-                mongoose.createConnection(config.mongoURI, {
+            it('on success, redirects to profile', function testSlash() {
+                return mongoose.createConnection(config.mongoURI, {
                     useNewUrlParser: true
                 })
                     .then(() => {
@@ -185,6 +175,7 @@ describe('user', function () {
                         return User.deleteMany({});
                     })
                     .then(() => {
+                        testDebug("Add test user");
                         let user = new User({
                             name: "Abe Froman",
                             email: "abefroman@domain.localhost",
@@ -196,7 +187,7 @@ describe('user', function () {
                     })
                     .then(() => {
                         testDebug("Start test");
-                        request(server)
+                        return request(server)
                             .get('/user/login')
                             .expect(200)
                             .then(function (getres) {
@@ -227,10 +218,7 @@ describe('user', function () {
                                     .get('/user/profile')
                                     .set({cookie: reqCookie})
                                     .expect(200)
-                                    .expect(expectBodyIncludes("Your Profile"))
-                                    .then(function () {
-                                        done();
-                                    });
+                                    .expect(expectBodyIncludes("Your Profile"));
                             });
                     })
                     .catch((err) => {
