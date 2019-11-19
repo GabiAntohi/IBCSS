@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "mocha -R spec test/*",
-    "coverage-test": "nyc --reporter=text mocha -R spec test/*"
+    "coverage-test": "nyc --reporter=text mocha -R spec test/*",
+    "coverage-test-html": "nyc --reporter=html mocha -R spec test/*"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
