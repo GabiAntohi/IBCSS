@@ -36,10 +36,12 @@ describe('user', function () {
                 mongoURI: "mongodb://localhost:27017/ibcss",
             };
 
-            beforeEach(function (done) {
+            beforeEach(function () {
                 app = require('../../app');
-                server = app(config);
-                done()
+                return app(config)
+                    .then(function (s) {
+                        server = s
+                    });
             });
             afterEach(function (done) {
                 server.close();
@@ -65,10 +67,12 @@ describe('user', function () {
                 mongoURI: "mongodb://localhost:27017/ibcss",
             };
 
-            beforeEach(function (done) {
+            beforeEach(function () {
                 app = require('../../app');
-                server = app(config);
-                done()
+                return app(config)
+                    .then(function (s) {
+                        server = s
+                    });
             });
             afterEach(function (done) {
                 server.close();
@@ -126,10 +130,12 @@ describe('user', function () {
                 mongoURI: "mongodb://localhost:27017/ibcss",
             };
 
-            beforeEach(function (done) {
+            beforeEach(function () {
                 app = require('../../app');
-                server = app(config);
-                done()
+                return app(config)
+                    .then(function (s) {
+                        server = s
+                    });
             });
             afterEach(function (done) {
                 server.close();
@@ -157,10 +163,12 @@ describe('user', function () {
                 mongoURI: "mongodb://localhost:27017/ibcss",
             };
 
-            beforeEach(function (done) {
+            beforeEach(function () {
                 app = require('../../app');
-                server = app(config);
-                done()
+                return app(config)
+                    .then(function (s) {
+                        server = s
+                    });
             });
             afterEach(function (done) {
                 server.close();

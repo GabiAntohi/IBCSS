@@ -44,21 +44,10 @@ function onError(error) {
 function stopDB(done) {
     mongoose.disconnect(done)
 }
-
-function makeServer(config) {
+function createServer(config) {
     var stripe = stripeMod(config.stripeSecretKey);
-    // Connect to MongoDB
-    mongoose
-        .connect(config.mongoURI, { useNewUrlParser: true })
-        .then(() => console.log('Remote MongoDB Connected...'))
-        .catch(err => console.log(err));
-
     //after importing the session package
     const MongoStore = require('connect-mongo')(session);
-
-    // var indexRouter = require('./routes/index', {
-    //   stripePublishableKey: 'pk_test_EHq1USOjmhVbQJ9iebQFeoap00LURhhpdQ' //keys.stripePublishableKey
-    // });
 
     var indexRouter = require('./routes/index');
     var usersRouter = require('./routes/users');
@@ -67,17 +56,6 @@ function makeServer(config) {
     var contactRouter = require('./routes/contact');
     var adminRouter = require('./routes/admin');
     var app = express();
-
-    //mongoose.connect('mongodb://localhost:27017/ibcss', { useNewUrlParser: true });
-    //let db = mongoose.connection;
-    //check connection
-    //db.once("open", function () {
-        // console.log("connected to mongodb");
-    //});
-    //check for db errors
-    //db.on("error", function (err) {
-        //  console.log(err);
-    //});
 
     app.use(methodOverride('_method'));
 
@@ -198,6 +176,16 @@ function makeServer(config) {
     return server;
 }
 
+function startServer(config) {
+    // Connect to MongoDB
+    return mongoose
+        .connect(config.mongoURI, { useNewUrlParser: true })
+        .then(() => {
+            console.log('Remote MongoDB Connected...');
+            return createServer(config)
+        });
+}
+
 /**
  * Normalize a port into a number, string, or false.
  */
@@ -219,7 +207,7 @@ function normalizePort(val) {
 }
 
 
-module.exports = makeServer;
+module.exports = startServer;
 module.exports.stopDB = stopDB;
 //start the server
 //app.listen(3000, function () {
