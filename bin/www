@@ -4,4 +4,8 @@
  * Module dependencies.
  */
 var config = require('../config/config.js');
-require('../app')(config);
+require('../app')(config)
+    .then(null, function (err) {
+        console.log(err)
+        process.exit(1)
+    });
