@@ -73,7 +73,6 @@ router.get('/test', blog_controller.test);
 
 
 //contact
-
 router.get('/allcontacts', function (req, res, next) {
     var successMgs = req.flash('success')[0];
     Contact.find(function (err, docs) {
@@ -86,8 +85,6 @@ router.get('/allcontacts', function (req, res, next) {
     });
 });
 
-
-
 const contact_controller = require('../controllers/contact.controller');
 //might need in future
 //router.post('/create', contact_controller.contact_create);
@@ -99,6 +96,8 @@ router.delete('/contact/:id/delete', contact_controller.contact_delete);
 // a simple test url to check that all of our files are communicating correctly.
 router.get('/test', contact_controller.test);
 
-
+// Calendar
+const CalendarController = require('../controllers/admin/calendar.controller');
+router.get('/calendar', CalendarController.index);
 
 module.exports = router;
