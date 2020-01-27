@@ -1,0 +1,57 @@
+{{>header_nav_admin}}
+<!-- Content Row -->
+<hr />
+<div id="wrapper" class="row">
+    <section class="banner_contact">
+            <div class="onbanner">
+                <h4>{{title}}</h4>
+                <h5>These are all the people who have tried to contact IBCSS, you can edit or delete.</h5>
+            </div>
+        </section>
+        <hr />
+
+        <div class="container">
+            <div class="shop tablehead">
+                <div class="details">
+                    <p>Month</p>
+                </div>
+                <div class="details">
+                    <p>Published</p>
+                </div>
+                <div class="details">
+                    <p>Title</p>
+                </div>
+                <div class="details">
+                    <p>Description</p>
+                </div>
+            </div>
+
+            {{#each calendar}}
+            <div class="size products clearfix" style="clear:both">
+                <div class="shop clearfix">
+                    <div class="details prc">
+                        <p>
+                            {{month}}
+                            {{intToMonth this.month}}
+                            {{_id}}
+                            {{this._id}}
+                        </p>
+                    </div>
+                    <div class="details">
+                        <input type="checkbox" name="published[]" value="{{this.published}}" class="form-input" />
+                    </div>
+                    <div class="details">
+                        <input type="text" name="title[]" value="{{this.title}}" class="form-input" />
+                    </div>
+                    <div class="details">
+                        <textarea name="description[]" class="form-input">{{this.description}}</textarea>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+        </div>
+
+</div>
+{{>footer_admin}}

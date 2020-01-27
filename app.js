@@ -12,9 +12,10 @@ var methodOverride = require('method-override');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const stripeMod = require('stripe');
+let DateUtil = require('./lib/dateutil');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var expressHbs = require("express-handlebars");
+let expressHbs = require("express-handlebars");
 
 // DB Config
 function onError(error) {
@@ -65,9 +66,17 @@ function createServer(config) {
     app.set('views', path.join(__dirname, 'views'));
 
     // view engine setup
-    app.engine(".hbs", expressHbs({ defaultLayout: "layout", extname: ".hbs" }));
-    app.set('view engine', '.hbs');
 
+    let hbs = expressHbs.create({
+        defaultLayout: "layout",
+        extname: ".hbs",
+        helpers: {
+            intToMonth: DateUtil.intToMonth
+        }
+    });
+
+    app.engine(".hbs", hbs.engine);
+    app.set('view engine', '.hbs');
 
     //get body parser from https://github.com/expressjs/body-parser
     // parse application/x-www-form-urlencoded
@@ -174,6 +183,9 @@ function createServer(config) {
             : 'port ' + addr.port;
         debug('Listening on ' + bind);
     });
+
+
+
     return server;
 }
 

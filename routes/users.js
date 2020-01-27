@@ -6,6 +6,7 @@ var passport = require("passport");//defining passport
 var User = require("../models/user.model");
 var Order = require('../models/order.model');
 var Cart = require('../models/cart.model');
+var middleware = require('../lib/middleware');
 var router = express.Router();
 
 let csrfProtection = csrf();
@@ -14,7 +15,7 @@ const user_controller = require('../controllers/user.controller');
 
 
 
-router.get('/viewusers', isLoggedIn, isAdmin, function (req, res, next) {
+router.get('/viewusers', middleware.isLoggedIn, middleware.isAdmin, function (req, res, next) {
     User.find(function (err, docs) {
         var UserAcc= [];
         var accSize = 1;
@@ -27,7 +28,7 @@ router.get('/viewusers', isLoggedIn, isAdmin, function (req, res, next) {
 });
 
 //on success redirect to profile page/ needs protection - logged in - reference to function
-router.get('/profile', isLoggedIn, function (req, res, next) {
+router.get('/profile', middleware.isLoggedIn, function (req, res, next) {
     Order.find({ user: req.user }, function (err, orders) {
         if (err) {
             return res.write('Error!');
@@ -44,15 +45,15 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
 });
 
 //update user
-router.put('/:id/update', isLoggedIn, user_controller.user_update);
+router.put('/:id/update', middleware.isLoggedIn, user_controller.user_update);
 //you can only log out if you are logged in
-router.get("/logout", isLoggedIn, function (req, res, next) {
+router.get("/logout", middleware.isLoggedIn, function (req, res, next) {
     req.logout();
     res.redirect("/");
 });
 
 //all routes where user can be not logged in come after this route IMPORTANT!!!
-router.use("/", notLoggedIn, function (req, res, next) {
+router.use("/", middleware.notLoggedIn, function (req, res, next) {
     next();
 });
 
@@ -94,41 +95,8 @@ router.post("/login", passport.authenticate("local.signin", {
     }
 });
 
-router.get('/dashboard', isAdmin, isLoggedIn, function (req, res) {
-    console.log(user.name);
-    User.findById(req.params.id, function (err, user) {
-        if (err) return next(err);
-        console.log(user.name);
-        res.render('admin/dashboard', { title: 'Dashboard', layout: false, user : req.user});
-    });
-});
-
-
 //delete user
+//todo: shouldn't this be while logged in? and only admin?
 router.delete('/:id/delete', user_controller.user_delete);
 
 module.exports = router;
-
-//need to be logged in to get to some pages
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect("/");
-}
-
-//not logged in - check if I am not authenticated
-function notLoggedIn(req, res, next) {
-    if (!req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect("/");
-}
-
-//user is admin
-function isAdmin(req, res, next) {
-    if (req.user.isAdmin)
-        return next();
-    res.redirect('/');
-}
-
