@@ -103,5 +103,7 @@ router.get('/test', contact_controller.test);
 // Calendar
 const CalendarController = require('../controllers/admin/calendar.controller');
 router.get('/calendar', CalendarController.index);
+router.get('/calendar/:year', CalendarController.edit);
+router.post('/calendar/:year', CalendarController.submitEdit);
 
 module.exports = router;
