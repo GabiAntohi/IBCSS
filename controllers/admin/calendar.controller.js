@@ -1,6 +1,20 @@
 const Calendar = require('../../models/calendar.model');
 const moment = require('moment');
 
+function getYearSchedule(year) {
+    return Calendar.find(
+        {
+            year: year
+        },
+        undefined,
+        {
+            sort: {
+                month: 1
+            }
+        })
+        .exec();
+}
+
 let CalendarController = {};
 CalendarController.index = function (req, res) {
     let year = moment().year();
@@ -18,13 +32,11 @@ CalendarController.edit = function (req, res, next) {
     }
 
     // Fetch years calendar, or create default unpublished entries
-    let opt = {sort: "month"};
-    let query = Calendar.find({year: year});
-    let promise = query.exec();
-    promise.then(function (entries) {
+    getYearSchedule(year)
+        .then(function (entries) {
         if (entries.length === 0) {
             let created = [];
-            for (let i = 1; i < 13; i++) {
+            for (let i = 0; i < 12; i++) {
                 let entry = new Calendar({
                     month: i,
                     year: year,
@@ -58,8 +70,7 @@ CalendarController.edit = function (req, res, next) {
 // Ensure we haven't lost/gained anything.
 CalendarController.submitEdit = function (req, res, next) {
     let year = req.params.year;
-    let query = Calendar.find({year: year});
-    query.exec()
+    getYearSchedule(year)
         .then(function (entries) {
         if (entries.length === 0) {
             throw new Error("calendar does not exist");

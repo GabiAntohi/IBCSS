@@ -14,85 +14,31 @@
         <p class="center">
             There are no meetings in January or December.
         </p>
-            <!-- Slide2 -->
-            <div class="wrap-slick2">
-                <div class="slick2">
-                    <div class="item-slick2">
-                        <!-- Block2 -->
-                        <div class="calendar_date">
-                            <div class="top-bar">
-                                <h3> the 2nd May</h3>
-                            </div>
-                            <p>
-                                 7:30 pm
-                            </p>
-                            <p class="meetdescription">
-                                Member Michael Harrington will discuss potting mixes, the potting process, and pass on tips along the way.
-                            </p>
-                        </div>
-                </div>
-
-
+        <!-- Slide2 -->
+        <div class="wrap-slick2">
+            <div class="slick2">
+                {{#each calendar}}
                 <div class="item-slick2">
                     <!-- Block2 -->
                     <div class="calendar_date">
                         <div class="top-bar">
-                            <h3> the 5th August</h3>
+                            <h3>the {{ intToMonth this.month }} {{ this.month }} {{ ../currentMonth }}</h3>
                         </div>
                         <p>
-                            6:30 pm
+                            ~ 6:30 pm
                         </p>
-                        <p class=" meetdescription">
+                        <p class="meetdescription">
                             <strong>
-                                Plant Identification Meet
+                                {{ this.title }}
                             </strong>
 
-                            - bring your mystery plants in and we will do our best
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="item-slick2">
-                    <!-- Block2 -->
-                    <div class="calendar_date">
-                        <div class="top-bar">
-                            <h3> the 8th September</h3>
-                        </div>
-                        <p>
-                            6:30 pm
-                        </p>
-                        <p class=" meetdescription">
-                            <strong>
-                                Plant Sale
-                            </strong>
-
-                            - Plant sale at the Dublin Botanic Gardens
-                        </p>
-
-                    </div>
-                </div>
-                <div class="item-slick2">
-                    <!-- Block2 -->
-                    <div class="calendar_date">
-                        <div class="top-bar">
-                            <h3>  the 11th December</h3>
-                        </div>
-                        <p>
-                            6:30 pm
-                        </p>
-                        <p class=" meetdescription">
-                            <strong>
-                                Plant Identification Meet
-                            </strong>
-
-                            - bring your mystery plants in and we will do our best
+                            {{ this.description }}
                         </p>
                     </div>
                 </div>
+                {{/each}}
             </div>
         </div>
-
     </div>
 </section>
 
@@ -109,7 +55,6 @@
 
         <div class="potting_small onright">
             <div class="text">
-
                 <p>
                     <strong>
                         Benefits of membership
