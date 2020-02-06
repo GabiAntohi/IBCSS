@@ -90,7 +90,7 @@ router.post("/login", passport.authenticate("local.signin", {
         req.session.oldUrl = null;
         res.redirect(oldUrl);
     } else {
-        res.redirect('/admin/dashboard');
+        res.redirect('/user/profile');
     }
 });
 

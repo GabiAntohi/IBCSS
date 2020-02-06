@@ -76,7 +76,6 @@ describe('home page', function () {
         blog1.imagePath = "";
         blog1.title = "Announcing new website";
         blog1.author = "admin";
-        blog1.content = "at last!";
         blog1.tag = "news";
 
         sinon.stub(Blog, 'find').yields(null, [blog1]);
@@ -85,7 +84,6 @@ describe('home page', function () {
             .expect(200, done)
             .expect(expectBodyIncludes("Welcome to the Irish Cactus and Succulent Society Website"))
             .expect(expectBodyIncludes("Announcing new website"))
-            .expect(expectBodyIncludes("at last!"));
     });
 });
 
@@ -126,7 +124,6 @@ describe('home page with live db', function () {
                     new Blog({
                         imagePath: 'https://images.pexels.com/photos/37076/pots-plants-cactus-succulent.jpg',
                         title: 'Announcing new website',
-                        content: 'at last!',
                         author: "Admin1",
                         tag: "cactus"
                     }),
