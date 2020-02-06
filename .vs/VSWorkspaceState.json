@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\public",
-    "\\public\\javascripts",
     "\\public\\stylesheets",
     "\\routes",
     "\\seed",
     "\\views",
     "\\views\\about",
     "\\views\\blog",
+    "\\views\\contact",
     "\\views\\layouts"
   ],
-  "SelectedNode": "\\app.js",
+  "SelectedNode": "\\views\\contact\\createcontact.hbs",
   "PreviewInSolutionExplorer": false
 }

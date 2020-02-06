@@ -72,7 +72,6 @@ router.delete('/blog/:id/delete', blog_controller.blog_delete);
 router.get('/test', blog_controller.test);
 
 
-
 //contact
 
 router.get('/allcontacts', function (req, res, next) {

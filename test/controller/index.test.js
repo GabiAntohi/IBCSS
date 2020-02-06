@@ -148,7 +148,6 @@ describe('home page with live db', function () {
                     .get('/')
                     .expect(expectBodyIncludes("Welcome to the Irish Cactus and Succulent Society Website"))
                     .expect(expectBodyIncludes("Announcing new website"))
-                    .expect(expectBodyIncludes("at last!"))
                     .expect(expectBodyIncludes("Admin1"))
                     .expect(expectBodyIncludes("Announcing 2019 cactus show"))
                     .expect(expectBodyIncludes("Thanks to the Botanical Gardens for hosting it"))
