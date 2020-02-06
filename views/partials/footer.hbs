@@ -7,13 +7,14 @@
                     Get in touch
                 </h4>
                 <p>
-                    Any questions? Let us know by calling or texting (+353) 87-2308330, email info@irelandcactus.com or by using the form on the Contact page.
+                    Any questions? Let us know by calling or texting <strong>(+353) 87-2308330</strong>, email<strong> info@cactusandsucculentsociety.ie</strong> or by using the form on the <strong>Contact page</strong>.
                 </p>
                 <!--social media - icons from fontawesome-->
                 <div class="social">
-                    <a href="#" class="color_pink fa fa-facebook"></a>
-                    <a href="#" class="color_pink fa fa-instagram"></a>
-                    <a href="#" class="color_pink fa fa-pinterest-p"></a>
+                    <a href="https://www.facebook.com/CactusandSucculentSocietyofIreland" class="color_pink fa fa-facebook fa-2x" target="_blank"></a>
+                    <a href="#" class="color_pink fa fa-instagram fa-2x" target="_blank"></a>
+                    <a href="https://twitter.com/CactusSocietyIE" class="color_pink fa fa-twitter fa-2x" target="_blank"></a>
+                    <a href="https://www.pinterest.co.uk/irishcactusandsucculentsociety" class="topbar-social-item fa fa-pinterest-p fa-2x" target="_blank"></a>
                 </div>
 
             </div>
@@ -22,17 +23,39 @@
                     Address
                 </h4>
                 <p>
-                    The Dublin and District<br />
-                    Cactus and Succulent Society<br />
-                    25 Shanowen Crescent<br />
-                    Dublin 9
+                    Irish Cactus and Succulent Society<br />
+                    Dublin Botanic Gardens<br />
+                    Glasnevin, Dublin 9<br />
+                    Ireland
                 </p>
             </div>
 
         </div>
     </div>
+
+    <ul class="dropdown-menu" id="dropdown-menu" style="background-color:#2a292e">
+        {{#if login}}
+        {{#if user.isAdmin}}
+        <li><a href="/admin/dashboard" style="color:#e1e3e2;background-color:#2a292e">Dashboard</a></li>
+        <li role="separator" class="divider"></li>
+        {{/if}}
+        <li><a href="/user/profile" style="color:#e1e3e2;background-color:#2a292e">Profile</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="/user/logout" style="color:#e1e3e2;background-color:#2a292e"> Logout</a></li>
+        {{else}}
+        <li><a href="/user/register" style="color:#e1e3e2;background-color:#2a292e">Register</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="/user/login" style="color:#e1e3e2;background-color:#2a292e">Log in</a></li>
+        {{/if}}
+    </ul>
+    {{#if login}}
+    {{#if user.isAdmin}}
+    <a href="/admin/dashboard"></a>
+    {{/if}}
+    <a class="login_btn" href="/user/login"></a>
+    {{/if}}
     <div class="vertical">
-        <span></span><p><?php echo date("Y"); ?> &copy; gabrielaantohi.eu</p>
+        <span></span><p> &copy; Irish Cactus and Succulent Society</p>
     </div>
     <!-- Back to top button :) -->
     <div class="btn-back-to-top" id="myBtn">
@@ -40,11 +63,7 @@
             <i class="fa fa-angle-double-up" aria-hidden="true"></i>
         </span>
     </div>
-    <script type="text/javascript" src="/javascripts/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/stylesheets/animsition/js/animsition.min.js"></script>
-    <script type="text/javascript" src="/stylesheets/slick/slick.min.js"></script>
-    <script type="text/javascript" src="/javascripts/slick-custom.js"></script>
-    <script src="../../javascripts/main.js"></script>
+
 
 
 </footer>

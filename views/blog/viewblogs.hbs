@@ -2,24 +2,21 @@
 <div class="pagebackground clearfix">
     <div class="container">
         <!-- Title Page -->
-        <section class="background_pages">
-            <div class="blog_header container">
+        <section class="background_pages banner_about">
+            <div class="about_header">
                 <h2>
-                    Our Stories
+                    {{title}}
                 </h2>
-                <p class="moto">Welcome to the IBCSS {{title}}</p>
+                <p class="moto">Our Stories</p>
             </div>
         </section>
 
         <!-- content page -->
-        <section class="section_stories container">
+        <section class="section_about clearfix">
             <section class="section_stories_category">
                 <!-- Categories -->
-                <h4>
-                    Categories
-                </h4>
 
-                <div id="myBtnContainer">
+                <div id="myBtnContainer" class=" clearfix">
                     <button class="btn active" onclick="filterSelection('all')">All</button>
                     <button class="btn" onclick="filterSelection('cactus')">Cactus</button>
                     <button class="btn" onclick="filterSelection('succulent')"> Succulents</button>

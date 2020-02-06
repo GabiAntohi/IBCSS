@@ -1,15 +1,23 @@
 <div class="pagebackground clearfix">
 <div class="container">
     <section class="background_pages banner_about">
-        <div class="blog_header">
+        <div class="contact_header">
             <h2>
-                Get in Touch
+                {{title}} 
             </h2>
-            <p class="moto"> {{title}}</p>
+            <p class="moto"> Get in Touch</p>
         </div>
     </section>
+
     <section class="section_contact">
-        <form accept-charset="UTF-8" id="contactform" name="myForm" action="/contact/create" onsubmit="" method="post">
+        <div class="left">
+
+            <p>If you have questions about the next meeting or joining the Society shoot us an email at info@cactusandsucculentsociety.ie or give us a call on (+353) 87-2308330.</p>
+            <p>Alternatively please use our form.</p>
+            <p>If you need information about care requirements or plant identification please attend one of our meetings, you won't be disappointed.</p>
+
+        </div>
+        <form accept-charset="UTF-8" id="contactform" name="myForm" class="right" action="/contact/create" onsubmit="" method="post">
             <label class="required" for="name">First name</label>
             <input id="name" name="name" required type="text" placeholder="your first name" />
             <label class="required" for="surname">Surname</label>
@@ -21,6 +29,7 @@
             <button class="button" type="submit" form="contactform">Submit</button>
         </form>
     </section>
+
 
 </div>
 </div>

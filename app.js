@@ -12,13 +12,13 @@ var expressHbs = require("express-handlebars");
 //connect mongoose
 const mongoose = require("mongoose");
 // DB Config
-const db = require('./config/key').mongoURI;
+//const db = require('./config/key').mongoURI;
 
 // Connect to MongoDB
-mongoose
-    .connect(db, { useNewUrlParser: true })
-    .then(() => console.log('Remote MongoDB Connected...'))
-    .catch(err => console.log(err));
+//mongoose
+    //.connect(db, { useNewUrlParser: true })
+   // .then(() => console.log('Remote MongoDB Connected...'))
+    //.catch(err => console.log(err));
 
 //sessions
 var session = require("express-session");
@@ -43,16 +43,16 @@ var contactRouter = require('./routes/contact');
 var adminRouter = require('./routes/admin');
 var app = express();
 
-//mongoose.connect('mongodb://localhost:27017/ibcss', { useNewUrlParser: true });
-//let db = mongoose.connection;
+mongoose.connect('mongodb://localhost:27017/ibcss', { useNewUrlParser: true });
+let db = mongoose.connection;
 //check connection
-//db.once("open", function () {
-   // console.log("connected to mongodb");
-//});
+db.once("open", function () {
+   console.log("connected to mongodb");
+});
 //check for db errors
-//db.on("error", function (err) {
-  //  console.log(err);
-//});
+db.on("error", function (err) {
+    console.log(err);
+});
 
 app.use(methodOverride('_method'));
 //load configuration from config file - setup passport
@@ -80,7 +80,7 @@ app.use(validator());
 app.use(cookieParser());
 
 app.get('/about', function (req, res) {
-    res.render("about/about", { title: 'About IBCSS' });
+    res.render("about/about", { title: 'About Us' });
 });
 
 //sessions

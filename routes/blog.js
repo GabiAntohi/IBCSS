@@ -11,7 +11,7 @@ router.get('/', function (req, res, next) {
         for (var i = 0; i < docs.length; i += postSize) {
             blogPosts.push(docs.slice(i, i + postSize));
         }
-        res.render('blog/viewblogs', { title: 'Blog', blogs: blogPosts });
+        res.render('blog/viewblogs', { title: 'News', blogs: blogPosts });
     });
 
 });

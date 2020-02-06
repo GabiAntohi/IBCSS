@@ -1,70 +1,56 @@
-﻿<!-- Header -->
-<nav class="navbar navbar-default" style="color:#e1e3e2; border:none;margin-bottom:0;">
-    <div class="container-fluid" id="thcd">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" id="thc" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="th icon-bar" style="background-color:#e1e3e2"></span>
-                <span class="th icon-bar" style="background-color:#e1e3e2"></span>
-                <span class="th icon-bar" style="background-color:#e1e3e2"></span>
-            </button>
-            <a class="navbar-brand logo" id="logo" href="/">IBCSS</a>
+﻿	<!-- Header -->
+<header class="header1">
+    <div class="container-menu-header">
+        <div class="topbar">
+            <div class="topbar-social">
+                <a href="https://www.facebook.com/CactusandSucculentSocietyofIreland" class="topbar-social-item fa fa-facebook" target="_blank"></a>
+                <a href="#" class="topbar-social-item fa fa-instagram" target="_blank"></a>
+                <a href="https://twitter.com/CactusSocietyIE" class="topbar-social-item fa fa-twitter" target="_blank"></a>
+                <a href="https://www.pinterest.co.uk/irishcactusandsucculentsociety" class="topbar-social-item fa fa-pinterest-p" target="_blank"></a>
+            </div>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav" >
-                <li>
-                    <a href="/" style="color:#e1e3e2;" >Home</a>
-                </li>
-                <li>
-                    <a href="/shop" style="color:#e1e3e2">Shop</a>
+        <div class="wrap_header">
+            <!-- logo -->
+            <a href="/" class="logo">
+                ICSS
+            </a>
+            <!-- nav -->
+            <div class="wrap_menu">
+                <div id="container">
+                    <nav class="menu">
+                        <ul class="main_menu">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/blog">News</a>
+                            </li>
+                            <li>
+                                <a href="/about">About</a>
+                            </li>
+                            <li>
+                                <a href="/contact">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mobile">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header -->
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/mobile.js"></script>
 
-                </li>
-                <li>
-                    <a href="/blog" style="color:#e1e3e2">Blog</a>
-                </li>
-                <li>
-                    <a href="/about" style="color:#e1e3e2">About</a>
-                </li>
-                <li>
-                    <a href="/contact" style="color:#e1e3e2">Contact</a>
-                </li>
 
-            </ul>
 
-           
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="/shop/shopping-cart" style="color:#e1e3e2;">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
-                        <span class="badge">{{session.cart.totalQty}}</span>
-                    </a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" style="color:#e1e3e2;background-color:#2a292e"
-                       aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="color:#e1e3e2; padding-right:5px;"></i>User<span class="caret" style="color:#e1e3e2;"></span></a>
-                    <ul class="dropdown-menu" id="dropdown-menu" style="background-color:#2a292e">
-                        {{#if login}}
-                       {{#if user.isAdmin}}
-                        <li><a href="/admin/dashboard" style="color:#e1e3e2;background-color:#2a292e">Dashboard</a></li>
-                        <li role="separator" class="divider"></li>
-                        {{/if}}
-                        <li><a href="/user/profile" style="color:#e1e3e2;background-color:#2a292e">Profile</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="/user/logout" style="color:#e1e3e2;background-color:#2a292e"> Logout</a></li>
-                        {{else}}
-                        <li><a href="/user/register" style="color:#e1e3e2;background-color:#2a292e">Register</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="/user/login" style="color:#e1e3e2;background-color:#2a292e">Log in</a></li>
-                        {{/if}}
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+
 
 
 

@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\config",
-    "\\controllers",
     "\\public",
+    "\\public\\javascripts",
+    "\\public\\stylesheets",
     "\\routes",
+    "\\seed",
     "\\views",
-    "\\views\\admin",
-    "\\views\\admin\\contacts",
+    "\\views\\about",
     "\\views\\blog",
-    "\\views\\partials"
+    "\\views\\layouts"
   ],
-  "SelectedNode": "\\routes\\shop.js",
+  "SelectedNode": "\\routes\\index.js",
   "PreviewInSolutionExplorer": false
 }
