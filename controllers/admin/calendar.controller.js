@@ -53,7 +53,7 @@ CalendarController.edit = function (req, res) {
                 timeInfo: timeInfo,
                 year: year
             });
-        })
+        });
 };
 
 // Update request. We'll have an array of calendar objects coming in.

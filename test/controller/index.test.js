@@ -1,10 +1,11 @@
-var request = require('supertest');
+const request = require('supertest');
 const sinon = require('sinon');
 const mongoose = require('mongoose');
-var Blog = require("../../models/blog.model");
-var TEST_DEBUG = process.env.TEST_DEBUG || false;
+const Blog = require("../../models/blog.model");
+const Calendar = require("../../models/calendar.model");
 
-var config = {
+let TEST_DEBUG = process.env.TEST_DEBUG || false;
+let config = {
     mongoURI: "mongodb://localhost:27017/ibcss",
     sessionSecret: "testing-mycarnivale"
 };
@@ -45,7 +46,15 @@ describe('the app', function() {
             .expect(404, done);
     });
 });
-
+function mockFind(array) {
+    return {
+        exec: function () {
+            return new Promise(function (resolve) {
+                resolve(array)
+            });
+        }
+    }
+};
 describe('home page', function () {
     var app;
     var server;
@@ -61,15 +70,18 @@ describe('home page', function () {
         server.close();
         app.stopDB();
         Blog.find.restore(); // cleanup effects of test
+        Calendar.find.restore(); // cleanup effects of test
         done()
     });
     it('responds to / with no blogs', function testSlash(done) {
-        let emptyBlogList = [];
-        sinon.stub(Blog, 'find').yields(null, emptyBlogList);
+        let mockFindNone = mockFind([]);
+        sinon.stub(Calendar, "find").returns(mockFindNone);
+        sinon.stub(Blog, "find").returns(mockFindNone);
+
         request(server)
             .get('/')
+            .expect(expectBodyIncludes("Welcome to the Irish Cactus and Succulent Society Website"))
             .expect(200, done)
-            .expect(expectBodyIncludes("Welcome to the Irish Cactus and Succulent Society Website"));
     });
     it('responds to / with blogs', function testSlash(done) {
         let blog1 = new Blog;
@@ -79,13 +91,14 @@ describe('home page', function () {
         blog1.content = "at last!";
         blog1.tag = "news";
 
-        sinon.stub(Blog, 'find').yields(null, [blog1]);
+        sinon.stub(Blog, 'find').returns(mockFind([blog1]));
+        sinon.stub(Calendar, 'find').returns(mockFind([]));
+
         request(server)
             .get('/')
-            .expect(200, done)
             .expect(expectBodyIncludes("Welcome to the Irish Cactus and Succulent Society Website"))
             .expect(expectBodyIncludes("Announcing new website"))
-
+            .expect(200, done);
     });
 });
 
@@ -109,7 +122,7 @@ describe('home page with live db', function () {
     afterEach(function (done) {
         server.close();
         app.stopDB();
-        mongoose.disconnect()
+        mongoose.disconnect();
         done()
     });
 
