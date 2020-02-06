@@ -426,9 +426,9 @@ input, .login input {
     width: 100%;
     height: 35px;
     margin: 0 auto 10px auto;
+    border-radius:0;
 }
 textarea, input, .login input {
-
     border-width: 0;
     border: 1px solid #f6edeb;
     background-color: #1a1e29;
@@ -880,7 +880,9 @@ footer a.login_btn {
             width:100px;
             background-color:#f6edeb;
 }
-
+p a.register {
+    color: #f6edeb;
+}
 @media only screen and (min-width: 768px) {
     .right {
         float: right;

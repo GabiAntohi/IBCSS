@@ -1,9 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-
 // sessions
-
 var session = require("express-session");
 var passport = require("passport");
 var flash = require("connect-flash");

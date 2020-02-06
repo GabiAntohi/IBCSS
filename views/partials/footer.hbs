@@ -33,27 +33,8 @@
         </div>
     </div>
 
-    <ul class="dropdown-menu" id="dropdown-menu" style="background-color:#2a292e">
-        {{#if login}}
-        {{#if user.isAdmin}}
-        <li><a href="/admin/dashboard" style="color:#e1e3e2;background-color:#2a292e">Dashboard</a></li>
-        <li role="separator" class="divider"></li>
-        {{/if}}
-        <li><a href="/user/profile" style="color:#e1e3e2;background-color:#2a292e">Profile</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="/user/logout" style="color:#e1e3e2;background-color:#2a292e"> Logout</a></li>
-        {{else}}
-        <li><a href="/user/register" style="color:#e1e3e2;background-color:#2a292e">Register</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="/user/login" style="color:#e1e3e2;background-color:#2a292e">Log in</a></li>
-        {{/if}}
-    </ul>
-    {{#if login}}
-    {{#if user.isAdmin}}
-    <a href="/admin/dashboard"></a>
-    {{/if}}
     <a class="login_btn" href="/user/login"></a>
-    {{/if}}
+
     <div class="vertical">
 
         <span></span><p> &copy; Irish Cactus and Succulent Society</p>
@@ -64,8 +45,6 @@
             <i class="fa fa-angle-double-up" aria-hidden="true"></i>
         </span>
     </div>
-
-
 
 </footer>
 
