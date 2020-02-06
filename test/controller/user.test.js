@@ -279,8 +279,8 @@ describe('user', function () {
                     });
             });
 
-            it('unknown user, redirects to login', function testSlash(done) {
-                mongoose.createConnection(config.mongoURI, {
+            it('unknown user, redirects to login', function testSlash() {
+                return mongoose.createConnection(config.mongoURI, {
                     useNewUrlParser: true
                 })
                     .then(() => {
@@ -289,7 +289,7 @@ describe('user', function () {
                     })
                     .then(() => {
                         testDebug("Start test");
-                        request(server)
+                        return request(server)
                             .get('/user/login')
                             .expect(200)
                             .then(function (getres) {
@@ -297,7 +297,7 @@ describe('user', function () {
                                 var csrfToken = $("#_csrf").val();
                                 testDebug("With CSRF token " + csrfToken);
                                 var reqCookie = getres.headers['set-cookie'];
-                                request(server)
+                                return request(server)
                                     .post('/user/login')
                                     .set({cookie: reqCookie})
                                     .send({
@@ -310,9 +310,8 @@ describe('user', function () {
                                             throw new Error("expected redirect to profile page: " + res.header['location'])
                                         }
                                     })
-                                    .expect(302, done);
-                            })
-
+                                    .expect(302);
+                            });
                     })
                     .catch((err) => {
                         testDebug(err);
