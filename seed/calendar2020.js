@@ -2,6 +2,7 @@ const CalendarUtil = require("../lib/calendar");
 const mongoose = require("mongoose");
 const moment = require('moment');
 
+// 0 -> Jan, 11 -> Dec
 const info = {
     1: {
         title: "Potting process discussion",
@@ -22,10 +23,6 @@ const info = {
         description: "Bring your ten favourite plants and put them on the bench! This is not competitive but does provide a chance to share plants that are not show-worthy or don’t fit a class. We all have them  so bring them along and make it an interesting evening. It will also help you to get ready for the Show ",
     },
     5: {
-        title: "Potting process discussion",
-        description: "Michael Harrington will take us through the preparation of potting mixes and the potting process with many tips along the way",
-    },
-    6: {
         title: "The Cactus and Succulent Show in the National Botanic Gardens.",
         description: "All hands on deck!\n" +
             "\n" +
