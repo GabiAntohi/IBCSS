@@ -33,7 +33,13 @@
                     <div class="shop clearfix">
                         <div class="details prc">
                             <p>
-                                {{ intToMonth this.month }}
+                            {{#with (lookup ../timeInfo @index)}}
+                            {{this.hour}}:{{this.minute}}
+                            {{#when this.hour 'gte' 12}}PM{{/when}}
+                            {{#when this.hour 'lte' 12}}AM{{/when}}
+                            {{this.dayText}}
+                            {{this.monthText}}
+                            {{/with}}
                             </p>
                         </div>
                         <div class="details">

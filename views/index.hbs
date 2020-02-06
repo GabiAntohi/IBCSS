@@ -18,24 +18,30 @@
         <div class="wrap-slick2">
             <div class="slick2">
                 {{#each calendar}}
+                    {{#when this.published 'eq' true}}
                 <div class="item-slick2">
+
                     <!-- Block2 -->
                     <div class="calendar_date">
+                        {{#with (lookup ../timeInfo @index)}}
                         <div class="top-bar">
-                            <h3>the {{ intToMonth this.month }} {{ this.month }} {{ ../currentMonth }}</h3>
+                            <h3>the {{this.dayText}} {{this.monthText}}</h3>
                         </div>
                         <p>
-                            ~ 6:30 pm
+                            {{this.hour}}:{{this.minute}}
+                            {{#when this.hour 'gte' 12}}PM{{/when}}
+                            {{#when this.hour 'lte' 12}}AM{{/when}}
                         </p>
+                        {{/with}}
                         <p class="meetdescription">
                             <strong>
                                 {{ this.title }}
                             </strong>
-
                             {{ this.description }}
                         </p>
                     </div>
                 </div>
+                    {{/when}}
                 {{/each}}
             </div>
         </div>
@@ -82,7 +88,7 @@
             Latest News
         </h3>
         <!-- blog post -->
-      
+
             {{#each blogs}}
 
             {{#each this}}

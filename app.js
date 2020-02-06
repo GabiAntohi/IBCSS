@@ -77,7 +77,10 @@ function createServer(config) {
                 var operators = {
                     'eq': function(l,r) { return l == r; },
                     'noteq': function(l,r) { return l != r; },
+                    'lt': function(l,r) { return Number(l) < Number(r); },
+                    'lte': function(l,r) { return Number(l) <= Number(r); },
                     'gt': function(l,r) { return Number(l) > Number(r); },
+                    'gte': function(l,r) { return Number(l) >= Number(r); },
                     'or': function(l,r) { return l || r; },
                     'and': function(l,r) { return l && r; },
                     '%': function(l,r) { return (l % r) === 0; }
