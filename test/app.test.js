@@ -31,8 +31,8 @@ describe('app', function() {
                 sessionSecret: "abc",
             })
                 .then(function(server) {
-                    app.stopDB()
-                    server.close()
+                    app.stopDB();
+                    server.close();
                     done()
                 });
         });

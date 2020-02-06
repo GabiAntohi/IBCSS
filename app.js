@@ -13,9 +13,10 @@ var methodOverride = require('method-override');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const stripeMod = require('stripe');
+let DateUtil = require('./lib/dateutil');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var expressHbs = require("express-handlebars");
+let expressHbs = require("express-handlebars");
 
 // DB Config
 function onError(error) {
@@ -66,9 +67,33 @@ function createServer(config) {
     app.set('views', path.join(__dirname, 'views'));
 
     // view engine setup
-    app.engine(".hbs", expressHbs({ defaultLayout: "layout", extname: ".hbs" }));
-    app.set('view engine', '.hbs');
 
+    let hbs = expressHbs.create({
+        defaultLayout: "layout",
+        extname: ".hbs",
+        helpers: {
+            intToMonth: DateUtil.intToMonth,
+            when: function(operand_1, operator, operand_2, options) {
+                var operators = {
+                    'eq': function(l,r) { return l == r; },
+                    'noteq': function(l,r) { return l != r; },
+                    'lt': function(l,r) { return Number(l) < Number(r); },
+                    'lte': function(l,r) { return Number(l) <= Number(r); },
+                    'gt': function(l,r) { return Number(l) > Number(r); },
+                    'gte': function(l,r) { return Number(l) >= Number(r); },
+                    'or': function(l,r) { return l || r; },
+                    'and': function(l,r) { return l && r; },
+                    '%': function(l,r) { return (l % r) === 0; }
+                }
+                    , result = operators[operator](operand_1,operand_2);
+                if (result) return options.fn(this);
+                else  return options.inverse(this);
+            },
+        }
+    });
+
+    app.engine(".hbs", hbs.engine);
+    app.set('view engine', '.hbs');
 
     //get body parser from https://github.com/expressjs/body-parser
     // parse application/x-www-form-urlencoded
@@ -176,6 +201,9 @@ function createServer(config) {
             : 'port ' + addr.port;
         debug('Listening on ' + bind);
     });
+
+
+
     return server;
 }
 

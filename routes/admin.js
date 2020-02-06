@@ -1,10 +1,14 @@
-var express = require('express');
-var router = express.Router();
-var Product = require("../models/product.model");
-var User = require("../models/user.model");
-var Contact = require("../models/contact.model");
+const express = require('express');
+const router = express.Router();
+const middleware = require('../lib/middleware');
+const Product = require("../models/product.model");
+const User = require("../models/user.model");
+const Contact = require("../models/contact.model");
 const multer = require('multer');
 const upload = multer({dest:'uploads/'});
+
+router.use(middleware.isLoggedIn);
+router.use(middleware.isAdmin);
 
 /* GET home page. */
 router.get('/dashboard', function (req, res) {
@@ -73,7 +77,6 @@ router.get('/test', blog_controller.test);
 
 
 //contact
-
 router.get('/allcontacts', function (req, res, next) {
     var successMgs = req.flash('success')[0];
     Contact.find(function (err, docs) {
@@ -86,8 +89,6 @@ router.get('/allcontacts', function (req, res, next) {
     });
 });
 
-
-
 const contact_controller = require('../controllers/contact.controller');
 //might need in future
 //router.post('/create', contact_controller.contact_create);
@@ -99,6 +100,10 @@ router.delete('/contact/:id/delete', contact_controller.contact_delete);
 // a simple test url to check that all of our files are communicating correctly.
 router.get('/test', contact_controller.test);
 
-
+// Calendar
+const CalendarController = require('../controllers/admin/calendar.controller');
+router.get('/calendar', CalendarController.index);
+router.get('/calendar/:year', CalendarController.edit);
+router.post('/calendar/:year', CalendarController.submitEdit);
 
 module.exports = router;
