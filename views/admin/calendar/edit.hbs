@@ -5,14 +5,14 @@
     <section class="banner_contact">
             <div class="onbanner">
                 <h4>{{title}}</h4>
-                <h5>These are all the people who have tried to contact IBCSS, you can edit or delete.</h5>
+                <h5>Please fill in details and don't forget to click UPDATE</h5>
             </div>
         </section>
         <hr />
 
-        <form method="POST" action="/admin/calendar/{{ year }}">
-            <input type="submit" value="Update">
+        <form method="POST" action="/admin/calendar/{{ year }}" class="calendar"> 
             <div class="container">
+                <input type="submit" value="Update" class="update_calendar">
                 <div class="shop tablehead">
                     <div class="details">
                         <p>Month</p>
@@ -33,20 +33,20 @@
                     <div class="shop clearfix">
                         <div class="details prc">
                             <p>
-                            {{#with (lookup ../timeInfo @index)}}
-                            {{this.hour}}:{{this.minute}}
-                            {{#when this.hour 'gte' 12}}PM{{/when}}
-                            {{#when this.hour 'lte' 12}}AM{{/when}}
-                            {{this.dayText}}
-                            {{this.monthText}}
-                            {{/with}}
+                                {{#with (lookup ../timeInfo @index)}}
+                                {{this.hour}}:{{this.minute}}
+                                {{#when this.hour 'gte' 12}}PM{{/when}}
+                                {{#when this.hour 'lte' 12}}AM{{/when}}
+                                {{this.dayText}}
+                                {{this.monthText}}
+                                {{/with}}
                             </p>
                         </div>
                         <div class="details">
-                            <input type="checkbox" name="calendar[{{ @index }}][published]" class="form-input" {{#if this.published }}checked {{/if }} />
+                            <input type="checkbox" name="calendar[{{ @index }}][published]" class="form-input" {{#if this.published }} checked {{/if }} />
                         </div>
                         <div class="details">
-                            <input type="text" name="calendar[{{ @index }}][title]" value="{{ this.title }}" class="form-input" value="{{ this.title }}"/>
+                            <input type="text" name="calendar[{{ @index }}][title]" value="{{ this.title }}" class="form-input" />
                         </div>
                         <div class="details">
                             <textarea name="calendar[{{ @index }}][description]" class="form-input">{{ this.description }}</textarea>
@@ -57,5 +57,5 @@
             </div>
         </form>
     </div>
-</div>
+
 {{>footer_admin}}

@@ -63,7 +63,26 @@ textarea, input, .login input {
     background-color: rgba(225,227,226, .1);
 }
 
-    input:focus, textarea:focus{
+
+.calendar textarea{
+    min-width:350px;
+    min-height:170px;
+    padding:7px;
+    margin:0 40px;
+}
+.calendar input {
+    min-height: 35px;
+    padding: 7px;
+}
+    .calendar input.update_calendar {
+        width: 75%;
+        text-transform: uppercase;
+        margin: 20px auto;
+        padding: 10px;
+        height:50px;
+    }
+
+    input:focus, textarea:focus {
         outline: 0px none;
     }
 

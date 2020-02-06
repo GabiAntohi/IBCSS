@@ -27,18 +27,20 @@
                         <div class="top-bar">
                             <h3>{{this.dayText}} of {{this.monthText}}</h3>
                         </div>
-                        <p>
+                        <p class="hour_minute">
                             {{this.hour}}:{{this.minute}}
                             {{#when this.hour 'gte' 12}}PM{{/when}}
                             {{#when this.hour 'lte' 12}}AM{{/when}}
                         </p>
                         {{/with}}
-                        <p class="meetdescription">
-                            <strong>
+                        <div class="meetdescription">
+                            <p class="title">
                                 {{ this.title }}
-                            </strong>
+                            </p>
+                            <p class="description">
                             {{ this.description }}
-                        </p>
+                                </p>
+                        </div>
                     </div>
                 </div>
                     {{/when}}

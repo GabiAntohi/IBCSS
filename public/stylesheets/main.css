@@ -315,15 +315,20 @@ h2.index_header {
 }
     .newproducts p {
         color: #1a1e29;
-        width: 75%;
+        width: 85%;
         margin: 0 auto;
         max-width: 700px;
         font-size:18px;
 
     }
-button.btn.btn-default.header {
-    background-color: #d0d9d8;
-}
+
+        .newproducts p.hour_minute {
+            margin-top: -25px;
+            color: rgba(26, 30, 41, .5);
+        }
+        button.btn.btn-default.header {
+            background-color: #d0d9d8;
+        }
 input.form-control.header {
     background-color: transparent;
 }
@@ -666,18 +671,24 @@ p.read-more-wrap, .item-blog-txt label{
     }
 
 .calendar_date {
-    height: 350px;
+    min-height: 400px;
     text-align: center;
-    padding-top: 30px;
+    padding: 30px 20px;
     border:5px solid #1a1e29;
     color: #1a1e29;
     clear: both;
     position: relative;
     z-index: 2;
 }
-        .meetdescription {
-            padding: 10px 20px 0;
-        }
+.meetdescription {
+    text-align:left;
+}
+
+.meetdescription .title {
+     text-align: center;
+     font-weight:700;
+     
+    }
 
 .relative{
     position:relative;
@@ -1097,6 +1108,8 @@ p a.register {
         .banner_about .moto, .banner_contact .moto, .banner_stories .moto {
             max-width: 50%;
         }
+
+
 
     .potting_small.onright {
         float: right;
