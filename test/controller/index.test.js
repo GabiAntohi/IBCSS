@@ -130,7 +130,6 @@ describe('home page with live db', function () {
                     new Blog({
                         imagePath: 'https://images.pexels.com/photos/37076/pots-plants-cactus-succulent.jpg',
                         title: 'Announcing 2019 cactus show',
-                        content: 'Thanks to the Botanical Gardens for hosting it',
                         author: "Admin2",
                         tag: "cactus"
                     }),
@@ -147,7 +146,6 @@ describe('home page with live db', function () {
                     .expect(expectBodyIncludes("Announcing new website"))
                     .expect(expectBodyIncludes("Admin1"))
                     .expect(expectBodyIncludes("Announcing 2019 cactus show"))
-                    .expect(expectBodyIncludes("Thanks to the Botanical Gardens for hosting it"))
                     .expect(expectBodyIncludes("Admin2"))
                     .expect(200);
             })
