@@ -13,6 +13,7 @@ var methodOverride = require('method-override');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const stripeMod = require('stripe');
+const contactInfo = require('./config/contact');
 let DateUtil = require('./lib/dateutil');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -73,6 +74,21 @@ function createServer(config) {
         extname: ".hbs",
         helpers: {
             intToMonth: DateUtil.intToMonth,
+            contactSocietyMobile: function () {
+                return contactInfo.mobile;
+            },
+            contactSocietyEmail: function () {
+                return contactInfo.emailAddress;
+            },
+            contactSocietyAddressHtmlFormat: function () {
+                return contactInfo.addressHtmlFormat;
+            },
+            societyAbbreviation: function () {
+                return contactInfo.abbreviation;
+            },
+            societyFullName: function () {
+                return contactInfo.fullName;
+            },
             when: function(operand_1, operator, operand_2, options) {
                 var operators = {
                     'eq': function(l,r) { return l == r; },
@@ -112,7 +128,7 @@ function createServer(config) {
     app.use(cookieParser());
 
     app.get('/about', function (req, res) {
-        res.render("about/about", { title: 'About IBCSS' });
+        res.render("about/about", { title: 'About '+contactInfo.abbreviation });
     });
 
     //sessions
