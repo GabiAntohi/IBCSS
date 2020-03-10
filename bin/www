@@ -1,11 +1,37 @@
 #!/usr/bin/env node
-
+let fs = require('fs');
+const App = require('../app');
 /**
  * Module dependencies.
  */
-var config = require('../config/config.js');
-require('../app')(config)
-    .then(null, function (err) {
-        console.log(err)
-        process.exit(1)
+
+function loadConfigFromFile(filePath) {
+    return new Promise(
+        function (resolve, reject) {
+            fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
+                if (!err) {
+                    resolve(JSON.parse(data.toString()))
+                } else {
+                    reject(err)
+                }
+            })
+        }
+    )
+}
+
+let promise;
+if (process.argv.length > 2) {
+    promise = loadConfigFromFile(process.argv[2])
+} else {
+    promise = new Promise(function (resolve) {
+        resolve(require('../config/config.js'));
     });
+}
+
+promise.then(function (config) {
+    return App(config)
+        .then(null, function (err) {
+            console.log(err);
+            process.exit(1)
+        });
+});
