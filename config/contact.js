@@ -1,4 +1,8 @@
 module.exports = {
+    twitter: "CactusSocietyIE",
+    facebook: "CactusandSucculentSocietyofIreland",
+    instagram: "",
+    pinterest: "irishcactusandsucculentsociety",
     abbreviation: "ICSS",
     mobile: "(+353) 87-2308330",
     emailAddress: "irishcactusandsucculentsociety@gmail.com",

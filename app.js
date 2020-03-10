@@ -74,6 +74,18 @@ function createServer(config) {
         extname: ".hbs",
         helpers: {
             intToMonth: DateUtil.intToMonth,
+            contactTwitterHandle: function () {
+                return contactInfo.twitter;
+            },
+            contactInstagramHandle: function () {
+                return contactInfo.instagram;
+            },
+            contactPinterestHandle: function () {
+                return contactInfo.pinterest;
+            },
+            contactFacebookHandle: function () {
+                return contactInfo.facebook;
+            },
             contactSocietyMobile: function () {
                 return contactInfo.mobile;
             },
