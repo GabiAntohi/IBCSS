@@ -4,8 +4,6 @@ const middleware = require('../lib/middleware');
 const Product = require("../models/product.model");
 const User = require("../models/user.model");
 const Contact = require("../models/contact.model");
-const multer = require('multer');
-const upload = multer({dest:'uploads/'});
 
 router.use(middleware.isLoggedIn);
 router.use(middleware.isAdmin);
