@@ -7,7 +7,7 @@
                     Get in touch
                 </h4>
                 <p>
-                    Any questions? Let us know by calling or texting <strong>(+353) 87-2308330</strong>, email<strong> info@cactusandsucculentsociety.ie</strong> or by using the form on the <strong>Contact page</strong>.
+                    Any questions? Let us know by calling or texting <strong>{{ contactSocietyMobile }}</strong>, email<strong> <a href="mailto:{{ contactSocietyEmail }}">{{ contactSocietyEmail }}</a></strong> or by using the form on the <strong>Contact page</strong>.
                 </p>
                 <!--social media - icons from fontawesome-->
                 <div class="social">
@@ -23,10 +23,7 @@
                     Address
                 </h4>
                 <p>
-                    Irish Cactus and Succulent Society<br />
-                    Dublin Botanic Gardens<br />
-                    Glasnevin, Dublin 9<br />
-                    Ireland
+                    {{{ contactSocietyAddressHtmlFormat }}}
                 </p>
             </div>
 
@@ -37,7 +34,7 @@
 
     <div class="vertical">
 
-        <span></span><p> &copy; Irish Cactus and Succulent Society</p>
+        <span></span><p> &copy; {{ societyFullName }}</p>
     </div>
     <!-- Back to top button :) -->
     <div class="btn-back-to-top" id="myBtn">

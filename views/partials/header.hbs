@@ -3,17 +3,25 @@
     <div class="container-menu-header">
         <div class="topbar">
             <div class="topbar-social">
-                <a href="https://www.facebook.com/CactusandSucculentSocietyofIreland" class="topbar-social-item fa fa-facebook" target="_blank"></a>
-                <a href="#" class="topbar-social-item fa fa-instagram" target="_blank"></a>
-                <a href="https://twitter.com/CactusSocietyIE" class="topbar-social-item fa fa-twitter" target="_blank"></a>
-                <a href="https://www.pinterest.co.uk/irishcactusandsucculentsociety" class="topbar-social-item fa fa-pinterest-p" target="_blank"></a>
+                {{#when (contactFacebookHandle) 'noteq' ""}}
+                <a href="https://www.facebook.com/{{ contactFacebookHandle }}" class="topbar-social-item fa fa-facebook" target="_blank"></a>
+                {{/when}}
+                {{#when (contactInstagramHandle) 'noteq' ""}}
+                <a href="https://instagram.com/{{ contactInstagramHandle }}" class="topbar-social-item fa fa-instagram" target="_blank"></a>
+                {{/when}}
+                {{#when (contactTwitterHandle) 'noteq' ""}}
+                <a href="https://twitter.com/{{ contactTwitterHandle }}" class="topbar-social-item fa fa-twitter" target="_blank"></a>
+                {{/when}}
+                {{#when (contactPinterestHandle) 'noteq' ""}}
+                <a href="https://www.pinterest.ie/{{ contactPinterestHandle }}" class="topbar-social-item fa fa-pinterest-p" target="_blank"></a>
+                {{/when}}
             </div>
         </div>
 
         <div class="wrap_header">
             <!-- logo -->
             <a href="/" class="logo">
-                ICSS
+                {{ societyAbbreviation }}
             </a>
             <!-- nav -->
             <div class="wrap_menu">
