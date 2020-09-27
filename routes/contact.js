@@ -4,7 +4,8 @@ var router = express.Router();
 
 /* GET contact page. */
 router.get('/', function (req, res) {
-    res.render('contact/createcontact', { title: 'Contact us' });
+    let displayForm = false;
+    res.render('contact/createcontact', { title: 'Contact us', displayForm: displayForm });
 });
 
 

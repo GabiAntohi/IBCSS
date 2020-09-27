@@ -12,11 +12,14 @@
     <section class="section_contact">
         <div class="left">
 
-            <p>If you have questions about the next meeting or joining the Society shoot us an email at info@cactusandsucculentsociety.ie or give us a call on (+353) 87-2308330.</p>
-            <p>Alternatively please use our form.</p>
-            <p>If you need information about care requirements or plant identification please attend one of our meetings, you won't be disappointed.</p>
+            <p>If you have questions about the next meeting or joining the Society shoot us an email at <a href="mailto:{{ contactSocietyEmail }}">{{ contactSocietyEmail }}</a> or give us a call on <strong>{{ contactSocietyMobile }}</strong></p>
+
+            <p>We have a <a href="https://www.facebook.com/groups/203262631112580/">Facebook group</a> which is very active with cultivation questions, pictures of plants and blossoms, and so on. Drop by and say hello!</p>
+
+            <p>We also host meetings in the Dublin Botanical Gardens, visitors are most welcome!</p>
 
         </div>
+        {{#if displayForm}}
         <form accept-charset="UTF-8" id="contactform" name="myForm" class="right" action="/contact/create" onsubmit="" method="post">
             <label class="required" for="name">First name</label>
             <input id="name" name="name" required type="text" placeholder="your first name" />
@@ -28,6 +31,7 @@
             <textarea id="message" required name="message" placeholder="your message here"></textarea>
             <button class="button" type="submit" form="contactform">Submit</button>
         </form>
+        {{/if }}
     </section>
 
 
