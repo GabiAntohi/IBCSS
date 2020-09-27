@@ -5,10 +5,10 @@ module.exports = {
     pinterest: "irishcactusandsucculentsociety",
     abbreviation: "ICSS",
     mobile: "(+353) 87-2308330",
-    emailAddress: "irishcactusandsucculentsociety@gmail.com",
+    emailAddress: "frankkeoghan2@gmail.com",
     fullName: "Irish Cactus and Succulent Society",
-    addressHtmlFormat: "Irish Cactus and Succulent Society<br />\n" +
-        "                    Dublin Botanic Gardens<br />\n" +
-        "                    Glasnevin, Dublin 9<br />\n" +
+    addressHtmlFormat: "Dublin and District Cactus and Society<br />\n" +
+        "                    25 Shanowen Crescent<br />\n" +
+        "                    Dublin 9<br />\n" +
         "                    Ireland"
 };
