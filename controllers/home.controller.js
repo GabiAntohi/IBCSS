@@ -24,7 +24,7 @@ HomeController.index = function (req, res, next) {
             });
 
             res.render('index', {
-                title: 'Index',
+                title: 'Irish Cactus and Succulent Society',
                 blogs: blogPosts,
                 calendar: calendar,
                 timeInfo: timeInfo,
