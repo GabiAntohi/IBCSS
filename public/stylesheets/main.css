@@ -84,6 +84,7 @@ a:link, a:hover {
     text-decoration: none;
     color:gray;
 }
+
 input {
 	outline: none;
 }
@@ -452,6 +453,12 @@ p a {
     font-weight:bold;
 }
 
+.section_contact p a {
+    font-size: 18px;
+    color: #f6edeb;
+    text-decoration:underline;
+}
+
 .required::after {
 	content: " (required)";
 }
@@ -652,6 +659,7 @@ p.read-more-wrap, .item-blog-txt label{
 	margin-top:10px;
 	color:#888888;
 }
+
 
 /*slick for index page*/
 .item-slick2{
