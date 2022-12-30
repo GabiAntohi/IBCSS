@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "nyc": "^14.1.1",
     "sinon": "^7.5.0",
     "supertest": "^4.0.2"
